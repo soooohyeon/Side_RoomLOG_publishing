@@ -1,3 +1,8 @@
+// 메뉴바 css 설정
+$(document).ready(function () {
+  $('#LI-HOME-LINK').addClass('li-menu-select');
+});
+
 // 3초마다 배너 자동 슬라이드 실행
 setInterval(bannerSlide, 3000);
 
@@ -11,12 +16,12 @@ function bannerSlide() {
   // 배너 가로 너비 구하기
   const bannerWidth = $("#SECTION-BANNER-CONTAINER").width();
 
-  $("#UL-BANNER-WRAP").animate(
-    { "margin-left": `-${bannerWidth}px` }, 1200, function() {
+  $('#UL-BANNER-WRAP').animate(
+    { 'margin-left': `-${bannerWidth}px` }, 1200, function() {
       // 첫 번째 li를 마지막 뒤로 이동
-      $("#UL-BANNER-WRAP").append($("#UL-BANNER-WRAP .li-slide-banner:first-child"));
+      $('#UL-BANNER-WRAP').append($('#UL-BANNER-WRAP .li-slide-banner:first-child'));
       // 다음 이동을 위해 margin 초기화
-      $("#UL-BANNER-WRAP").css("margin-left", "0");
+      $('#UL-BANNER-WRAP').css('margin-left', '0');
     }
   );
 }
