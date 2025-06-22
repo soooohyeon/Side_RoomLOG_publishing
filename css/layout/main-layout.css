@@ -1,3 +1,5 @@
+/* 기본 레이아웃 - 헤더더, 푸터 */
+
 * {
   margin: 0;
   padding: 0;
@@ -48,20 +50,23 @@ ul { list-style-type: none; }
 
 /* 메뉴바 */
 #DIV-HEADER-BOTTOM {
+  padding: 0 25px;
+
   border-top:1px solid #DDDDDD;
   border-bottom:1px solid #DDDDDD;
-  padding: 15px 25px;
 }
-
+#UL-HEDAER-MENU { display: flex; }
 #UL-HEDAER-MENU > li {
-  display: inline;
-  margin: 0 15px;
-  padding: 15px 7px;
 
   font-weight: 700;
 }
 
-#UL-HEDAER-MENU > li :hover { color: #04B2D9; }
+#UL-HEDAER-MENU > li > a {
+  display: block;
+  margin: 0 15px;
+  padding: 15px 7px;
+}
+#UL-HEDAER-MENU > li > a:hover { color: #04B2D9; }
 
 .li-menu-select {
   border-bottom: 3px solid #04B2D9;
@@ -72,7 +77,7 @@ ul { list-style-type: none; }
 #MAIN-CONTAINTER {
   width: 80%;
   margin: auto;
-  padding: 35px 0 130px;
+  padding: 35px 0 150px;
 }
 
 /* 하단 푸터 영역 */
@@ -94,4 +99,56 @@ ul { list-style-type: none; }
   margin: 0 0 20px;
 }
 .div-footer-legal > a:hover { color: #064973; }
-#DIV-INFO-WRAP p { padding-top: 2px; }
+#DIV-ROOMLOG-INFO-WRAP p { padding-top: 2px; }
+
+/* -------------------------------------------------------------- */
+
+/* 페이지네이션 */
+#DIV-PAGENATION-WRAP > ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+
+  color: #cccccc;
+}
+
+#DIV-PAGENATION-WRAP > ul > li { cursor: pointer; }
+
+.li-pagenation {
+  margin: 0 10px;
+  font-size: 23px;
+}
+
+.page {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #cccccc;
+  font-weight: 500;
+}
+
+.page:hover {
+  border: 1px solid #064973;
+  color: #064973;
+}
+
+.previous, .next {
+  font-size: 25px;
+  margin: 0 25px;
+}
+.previous:hover, .next:hover { color: #064973; }
+
+/* 현재 페이지 */
+.selected {
+  background-color: #064973;
+  color: #fff;
+}
+.selected:hover {
+  background-color: #064973;
+  border: none;
+  color: #fff;
+}

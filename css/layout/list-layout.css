@@ -1,0 +1,146 @@
+/* 리스트 기본 레이아웃웃 */
+
+/* 게시물 호버시 효과 */
+.post-hover:hover {
+  background-color: rgba(213, 229, 242, 0.3);
+  cursor: pointer;
+}
+
+/* 글 목록 공통 */
+#DIV-LIST-CONTAINER {
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+/* 페이지 설명, 서브 설명 */
+#P-TITLE {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+#P-SUB-TITLE {
+  margin-top: 10px;
+  color: #999999;
+  line-height: 1.5em;
+  letter-spacing: 1px;
+}
+
+/* 목록 컨텐츠 영역 */
+#DIV-LIST-WRAP { margin: 50px 0; }
+
+/* 글 개수 */
+#DIV-POST-COUNT {
+  font-size: 18px;
+  color: #555555;
+}
+
+/* 글 게시글 목록 */
+#DIV-INFO-WRAP { margin-bottom: 20px; }
+
+/* 글 1개 */
+.div-one-post-wrap {
+  padding: 15px 30px;
+  margin-bottom: 15px;
+
+  background-color: #fff;
+  border: 1px solid #cccccc;
+  border-radius: 15px;
+}
+
+.div-profile-post-wrap { width: 100% }
+
+.div-post-info-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 프로필 + 닉네임 */
+.div-profile-wrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.div-go-user-page {
+  display: flex;
+  align-items: center;
+}
+
+.div-go-user-page > img {
+  width: 67px;
+  height: 67px;
+
+  border: 1px solid #dddddd;
+  border-radius: 50%;
+}
+
+.div-nickname {
+  margin: 0 10px;
+  font-size: 24px;
+}
+
+/* 제목, 본문 말줄임표 */
+.div-title-skip {
+  height: 30px;
+
+  font-size: 20px;
+  font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+
+.div-content-skip {
+  height: 60px;
+
+  overflow: hidden;
+  font-size: 20px;
+  color: #555555;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* 게시글 작성일 */
+.div-time {
+  color: #999999;
+  font-size: 19px;
+}
+
+/* -------------------------------------------------------------- */
+
+/* 게시글이 없을 경우 */
+.div-post-none {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #555555;
+  font-size: 20px;
+}
+
+/* -------------------------------------------------------------- */
+
+/* 글작성 버튼 영역 */
+#DIV-WRITE-WRAP {
+  margin-top: 110px;
+  text-align: right;
+}
+
+.div-write-btn {
+  padding: 15px 20px;
+  background-color: #064973;
+
+  border: none;
+  border-radius: 7px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.div-write-btn:hover { background-color: #00263A; }

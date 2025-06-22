@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RoomLOG</title>
   <link rel="shortcut icon" href="../image/layout/favicon.png">
-  <link rel="stylesheet" href="../css/layout/layout.css">
+  <link rel="stylesheet" href="../css/layout/main-layout.css">
+  <link rel="stylesheet" href="../css/layout/list-layout.css">
   <link rel="stylesheet" href="../css/main/main.css">
-  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script defer src="../js/main/main.js"></script>
+  <script defer src="../../js/basic/basic.js"></script>
 </head>
 <body>
   <!-- 상단 공통 헤더 영역 -->
@@ -69,7 +71,7 @@
       <div class="div-rank-wrap">
 
         <!-- 팔로워 1명 -->
-        <div class="div-rank-layout div-rank-follower-wrap">
+        <div class="div-rank-layout div-rank-follower-wrap post-hover">
           <div class="div-profile-image"><img src="../image/example/profile_image/profile1.jpg" alt="profile"></div>
           <div class="div-nickname">조용한오후</div>
           <button class="btn-layout-follow btn-follow">팔로우</button>
@@ -90,7 +92,7 @@
         <!--  -->
 
         <!--  -->
-        <div class="div-rank-layout div-rank-follower-wrap">
+        <div class="div-rank-layout div-rank-follower-wrap post-hover">
           <div class="div-profile-image"><img src="../image/example/profile_image/profile2.jpg" alt="profile"></div>
           <div class="div-nickname">작은식탁일기</div>
           <button class="btn-layout-follow btn-follow">팔로우</button>
@@ -108,7 +110,7 @@
             </div>
           </div>
         </div>
-        <div class="div-rank-layout div-rank-follower-wrap">
+        <div class="div-rank-layout div-rank-follower-wrap post-hover">
           <div class="div-profile-image"><img src="../image/example/profile_image/profile3.jpg" alt="profile"></div>
           <div class="div-nickname">포근한하루</div>
           <button class="btn-layout-follow btn-following">팔로우</button>
@@ -126,7 +128,7 @@
             </div>
           </div>
         </div>
-        <div class="div-rank-layout div-rank-follower-wrap">
+        <div class="div-rank-layout div-rank-follower-wrap post-hover">
           <div class="div-profile-image"><img src="../image/example/profile_image/profile4.jpg" alt="profile"></div>
           <div class="div-nickname">이불밖은햇살</div>
           <button class="btn-layout-follow btn-follow">팔로우</button>
@@ -159,7 +161,7 @@
       <div class="div-rank-wrap">
         
         <!-- 게시글 1개 -->
-        <div class="div-rank-layout div-rank-board-wrap">
+        <div class="div-rank-layout div-rank-board-wrap post-hover">
           <div class="div-board-info-wrap">
             <div class="div-skip div-board-title">이번에 인테리어 싹 바꿔봤습니당</div>
             <div class="div-board-image"><img src="../image/example/board/work-desk.jpg"></div>
@@ -169,11 +171,11 @@
           </div>
           <div class="div-board-info-count-wrap">
             <div class="div-board-count-wrap">
-              <img src="../image/main/comment_count.png" alt="comment">
+              <img src="../image/layout/comment_count.png" class="img-bookmark" alt="bookmark">
               <div class="div-board-info-count comment-count">46</div>
             </div>
             <div class="div-board-count-wrap">
-              <img src="../image/main/bookmark_no.png" class="img-bookmark" alt="bookmark">
+              <img src="../../image/layout/scrap_ok.png" alt="scrap_ok" onclick="noScrap(event, this)">
               <div class="div-board-info-count">117</div>
             </div>
           </div>
@@ -181,7 +183,7 @@
         <!--  -->
 
         <!--  -->
-        <div class="div-rank-layout div-rank-board-wrap">
+        <div class="div-rank-layout div-rank-board-wrap post-hover">
           <div class="div-board-info-wrap">
             <div class="div-skip div-board-title">이번에 소파 사려고 하는데 추천 좀 부탁드려요!!</div>
           </div>
@@ -190,16 +192,16 @@
           </div>
           <div class="div-board-info-count-wrap">
             <div class="div-board-count-wrap">
-              <img src="../image/main/comment_count.png" alt="comment">
+              <img src="../image/layout/comment_count.png" class="img-bookmark" alt="bookmark">
               <div class="div-board-info-count comment-count">46</div>
             </div>
             <div class="div-board-count-wrap">
-              <img src="../image/main/bookmark_no.png" class="img-bookmark" alt="bookmark">
+              <img src="../../image/layout/scrap_no.png" alt="scrap_ok" onclick="goScrap(event, this)">
               <div class="div-board-info-count">117</div>
             </div>
           </div>
         </div>
-        <div class="div-rank-layout div-rank-board-wrap">
+        <div class="div-rank-layout div-rank-board-wrap post-hover">
           <div class="div-board-info-wrap">
             <div class="div-skip div-board-title">화장실에 둘만한 장식 없을까요?</div>
             <div class="div-board-image"><img src="../image/example/board/work-desk.jpg"></div>
@@ -209,11 +211,11 @@
           </div>
           <div class="div-board-info-count-wrap">
             <div class="div-board-count-wrap">
-              <img src="../image/main/comment_count.png" alt="comment">
+              <img src="../image/layout/comment_count.png" class="img-bookmark" alt="bookmark">
               <div class="div-board-info-count comment-count">46</div>
             </div>
             <div class="div-board-count-wrap">
-              <img src="../image/main/bookmark_no.png" class="img-bookmark" alt="bookmark">
+              <img src="../../image/layout/scrap_no.png" alt="scrap_ok" onclick="goScrap(event, this)">
               <div class="div-board-info-count">117</div>
             </div>
           </div>
@@ -235,7 +237,7 @@
         <div class="div-footer-legal"><a href="">이용약관</a></div>
       </div>
 
-      <div id="DIV-INFO-WRAP">
+      <div id="DIV-ROOMLOG-INFO-WRAP">
         <p>우선의 공간을 기록하는 사람들.</p>
         <p>Contact: official@roomlog.com</p>
         <p>Copyright © RoomLOG. All rights reserved.</p>
