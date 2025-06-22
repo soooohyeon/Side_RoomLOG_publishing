@@ -1,7 +1,7 @@
 /* 검색창 영역 */
 #DIV-SEARCH-WRAP {
   display: flex;
-  height: 50px;
+  height: 70px;
   margin-top: 40px;
 }
 
@@ -19,14 +19,14 @@ select::-ms-expand{ display: none;/*for IE10,11*/ }
 
 /* 검색 카테고리 */
 #SELECT-SEARCH-CATEGORY {
-  width: 200px;
+  width: 250px;
   height: 100%;
   margin-right: 20px;
-  padding: 0 20px;
+  padding: 0 30px;
 
   border: 1px solid #999999;
   border-radius: 50px;
-  font-size: 19px;
+  font-size: 21px;
 }
 
 /* 검색창 */
@@ -51,7 +51,7 @@ select::-ms-expand{ display: none;/*for IE10,11*/ }
   height: 100%;
 
   border: none;
-  font-size: 19px;
+  font-size: 21px;
 }
 #INPUT-SEARCH-TEXT:focus { outline: none; }
 
