@@ -4,7 +4,7 @@
 // 답글 버튼 호버시
 const $reCommentBtn = $(".div-re-comment-btn");
 
-$reCommentBtn.hover(function () {
+$reCommentBtn.hover(function() {
   const $img = $(this).children("img");
   const src = $img.attr("src");
   
@@ -24,7 +24,7 @@ $reCommentBtn.hover(function () {
 
 // ---------------------------------------------------------------
 
-$(document).ready(function(){
+$(document).ready(function() {
   // 새 댓글
   const $comment = $("#TEXTAREA-COMMENT-TXT");
   
@@ -35,6 +35,9 @@ $(document).ready(function(){
   });
   // 실시간 글자 수 표시, 등록 버튼 활성화
   $comment.on("change input", countComent);
+
+  // 댓글 수정 취소 함수 호출
+  updateCancel();
 });
 
 // 새 댓글 작성 시 - 실시간 글자 수 표시, 등록 버튼 활성화
@@ -73,7 +76,7 @@ function countComent() {
 let reCommentCheck = false;
 
 // 답글 버튼 클릭 시 입력 폼 생성
-$(".div-re-comment-btn").on("click", function (){
+$(".div-re-comment-btn").on("click", function() {
   // 누른 답글 버튼의 댓글을 감싸는 마지막 div
   $divWrap = $(this).closest(".div-parent-comment");
   // 대댓글 입력 폼
@@ -105,7 +108,7 @@ $(".div-re-comment-btn").on("click", function (){
 
 
 // 취소 버튼 클릭시 입력 폼 삭제
-$(document).on("click", "#RE-COMMENT-CANCEL-BTN", function () {
+$(document).on("click", "#RE-COMMENT-CANCEL-BTN", function() {
   const recommentCount = $(this).closest("form").find("textarea").val().length;
   if (recommentCount > 0) {
     openModal("작성 중인 댓글은 저장되지 않습니다.<br>정말 취소할까요?", 2).then((result) => {
@@ -138,7 +141,7 @@ function isValidComment($textarea, maxLength = 200) {
 }
 
 // 대댓글 작성 버튼 클릭 시 
-$(document).on("click", "#RE-COMMENT-WRITE-BTN", function () {
+$(document).on("click", "#RE-COMMENT-WRITE-BTN", function() {
   const $reComment = $(this).closest("form").find("#TEXTAREA-RE-COMMENT-TXT");
   const result = isValidComment($reComment);
 
@@ -150,7 +153,7 @@ $(document).on("click", "#RE-COMMENT-WRITE-BTN", function () {
 });
 
 // 댓글 수정 버튼 클릭 시
-$(document).on("click", "#COMMENT-UPDATE-BTN", function () {
+$(document).on("click", "#COMMENT-UPDATE-BTN", function() {
   const $commentEdit = $(this).closest(".div-comment-update-wrap").find("#TEXTAREA-RE-COMMENT-TXT");
   const result = isValidComment($commentEdit);
 
@@ -163,17 +166,18 @@ $(document).on("click", "#COMMENT-UPDATE-BTN", function () {
 
 // ---------------------------------------------------------------
 
+// 현재 댓글 수정 폼이 있는지 확인
+let $currentEditComment = null;
 // 댓글 수정 버튼 클릭 시
-$(document).on("click", ".comment-update-btn", function () {
+$(document).on("click", ".comment-update-btn", function() {
   $oriCommentWrap = $(this).closest(".div-comment-content-wrap");
   $oriComment = $oriCommentWrap.find(".div-comment-content");
-  const oriText = $oriComment.text().trim();
-  
 
-  const editBox = `
+  const oriCommentText = $oriComment.text().trim();
+  const editFrame = `
             <div class="div-comment-update-wrap">
               <div class="div-comment-update">
-                <textarea name="re-comment" id="TEXTAREA-RE-COMMENT-TXT">` + oriText + `</textarea>
+                <textarea name="re-comment" id="TEXTAREA-RE-COMMENT-TXT">` + oriCommentText + `</textarea>
               </div>
               <div class="div-comment-btn-wrap textarea-btn-wrap">
                   <div class="div-comment-btn div-menu-line"><span id="COMMENT-UPDATE-BTN">등록</span></div>
@@ -181,7 +185,93 @@ $(document).on("click", ".comment-update-btn", function () {
               </div>
             </div>
   `;
-  
-  $oriCommentWrap.html(editBox);
+
+  // 이미 수정 중인 댓글이 있다면
+  // 최근 수정 중인 댓글에 담긴 값이 있거나 현재 누른 댓글과 일치하지 않는다면면
+  if ($currentEditComment && !$oriCommentWrap.is($currentEditComment)) {
+    console.log("22");
+    openModal("이미 다른 댓글을 수정 중입니다.<br>현재 수정을 취소하고 이 댓글을 수정하시겠어요?", 2).then((result) => {
+      if (result) {
+        console.log(result);
+        const oriComment = $currentEditComment.data("original-text");
+        const className = $currentEditComment.attr("class");
+        
+        // 클래스명으로 댓글, 대댓글 구분
+        if (className.includes("parent-comment-wrap")) {
+          // 댓글
+          renderOriginalComment($currentEditComment, oriComment, "comment");
+        } else if (className.includes("child-comment-wrap")) {
+          // 대댓글
+          renderOriginalComment($currentEditComment, oriComment, "reComment");
+        }
+        // 속성에 원본 댓글 넣기
+        $oriCommentWrap.data("original-text", oriCommentText);
+        // 수정 폼으로 변경
+        $oriCommentWrap.html(editFrame);
+        // 최근 수정한 댓글 담아두기
+        $currentEditComment = $oriCommentWrap;
+      }
+    });
+  } else {
+    // 속성에 원본 댓글 넣기
+    $oriCommentWrap.data("original-text", oriCommentText);
+    // 수정 폼으로 변경
+    $oriCommentWrap.html(editFrame);
+    // 최근 수정한 댓글 담아두기
+    $currentEditComment = $oriCommentWrap;
+  }
+
 });
 
+// 댓글 수정 취소
+function updateCancel() {
+  $(document).on("click", "#COMMENT-UPDATE-CANCEL-BTN", function (){
+    const $wrap = $(this).closest(".div-comment-content-wrap");
+    const className = $wrap.attr("class");
+    const oriComment = $wrap.data('original-text');
+    
+    // 클래스명으로 댓글, 대댓글 구분
+    if (className.includes("parent-comment-wrap")) {
+      // 댓글
+      renderOriginalComment($wrap, oriComment, "comment");
+    } else if (className.includes("child-comment-wrap")) {
+      // 대댓글
+      renderOriginalComment($wrap, oriComment, "reComment");
+    }
+  });
+}
+
+// 수정 취소한 댓글 화면에 다시 뿌리기
+function renderOriginalComment(wrap, oriText, type) {
+  // 공통 DOM 부분
+  let oriSameStart = `
+    <div class="div-re-comment-btn-wrap">
+    <div class="div-comment-content">
+      ${oriText}
+    </div>
+  `;
+  let oriSameLast = `
+    <div class="div-comment-btn-wrap">
+      <div class="div-comment-btn div-menu-line"><span class="comment-update-btn">수정</span></div>
+      <div class="div-comment-btn"><span>삭제</span></div>
+    </div>
+  `;
+  // 댓글, 대댓글에 따라 다른 DOM 부분
+  let oriOther = "";
+
+  if (type === "comment") {
+    oriOther = `
+        <div class="div-re-comment-btn">
+          <img src="../../image/community/re_comment_btn.png">답글
+        </div>
+      </div>
+    `;
+  } else if (type === "reComment") {
+    oriOther = `</div>`;
+  }
+
+  // 화면에 뿌리기
+  wrap.html(`${oriSameStart}${oriOther}${oriSameLast}`);
+  // 현재 댓글 수정 폼 변수 초기화
+  $currentEditComment = null;
+}
