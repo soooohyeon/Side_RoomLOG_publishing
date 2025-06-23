@@ -94,13 +94,13 @@
           <div id="DIV-POST-LIST-WRAP">
 
             <!-- 글 1개 -->
-            <div class="div-one-post-wrap post-hover" onclick="">
+            <div class="div-one-post-wrap post-hover" onclick="location.href='community_view.html'">
               <div class="div-post-info-wrap">
                 <div class="div-profile-post-wrap">
                   <div class="div-profile-wrap">
-                    <div class="div-go-user-page" onclick="">
-                      <img src="../../image/example/profile_image/profile3.jpg" alt="프로필">
-                      <div class="div-nickname">조용한 오후</div>
+                    <div class="div-go-user-page">
+                      <img src="../../image/example/profile_image/profile3.jpg" onclick="">
+                      <div class="div-nickname div-nick" onclick="">조용한 오후</div>
                     </div>
                     <div class="div-age">20대</div>
                   </div>
@@ -139,7 +139,7 @@
                 <div class="div-profile-wrap">
                   <div class="div-go-user-page" onclick="">
                     <img src="../../image/example/profile_image/profile2.jpg" alt="프로필">
-                    <div class="div-nickname">작은식탁일기</div>
+                    <div class="div-nickname div-nick">작은식탁일기</div>
                   </div>
                   <div class="div-age">20대</div>
                 </div>
@@ -172,7 +172,7 @@
                 <div class="div-profile-wrap">
                   <div class="div-go-user-page" onclick="">
                     <img src="../../image/example/profile_image/profile1.jpg" alt="프로필">
-                    <div class="div-nickname">고양이좋아</div>
+                    <div class="div-nickname div-nick">고양이좋아</div>
                   </div>
                   <div class="div-age">20대</div>
                 </div>
@@ -203,27 +203,28 @@
             <!--  -->
             
             <!-- 게시글이 없을 경우 -->
-            <!-- <div class="div-post-none">게시글이 없습니다.</div> -->
+            <!-- <div class="div-post-none">글이 아직 없어요. 첫 게시물을 작성해보세요!</div> -->
             <!--  -->
 
           </div>
         </div>
 
-        <!-- 글작성 버튼 -->
-        <div id="DIV-WRITE-WRAP">
-          <button class="div-write-btn">글 남기기</button>
-        </div>
-
+        
+        <!-- 페이지네이션 -->
         <div id="DIV-PAGENATION-WRAP">
+          <div class="div-page-btn-wrap">
+            <div class="pagenation previous" onclick="">◁</div>
+          </div>
           <ul>
-            <li class="li-pagenation previous" onclick="">◁</li>
-            <li class="li-pagenation page selected" onclick="">1</li>
-            <li class="li-pagenation page" onclick="">2</li>
-            <li class="li-pagenation page" onclick="">3</li>
-            <li class="li-pagenation page" onclick="">4</li>
-            <li class="li-pagenation page" onclick="">5</li>
-            <li class="li-pagenation next" onclick="">▷</li>
+            <li class="pagenation page selected" onclick="">1</li>
+            <li class="pagenation page" onclick="">2</li>
+            <li class="pagenation page" onclick="">3</li>
+            <li class="pagenation page" onclick="">4</li>
+            <li class="pagenation page" onclick="">5</li>
           </ul>
+          <div class="div-page-btn-wrap">
+            <div class="pagenation next" onclick="">▷</div>
+          </div>
         </div>
 
       </section>

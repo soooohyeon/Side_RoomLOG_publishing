@@ -35,7 +35,6 @@
 .div-rank-wrap {
   width: 100%;
   display: flex;
-  justify-content: space-between;
 }
 
 /* 유저, 게시글 1개의 기본 레이아웃 */
@@ -65,10 +64,13 @@
 
 /*  랭킹 - 팔로워 많은 유저 4명 */
 .div-rank-follower-wrap {
-  width: 19%;
-  min-width: 230px;
-  padding: 30px 2% 20px;
+  width: 23%;
+  min-width: 180px;
+  padding: 30px 2%;
 }
+
+/* 유저 리스트 중 마지막 유저만 제외하고 여백주기 */
+.div-rank-wrap .div-rank-follower-wrap:not(:last-child) { margin-right: 30px; }
 
 .div-profile-image {
   width: 130px;
@@ -95,6 +97,8 @@
   text-align: center;
 }
 
+.button-style { width: 90px; }
+
 .div-user-info-wrap { color: #999999; }
 .div-user-info-wrap div:first-child { margin-bottom: 5px;}
 .div-count-wrap { display: flex; }
@@ -110,22 +114,6 @@
 .img-followr-count { width: 27px; }
 .img-board-count { width: 27px; }
 
-/* 팔로우 / 팔로잉 버튼 */
-.btn-layout-follow {
-  width: 85px;
-  height: 33px;
-
-  border: none;
-  border-radius: 5px;
-  color: #ffffff;
-  cursor: pointer;
-}
-
-.btn-follow { background-color: #cccccc; }
-.btn-follow:hover { background-color: #a9a9a9; }
-.btn-following { background-color: #006497; }
-.btn-following:hover  { background-color: #003E5D; }
-
 /* 랭킹 - 스크랩 많은 게시글 3개 */
 #DIV-RANK-BOARD-TITLE-WRAP {
   display: flex;
@@ -139,8 +127,11 @@
 }
 #DIV-GO-BOARD-PAGE > a:hover { color: #006497; }
 
+/* 게시글 리스트 중 마지막 게시글만 제외하고 여백주기 */
+.div-rank-wrap .div-rank-board-wrap:not(:last-child) { margin-right: 20px; }
+
 .div-rank-board-wrap {
-  width: 28.5%;
+  width: 30%;
   min-width: 250px;
   padding: 20px 2%;
 }

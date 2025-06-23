@@ -8,7 +8,7 @@
 
 /* 글 목록 공통 */
 #DIV-LIST-CONTAINER {
-  width: 80%;
+  width: 85%;
   margin: auto;
   margin-top: 30px;
 }
@@ -27,7 +27,8 @@
 }
 
 /* 목록 컨텐츠 영역 */
-#DIV-LIST-WRAP { margin: 50px 0; }
+#SECTION-SEARCH-LIST-WRAP{ margin-top: 100px; }
+#DIV-LIST-WRAP { margin: 70px 0; }
 
 /* 글 개수 */
 #DIV-POST-COUNT {
@@ -75,11 +76,6 @@
   border-radius: 50%;
 }
 
-.div-nickname {
-  margin: 0 10px;
-  font-size: 24px;
-}
-
 /* 제목, 본문 말줄임표 */
 .div-title-skip {
   height: 30px;
@@ -109,19 +105,6 @@
 .div-time {
   color: #999999;
   font-size: 19px;
-}
-
-/* -------------------------------------------------------------- */
-
-/* 게시글이 없을 경우 */
-.div-post-none {
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  color: #555555;
-  font-size: 20px;
 }
 
 /* -------------------------------------------------------------- */

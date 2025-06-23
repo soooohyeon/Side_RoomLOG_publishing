@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../css/main/main.css">
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script defer src="../js/main/main.js"></script>
-  <script defer src="../../js/basic/basic.js"></script>
+  <script defer src="../js/basic/basic.js"></script>
 </head>
 <body>
   <!-- 상단 공통 헤더 영역 -->
@@ -74,7 +74,8 @@
         <div class="div-rank-layout div-rank-follower-wrap post-hover">
           <div class="div-profile-image"><img src="../image/example/profile_image/profile1.jpg" alt="profile"></div>
           <div class="div-nickname">조용한오후</div>
-          <button class="btn-layout-follow btn-follow">팔로우</button>
+          <button class="button-style follow-btn" onclick="goFollow(event, this)">팔로우</button>
+          <!-- <button class="button-style basic-button" onclick="noFollow(event, this)">팔로잉</button> -->
           <p class="div-skip p-user-intro">조용히 머물다 가는 계절처럼 🍂</p>
           <div class="div-user-info-wrap">
             <div class="div-count-wrap">
@@ -95,7 +96,7 @@
         <div class="div-rank-layout div-rank-follower-wrap post-hover">
           <div class="div-profile-image"><img src="../image/example/profile_image/profile2.jpg" alt="profile"></div>
           <div class="div-nickname">작은식탁일기</div>
-          <button class="btn-layout-follow btn-follow">팔로우</button>
+          <button class="button-style follow-btn" onclick="goFollow(event, this)">팔로우</button>
           <p class="p-user-intro div-skip">식탁 위 작은 것들로 하루를 기록해요</p>
           <div class="div-user-info-wrap">
             <div class="div-count-wrap">
@@ -113,7 +114,7 @@
         <div class="div-rank-layout div-rank-follower-wrap post-hover">
           <div class="div-profile-image"><img src="../image/example/profile_image/profile3.jpg" alt="profile"></div>
           <div class="div-nickname">포근한하루</div>
-          <button class="btn-layout-follow btn-following">팔로우</button>
+          <button class="button-style basic-button" onclick="noFollow(event, this)">팔로잉</button>
           <p class="p-user-intro div-skip">이불 속 온기를 좋아하는 사람 🛏️</p>
           <div class="div-user-info-wrap">
             <div class="div-count-wrap">
@@ -131,7 +132,7 @@
         <div class="div-rank-layout div-rank-follower-wrap post-hover">
           <div class="div-profile-image"><img src="../image/example/profile_image/profile4.jpg" alt="profile"></div>
           <div class="div-nickname">이불밖은햇살</div>
-          <button class="btn-layout-follow btn-follow">팔로우</button>
+          <button class="button-style follow-btn" onclick="goFollow(event, this)">팔로우</button>
           <p class="p-user-intro div-skip">소란한 하루에도 고요한 시간이 필요해요</p>
           <div class="div-user-info-wrap">
             <div class="div-count-wrap">

@@ -14,12 +14,10 @@ $(document).ready(function () {
   // 프로필 이미지 미리보기
   $("#profile-image").on("change", function(event){
     const file = event.target.files[0];
-    console.log($("#IMG-PROFILE").length);
-    console.log(file);
     if (!file) return;
-  
     const imageURL = URL.createObjectURL(file);
     $("#IMG-PROFILE").attr("src", imageURL);
     console.log(imageURL);
   });
+  
 });

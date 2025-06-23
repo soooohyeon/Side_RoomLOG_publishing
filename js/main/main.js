@@ -1,8 +1,3 @@
-// 메뉴바 css 설정
-$(document).ready(function () {
-  $('#LI-HOME-LINK').find('a').addClass('li-menu-select');
-});
-
 // 3초마다 배너 자동 슬라이드 실행
 setInterval(bannerSlide, 3000);
 
