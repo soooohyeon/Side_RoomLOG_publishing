@@ -74,8 +74,8 @@
         <div class="div-rank-layout div-rank-follower-wrap post-hover">
           <div class="div-profile-image"><img src="../image/example/profile_image/profile1.jpg" alt="profile"></div>
           <div class="div-nickname">조용한오후</div>
-          <button class="button-style follow-btn" onclick="goFollow(event, this)">팔로우</button>
-          <!-- <button class="button-style basic-button" onclick="noFollow(event, this)">팔로잉</button> -->
+          <button class="button-style follow-btn" onclick="goFollow(event, this, 0)">팔로우</button>
+          <!-- <button class="button-style basic-button" onclick="noFollow(event, this, 1)">팔로잉</button> -->
           <p class="div-skip p-user-intro">조용히 머물다 가는 계절처럼 🍂</p>
           <div class="div-user-info-wrap">
             <div class="div-count-wrap">
@@ -96,7 +96,7 @@
         <div class="div-rank-layout div-rank-follower-wrap post-hover">
           <div class="div-profile-image"><img src="../image/example/profile_image/profile2.jpg" alt="profile"></div>
           <div class="div-nickname">작은식탁일기</div>
-          <button class="button-style follow-btn" onclick="goFollow(event, this)">팔로우</button>
+          <button class="button-style follow-btn" onclick="goFollow(event, this, 1)">팔로우</button>
           <p class="p-user-intro div-skip">식탁 위 작은 것들로 하루를 기록해요</p>
           <div class="div-user-info-wrap">
             <div class="div-count-wrap">
@@ -114,7 +114,7 @@
         <div class="div-rank-layout div-rank-follower-wrap post-hover">
           <div class="div-profile-image"><img src="../image/example/profile_image/profile3.jpg" alt="profile"></div>
           <div class="div-nickname">포근한하루</div>
-          <button class="button-style basic-button" onclick="noFollow(event, this)">팔로잉</button>
+          <button class="button-style basic-button" onclick="noFollow(event, this, 1)">팔로잉</button>
           <p class="p-user-intro div-skip">이불 속 온기를 좋아하는 사람 🛏️</p>
           <div class="div-user-info-wrap">
             <div class="div-count-wrap">
@@ -132,7 +132,7 @@
         <div class="div-rank-layout div-rank-follower-wrap post-hover">
           <div class="div-profile-image"><img src="../image/example/profile_image/profile4.jpg" alt="profile"></div>
           <div class="div-nickname">이불밖은햇살</div>
-          <button class="button-style follow-btn" onclick="goFollow(event, this)">팔로우</button>
+          <button class="button-style follow-btn" onclick="goFollow(event, this, 1)">팔로우</button>
           <p class="p-user-intro div-skip">소란한 하루에도 고요한 시간이 필요해요</p>
           <div class="div-user-info-wrap">
             <div class="div-count-wrap">
@@ -176,7 +176,8 @@
               <div class="div-board-info-count comment-count">46</div>
             </div>
             <div class="div-board-count-wrap">
-              <img src="../../image/layout/scrap_ok.png" alt="scrap_ok" onclick="noScrap(event, this)">
+              <!-- <img src="../../image/layout/scrap_ok.png" alt="scrap_ok" onclick="noScrap(event, this, 0)"> -->
+              <img src="../../image/layout/scrap_no.png" alt="scrap_no" onclick="goScrap(event, this, 0)">
               <div class="div-board-info-count">117</div>
             </div>
           </div>
@@ -197,7 +198,7 @@
               <div class="div-board-info-count comment-count">46</div>
             </div>
             <div class="div-board-count-wrap">
-              <img src="../../image/layout/scrap_no.png" alt="scrap_ok" onclick="goScrap(event, this)">
+              <img src="../../image/layout/scrap_no.png" alt="scrap_ok" onclick="goScrap(event, this, 1)">
               <div class="div-board-info-count">117</div>
             </div>
           </div>
@@ -216,7 +217,7 @@
               <div class="div-board-info-count comment-count">46</div>
             </div>
             <div class="div-board-count-wrap">
-              <img src="../../image/layout/scrap_no.png" alt="scrap_ok" onclick="goScrap(event, this)">
+              <img src="../../image/layout/scrap_no.png" alt="scrap_ok" onclick="goScrap(event, this, 1)">
               <div class="div-board-info-count">117</div>
             </div>
           </div>
@@ -245,6 +246,20 @@
       </div>
     </div>
   </footer>
+  <!--  -->
+
+  <!-- 알람 모달창 -->
+  <div class="div-alert-container" id="MODAL-ALERT-ONE-A">
+    <div class="div-alert-wrap">
+      <div class="div-alert-content">
+        모달 내용
+      </div>
+      <div class="div-alert-btn-wrap">
+        <div class="div-alert-btn alert-ok modal-close">확인</div>
+        <div class="div-alert-btn alert-no">취소</div>
+      </div>
+    </div>
+  </div>
   <!--  -->
 
 </body>

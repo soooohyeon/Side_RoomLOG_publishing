@@ -333,6 +333,7 @@ ul { list-style-type: none; }
 } 
 
 .alert-no {
+  display: none;
   border: 3px solid #999999;
   color: #999999;
   font-weight: 700;
@@ -340,5 +341,6 @@ ul { list-style-type: none; }
 .alert-no:hover {
   border: 3px solid #666666;
   color: #666666;
-} 
+}
+.modal-coutinue { display: flex; }
 

@@ -124,7 +124,8 @@
                     <div class="div-comment">17</div>
                   </div>
                   <div class="div-count-wrap">
-                    <img src="../../image/layout/scrap_ok.png" alt="scrap_ok" onclick="noScrap(event, this)">
+                    <img src="../../image/layout/scrap_ok.png" alt="scrap_ok" onclick="noScrap(event, this, 1)">
+                    <!-- <img src="../../image/layout/scrap_no.png" alt="scrap_no" onclick="goScrap(event, this, userNumber)"> -->
                     <div class="div-scrap">221</div>
                   </div>
                 </div>
@@ -160,7 +161,7 @@
                   <div class="div-comment">17</div>
                 </div>
                 <div class="div-count-wrap">
-                  <img src="../../image/layout/scrap_no.png" alt="scrap" onclick="noScrap(event, this)">
+                  <img src="../../image/layout/scrap_no.png" alt="scrap_no" onclick="goScrap(event, this, 0)">
                   <div class="div-scrap">221</div>
                 </div>
               </div>
@@ -194,7 +195,7 @@
                   <div class="div-comment">17</div>
                 </div>
                 <div class="div-count-wrap">
-                  <img src="../../image/layout/scrap_no.png" alt="scrap" onclick="noScrap(event, this)">
+                  <img src="../../image/layout/scrap_no.png" alt="scrap" onclick="goScrap(event, this, 1)">
                   <div class="div-scrap">221</div>
                 </div>
               </div>
@@ -248,6 +249,20 @@
       </div>
     </div>
   </footer>
+  <!--  -->
+
+  <!-- 알람 모달창 -->
+  <div class="div-alert-container" id="MODAL-ALERT-ONE-A">
+    <div class="div-alert-wrap">
+      <div class="div-alert-content">
+        모달 내용
+      </div>
+      <div class="div-alert-btn-wrap">
+        <div class="div-alert-btn alert-ok modal-close">확인</div>
+        <div class="div-alert-btn alert-no">취소</div>
+      </div>
+    </div>
+  </div>
   <!--  -->
 
 </body>

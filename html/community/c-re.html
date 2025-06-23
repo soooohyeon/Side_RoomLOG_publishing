@@ -143,8 +143,8 @@
             </div>
           </div>
           <div id="DIV-USER-FOLLOW-BTN">
-            <!-- <button class="button-style basic-button" onclick="noFollow(event, this, 0)">팔로잉</button> -->
-            <button class="button-style follow-btn" onclick="goFollow(event, this, 1)">팔로우</button>
+            <!-- <button class="button-style basic-button" onclick="noFollow(this)">팔로잉</button> -->
+            <button class="button-style follow-btn" onclick="goFollow(event, this)">팔로우</button>
           </div>
         </div>
 
@@ -155,7 +155,7 @@
     <!-- 목록 + 스크랩 버튼 영역 -->
     <section class="section-btn-wrap">
       <button class="button-style list-button" onclick="history.back()">목록으로</button>
-      <button class="button-style blue-line-button" onclick="goPostScrap(this, 0)">
+      <button class="button-style blue-line-button" onclick="goPostScrap(this)">
         <img src="../../image/layout/scrap_ok.png">스크랩
       </button>
       <!-- <button class="button-style basic-button" onclick="noPostScrap(this)">
@@ -201,17 +201,14 @@
             <div class="div-comment-date">30분 전</div>
           </div>
           <div class="div-comment-content-wrap">
-            <div class="div-re-comment-btn-wrap">
-              <div class="div-comment-content">
-                이런 글 보면 괜히 나도 글 쓰고 싶어져요. 하루하루 지나가는 순간들이 더 특별하게 느껴지네요.
+            <div class="div-comment-update-wrap">
+              <div class="div-comment-update">
+                <textarea name="re-comment" id="TEXTAREA-RE-COMMENT-TXT">이런 글 보면 괜히 나도 글 쓰고 싶어져요. 하루하루 지나가는 순간들이 더 특별하게 느껴지네요.</textarea>
               </div>
-              <div class="div-re-comment-btn">
-                <img src="../../image/community/re_comment_btn.png">답글
+              <div class="div-comment-btn-wrap textarea-btn-wrap">
+                  <div class="div-comment-btn div-menu-line"><span id="COMMENT-UPDATE-BTN">등록</span></div>
+                  <div class="div-comment-btn"><span id="COMMENT-UPDATE-CANCEL-BTN">취소</span></div>
               </div>
-            </div>
-            <div class="div-comment-btn-wrap">
-              <div class="div-comment-btn div-menu-line"><span class="comment-update-btn">수정</span></div>
-              <div class="div-comment-btn"><span>삭제</span></div>
             </div>
           </div>
         </div>
@@ -230,12 +227,15 @@
             <div class="div-comment-date">30분 전</div>
           </div>
           <div class="div-comment-content-wrap">
-            <div class="div-comment-content">
-              맞아요. 표현 너무 예뻐요…
-            </div>
-            <div class="div-comment-btn-wrap">
-              <div class="div-comment-btn div-menu-line"><span class="comment-update-btn">수정</span></div>
-              <div class="div-comment-btn"><span>삭제</span></div>
+
+            <div class="div-comment-update-wrap">
+              <div class="div-comment-update">
+                <textarea name="re-comment" id="TEXTAREA-RE-COMMENT-TXT">맞아요. 표현 너무 예뻐요…</textarea>
+              </div>
+              <div class="div-comment-btn-wrap textarea-btn-wrap">
+                  <div class="div-comment-btn div-menu-line"><span id="COMMENT-UPDATE-BTN">등록</span></div>
+                  <div class="div-comment-btn"><span id="COMMENT-UPDATE-CANCEL-BTN">취소</span></div>
+              </div>
             </div>
           </div>
         </div>
@@ -254,10 +254,11 @@
             <div class="div-comment-date">30분 전</div>
           </div>
           <div class="div-comment-content-wrap">
+
             <div class="div-re-comment-btn-wrap">
               <div class="div-comment-content">
-                사진도 글도 모두 예쁘네요. 감성적인 분위기 덕분에 하루의 끝에서 힐링하고 갑니다.<br>
-                괜히 괜찮은 하루였다고 느껴지게 만드는 힘이 있어요.
+사진도 글도 모두 예쁘네요. 감성적인 분위기 덕분에 하루의 끝에서 힐링하고 갑니다.
+괜히 괜찮은 하루였다고 느껴지게 만드는 힘이 있어요.
               </div>
               <div class="div-re-comment-btn">
                 <img src="../../image/community/re_comment_btn.png">답글

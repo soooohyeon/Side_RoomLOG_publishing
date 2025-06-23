@@ -37,22 +37,28 @@ $(document).ready(function () {
 
 // ---------------------------------------------------------------
 
-// 팔로우 - 메인, 게시판 디테일, 유저 개인 페이지지
+// 팔로우 - 메인, 게시판 디테일, 유저 개인 페이지
 // 팔로우 하기
-function goFollow(event, element) {
+function goFollow(event, element, userNumber) {
   event.stopPropagation();
-  
-  element.innerText = "팔로잉";
-  element.setAttribute("onclick", "noFollow(event, this)");
-  element.setAttribute("class", "button-style basic-button");
+
+  console.log("userNumber : " + userNumber)
+
+  if (userNumber > 0) {
+    element.innerText = "팔로잉";
+    element.setAttribute("onclick", "noFollow(event, this, userNumber)");
+    element.setAttribute("class", "button-style basic-button");
+  } else {
+    openModal("로그인이 필요해요.<br>팔로우는 로그인 후 이용할 수 있어요!");
+  }
 }
 
 // 팔로우 해제
-function noFollow(event, element) {
+function noFollow(event, element, userNumber) {
   event.stopPropagation();
 
   element.innerText = "팔로우";
-  element.setAttribute("onclick", "goFollow(event, this)");
+  element.setAttribute("onclick", "goFollow(event, this, userNumber)");
   element.setAttribute("class", "button-style follow-btn");
 }
 
@@ -60,42 +66,59 @@ function noFollow(event, element) {
 
 // 스크랩 - 메인, 게시판 목록 적용
 // 스크랩 하기
-function goScrap(event, element) {
+function goScrap(event, element, userNumber) {
   event.stopPropagation();
-  
-  element.src = "../../image/layout/scrap_ok.png";
-  element.setAttribute("onclick", "noScrap(event, this)");
-  element.setAttribute("alt", "scrap_ok");
+
+  if (userNumber > 0) {
+    element.src = "../../image/layout/scrap_ok.png";
+    element.setAttribute("onclick", "noScrap(event, this, userNumber)");
+    element.setAttribute("alt", "scrap_ok")
+  } else {
+    openModal("로그인이 필요해요.<br>스크랩은 로그인 후 이용할 수 있어요!");
+  };
 }
 
 // 스크랩 해제
-function noScrap(event, element) {
+function noScrap(event, element, userNumber) {
   event.stopPropagation();
   
   element.src = "../../image/layout/scrap_no.png";
-  element.setAttribute("onclick", "goScrap(event, this)");
+  element.setAttribute("onclick", "goScrap(event, this, userNumber)");
   element.setAttribute("alt", "scrap_no");
 }
 
 // --------------------------------------------------------------- 
 // 모달
 // 모달 열기
-function openModal(message, modalId = '#MODAL-ALERT') {
-  const $modal = $(modalId);
-  $modal.find('.div-alert-content').text(message);
-  $modal.addClass('alert-active');
-  $modal.fadeIn(200);
+function openModal(message, temp = 1, modalId = '#MODAL-ALERT-ONE-A') {
+  return new Promise((resolve) => {
+    const $modal = $(modalId);
+    $modal.find('.div-alert-content').html(message);
+    $modal.addClass('alert-active');
+
+    if (temp == 2) {
+      $modal.find('.alert-no').addClass('modal-coutinue');
+    }
+
+    // 확인 클릭 시 → true 반환
+    $modal.find('.alert-ok').one('click', function () {
+      closeModal(modalId);
+      resolve(true);
+    });
+
+    // 취소 클릭 시 → false 반환
+    $modal.find('.alert-no').one('click', function () {
+      closeModal(modalId);
+      resolve(false);
+    });
+
+    // 모달 표시
+    $modal.fadeIn(200);
+  });
 }
 
 // 모달 닫기
-function closeModal(modalId = '#MODAL-ALERT') {
-  const $modal = $(modalId);
-  $modal.removeClass('alert-active');
-  $modal.fadeOut(200);
-}
-
-// 모달 닫기
-function closeModal(modalId = '#MODAL-ALERT') {
+function closeModal(modalId = '.div-alert-container') {
   const $modal = $(modalId);
   $modal.removeClass('alert-active');
   $modal.fadeOut(200);
