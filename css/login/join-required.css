@@ -25,13 +25,15 @@
 }
 
 .div-check {
-  margin-top: 5px;
-
   color: #555555;
   font-size: 15px;
 }
 
-#DIV-NICK-CHECK { text-align: center; }
+#DIV-NICK-CHECK {
+  margin-top: 5px;
+  text-align: center;
+}
+
 .required-input { width: 100%; }
 
 /* 생년월일 입력 칸 */

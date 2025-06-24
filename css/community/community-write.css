@@ -1,0 +1,18 @@
+textarea:focus { outline: 3px solid #064973; }
+
+#DIV-PAGE-TITLE-WRAP {
+  margin: 60px 40px 45px;
+}
+
+#DIV-WRITE-WRAP {
+  border: 1px solid;
+}
+
+.div-one-column-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.div-text-count-wrap {
+  text-align: right;
+}

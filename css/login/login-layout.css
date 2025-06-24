@@ -1,5 +1,4 @@
 /* 로그인 및 회원가입 공통 레이아웃 */
-
 #MAIN-LOGIN-CONTAINTER { border-top:1px solid #DDDDDD; }
 
 #DIV-LOGIN-CONTAINER {
@@ -53,11 +52,6 @@
   text-align: center;
 }
 
-.input-join-data:focus {
-  border: none;
-  outline: 3px solid #064973 ;
-}
-
 /* 회원가입, 건너띄기기 버튼 */
 #DIV-JOIN-BTN-WRAP {
   margin-top: 20px;
@@ -71,6 +65,7 @@
   border: none;
   border-radius: 10px;
   color: #ffffff;
+  font-weight: 600;
 }
 
 .btn-no-join { background-color: #dddddd; }

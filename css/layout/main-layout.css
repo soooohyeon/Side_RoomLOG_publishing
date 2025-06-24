@@ -21,6 +21,17 @@ a {
 
 ul { list-style-type: none; }
 
+textarea {
+  resize: none;
+  overflow-y: hidden;
+}
+textarea:focus { outline: none; }
+
+input[type="text"]:focus {
+  border: none;
+  outline: 3px solid #064973;
+}
+
 /* -------------------------------------------------------------- */
 
 /* 상단 공통 헤더 영역 */
@@ -111,7 +122,7 @@ ul { list-style-type: none; }
 }
 
 #P-SUB-TITLE {
-  margin-top: 10px;
+  margin-top: 15px;
 
   color: #999999;
   font-size: 18px;

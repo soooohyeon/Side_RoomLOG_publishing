@@ -201,12 +201,6 @@ img {
   display: flex;
 }
 
-textarea {
-  resize: none;
-  overflow-y: hidden;
-}
-textarea:focus { outline: none; }
-
 #TEXTAREA-COMMENT-TXT {
   width: 100%;
   min-height: 75px;

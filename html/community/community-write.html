@@ -45,23 +45,56 @@
   
   <!-- 메인 콘텐츠 영역 -->
   <main id="MAIN-CONTAINTER">
-    
-    <!-- 페이지 작성 -->
+    <!-- 페이지 영역 구분 선 -->
     <section class="section-line">
+      <!-- 페이지 설명 영역 -->
       <div id="DIV-PAGE-TITLE-WRAP">
         <p id="P-TITLE">오늘의 공간, 오늘의 이야기</p>
         <p id="P-SUB-TITLE">인테리어, 생활 팁, 소소한 하루까지<br>지금 당신의 공간 이야기를 남겨보세요.</p>
       </div>
-      
+      <!--  -->
 
-
-      <div id="DIV-WRITE-WRAP">
-        <div class="button-style div-write-btn">저장</div>
-      </div>
-      
+      <form action="" method="" enctype="multipart/form-data">
+        <!-- 글 작성 영역 -->
+        <div id="DIV-WRITE-FORM-WRAP">
+          <div class="div-one-column-wrap">
+            <div class="div-column-name">제목</div>
+            <div class="div-column-input-wrap">
+              <input type="text" name="title" class="">
+            </div>
+          </div>
+          <div class="div-one-column-wrap">
+            <div class="div-column-name">내용</div>
+            <div class="div-column-input-wrap">
+              <textarea name="content" id=""></textarea>
+              <div class="div-text-count-wrap"><span id="count-text">0</span>/300</div>
+            </div>
+          </div>
+          <div class="div-one-column-wrap">
+            <div class="div-column-name">해시태그</div>
+            <div class="div-column-input-wrap">
+              <input type="text" name="hashtag" class="">
+            </div>
+          </div>
+          <div class="div-one-column-wrap">
+            <div class="div-column-name">첨부 이미지</div>
+            <div class="div-column-input-wrap">
+              <input type="file" name="image" class="" multiple>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        
+        <!-- 목록 / 등록 버튼 영역 -->
+        <div id="DIV-WRITE-WRAP">
+          <div class="button-style list-button">저장</div>
+          <div class="button-style basic-button">저장</div>
+        </div>
+        <!--  -->
+      </form>
 
     </section>
-
+    <!--  -->
   </main>
   <!--  -->
 
