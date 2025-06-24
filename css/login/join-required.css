@@ -28,11 +28,11 @@
   margin-top: 5px;
 
   color: #555555;
-  font-size: 13px;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 #DIV-NICK-CHECK { text-align: center; }
-
 .required-input { width: 100%; }
 
 /* 생년월일 입력 칸 */
@@ -91,6 +91,7 @@ input[type='radio'] { display: none;}
   
   border-radius: 10px;
   color: #ffffff;
+  font-weight: 600;
 }
 input[type="radio"]:checked + span { background-color: #064973; }
 input[type="radio"]:not(:checked) + span:hover { background-color: #A9A9A9; }

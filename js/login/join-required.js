@@ -14,6 +14,7 @@ $(document).ready(function () {
 
     if (nickLength < 2) {
       isCheckNick = false;
+      nickResult.removeAttr("style");
       nickResult.text("최소 2글자 이상 입력하세요");
     } else if (nickLength > 12) {
       isCheckNick = false;

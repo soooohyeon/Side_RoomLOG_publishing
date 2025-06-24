@@ -23,7 +23,6 @@
   display: flex;
   justify-content: center;
 
-  line-height: 0;
   cursor: pointer;
 }
 
@@ -37,6 +36,8 @@
 
 #DIV-PROFILE-NAME {
   margin: 15px 0 20px;
+  font-size: 20px;
+  font-weight: 700;
   text-align: center;
 }
 

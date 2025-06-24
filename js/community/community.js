@@ -5,7 +5,7 @@ $("#SELECT-SORT").click(function() {
   if (selectValue.val() == "comment") {
     selectValue.css("padding", "0 15px");
   } else if (selectValue.val() == "scrap") {
-    selectValue.css("padding", "0 30px");
+    selectValue.css("padding", "0 32px");
   } else {
     selectValue.removeAttr("style");
   }

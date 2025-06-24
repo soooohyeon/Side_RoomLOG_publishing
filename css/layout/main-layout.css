@@ -1,12 +1,17 @@
-/* 기본 레이아웃 - 헤더더, 푸터 */
+/* 기본 레이아웃 - 헤더, 푸터 */
+/* 그 외 공통 부분 */
+
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
 
 * {
   margin: 0;
   padding: 0;
-  font-size: 16px;
+  font-family: 'NanumSquare', 'Noto Sans', sans-serif;
+  font-size: 17px;
+  letter-spacing: 1px;
 }
 
-body { background-color: #FDFDFD; }
+body {background-color: #FDFDFD; }
 
 a {
   color: inherit;
@@ -35,7 +40,7 @@ ul { list-style-type: none; }
 
 #DIV-HEADER-TOP div {
   display: inline-block;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 #IMG-LOGO {
@@ -61,15 +66,14 @@ ul { list-style-type: none; }
   border-bottom:1px solid #DDDDDD;
 }
 #UL-HEDAER-MENU { display: flex; }
-#UL-HEDAER-MENU > li {
-
-  font-weight: 700;
-}
+#UL-HEDAER-MENU > li { font-weight: 800; }
 
 #UL-HEDAER-MENU > li > a {
   display: block;
   margin: 0 15px;
   padding: 15px 7px;
+
+  font-size: 18px;
 }
 #UL-HEDAER-MENU > li > a:hover { color: #04B2D9; }
 
@@ -111,7 +115,7 @@ ul { list-style-type: none; }
 /* 유저 닉네임 - 작게 */
 .div-nick {
   margin-right: 15px;
-  font-weight: 500;
+  font-weight: 600;
 }
 .div-nick:hover { color: #006497; }
 
@@ -141,11 +145,15 @@ ul { list-style-type: none; }
 
 /* 버튼 스타일 */
 .button-style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 5px;
 
   border: none;
   border-radius: 7px;
   font-weight: 600;
+  letter-spacing: 1.5px;
   cursor: pointer;
 }
 
@@ -165,24 +173,24 @@ ul { list-style-type: none; }
   margin-right: 15px;
   background-color: #fff;
 
-  border: 3px solid #999999 !important;
+  border: 2px solid #999999 !important;
   border-radius: 5px!important;
   color: #999999;
 }
 .list-button:hover {
-  border: 3px solid #666666 !important;
+  border: 2px solid #666666 !important;
   color: #666666;
 }
 
 .blue-line-button {
   background-color: #fff;
 
-  border: 3px solid #006497 !important;
+  border: 2px solid #006497 !important;
   border-radius: 5px!important;
   color: #006497;
 }
 .blue-line-button:hover {
-  border: 3px solid #00263A !important;
+  border: 2px solid #00263A !important;
   color: #00263A;
 }
 
@@ -219,7 +227,7 @@ ul { list-style-type: none; }
   justify-content: center;
 
   color: #cccccc;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .div-page-btn-wrap {
@@ -303,7 +311,6 @@ ul { list-style-type: none; }
 
 .div-alert-content {
   font-weight: 500;
-  letter-spacing: 1px;
   line-height: 1.5em;
 }
 

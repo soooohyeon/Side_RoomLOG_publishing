@@ -81,7 +81,7 @@ function goScrap(event, element, userNumber) {
 
   if (userNumber > 0) {
     element.src = "../../image/layout/scrap_ok.png";
-    element.setAttribute("onclick", "noScrap(event, this, userNumber)");
+    element.setAttribute("onclick", "noScrap(event, this, 0)");
     element.setAttribute("alt", "scrap_ok")
   } else {
     openModal("로그인이 필요해요.<br>스크랩은 로그인 후 이용할 수 있어요!");
