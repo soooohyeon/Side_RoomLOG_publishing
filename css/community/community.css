@@ -1,7 +1,7 @@
 /* 검색창 영역 */
 #DIV-SEARCH-WRAP {
   display: flex;
-  height: 70px;
+  height: 60px;
 }
 
 /* 셀렉트 기본 화살표 없애고 화살표 직접 지정 */
@@ -124,6 +124,7 @@ select::-ms-expand{ display: none;/*for IE10,11*/ }
 
 .div-count-wrap {
   display: flex;
+  align-items: center;
   margin-left: 20px;
 
   color: #999999;

@@ -89,10 +89,10 @@
 }
 
 .div-content-skip {
-  height: 60px;
+  height: 50px;
 
   overflow: hidden;
-  font-size: 20px;
+  font-size: 18px;
   color: #555555;
   text-overflow: ellipsis;
   word-break: keep-all;

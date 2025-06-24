@@ -62,7 +62,7 @@ img {
   margin: 20px 0;
 
   color: #555555;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.6em;
 }
 
@@ -126,10 +126,11 @@ img {
 
 #DIV-USER-INFO-WRAP { display: flex; }
 
-#DIV-USER-WRAP { width: calc(100%-80px); }
+/* #DIV-USER-WRAP { width: calc(100%-80px); } */
 
 .div-user-nick-age-wrap {
   display: flex;
+  padding-top: 7px;
 }
 
 #DIV-POST-USER-PROFILE {
@@ -148,6 +149,7 @@ img {
 
 .div-info {
   height: 45px;
+  margin-top: 5px;
   
   color: #555555;
   font-size: 17px;
@@ -168,6 +170,7 @@ img {
 }
 
 #DIV-USER-FOLLOW-BTN > .button-style { width: 90px; }
+#DIV-USER-FOLLOW-BTN > .follow-btn { border: 3px solid #bdbdbd !important; }
 
 /* 목록 + 스크랩 버튼 영역 */
 .section-btn-wrap {
@@ -185,10 +188,10 @@ img {
 
 .basic-button {
   border: 3px solid #006497 !important;
-  border-radius: 5px!important;
   font-weight: 500;
 }
 .basic-button:hover { border: 3px solid #00263A !important; }
+.section-btn-wrap > .basic-button { border-radius: 5px; }
 
 .button-style > img {
   width: 22px;
@@ -228,7 +231,7 @@ textarea:focus { outline: none; }
 
 /* 댓글 작성 / 수정 버튼 공통 */
 #DIV-SAVE-BTN-WRAP { padding: 15px 0; }
-#DIV-SAVE-BTN-WRAP > button { font-size: 19px; }
+#DIV-SAVE-BTN-WRAP > button { font-size: 18px; }
 
 .btn-comment-save {
   background-color: transparent;
@@ -281,18 +284,18 @@ textarea:focus { outline: none; }
 }
 
 .div-comment-profile-wrap {
-  width: 60px;
-  height: 60px;
-  margin-right: 15px;
+  width: 55px;
+  height: 55px;
+  margin-right: 10px;
 }
 .div-comment-profile-wrap > img { border-radius: 100%; }
 .div-comment-profile-wrap > img:hover { border: 1px, solid #006497; }
-.div-nick { font-size: 22px; }
+.div-nick { font-size: 20px; }
 .div-comment-profile-wrap, .div-nick { cursor: pointer; }
 .div-comment-date { color: #999999; }
 
 .div-comment-content-wrap {
-  margin-left: 75px;
+  margin-left: 65px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -313,6 +316,7 @@ textarea:focus { outline: none; }
   color: #999999;
   font-size: 16px;
   font-weight: 500;
+  white-space: nowrap;
   cursor: pointer;
 }
 .div-re-comment-btn:hover { color: #006497; }
@@ -327,10 +331,7 @@ textarea:focus { outline: none; }
   display: flex;
 
   color: #999999;
-}
-
-.div-re-comment-wrap .div-comment-btn-wrap {
-  width: 85px;
+  white-space: nowrap;
 }
 
 .div-comment-btn > span {
@@ -344,7 +345,7 @@ textarea:focus { outline: none; }
 .div-re-comment-write-wrap > form {
   display: flex;
   align-items: center;
-  margin-left: 75px;
+  margin-left: 65px;
 }
 
 .div-re-comment-write {
@@ -366,8 +367,6 @@ textarea:focus { outline: none; }
   font-family: inherit;
 }
 
-.textarea-btn-wrap { width: 85px; }
-
 /* 댓글 수정 시 */
 .div-comment-update-wrap {
   width: 100%;
@@ -377,7 +376,6 @@ textarea:focus { outline: none; }
 
 .div-comment-update {
   width: 100%;
-  height: 90px;
   flex: 1;
   box-sizing: border-box;
   padding: 15px 20px;

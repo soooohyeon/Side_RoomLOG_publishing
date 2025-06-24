@@ -275,3 +275,29 @@ function renderOriginalComment(wrap, oriText, type) {
   // 현재 댓글 수정 폼 변수 초기화
   $currentEditComment = null;
 }
+
+// 댓글 삭제 버튼 클릭 시
+$(".comment-delete-btn").on("click", function() {
+  console.log("이게 바로 click이다 이거야");
+
+  const $wrap = $(this).closest(".div-comment-content-wrap");
+  const className = $wrap.attr("class");
+  const oriComment = $wrap.data('original-text');
+  
+  // 클래스명으로 댓글, 대댓글 구분
+  if (className.includes("parent-comment-wrap")) {
+    // 댓글
+    openModal("이 댓글을 정말 지우시겠어요?<br>한 번 삭제하면, 다시 볼 수 없어요.", 2).then((result) => {
+      if (result) {
+        location.href = "삭제경로";
+      }
+    });
+  } else if (className.includes("child-comment-wrap")) {
+    // 대댓글
+    openModal("이 답글을 정말 지우시겠어요?<br>삭제하면 복구가 불가능해요.", 2).then((result) => {
+      if (result) {
+        location.href = "삭제경로";
+      }
+    });
+  }
+});

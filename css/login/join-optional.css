@@ -8,10 +8,15 @@
   margin: auto;
   display: flex;
   align-items: center;
-
+  
   border: 4px solid #DDDDDD;
   border-radius: 100%;
   overflow: hidden;
+}
+
+#DIV-PROFILE-IMG > label {
+  width: 100%;
+  height: 100%;
 }
 
 #DIV-PROFILE-IMG-WRAP {

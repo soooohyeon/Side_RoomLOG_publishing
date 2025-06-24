@@ -1,7 +1,19 @@
 // 공통 이벤트
 // ---------------------------------------------------------------
 
-$(document).ready(function () {
+// 메세지함 버튼 클릭 시
+$("#GO-MESSAGE-PAGE").on("click", function() {
+  const userNumber = 0;
+
+  if (userNumber > 0) {
+    // 페이지 이동
+    location.href = "" ;
+  } else {
+    openModal("로그인이 필요해요.<br>메세지는 로그인 후 이용할 수 있어요!");
+  }
+})
+
+$(document).ready(function() {
 
   // 메뉴바 css 설정
   const url = window.location.pathname;
@@ -20,14 +32,14 @@ $(document).ready(function () {
   
   // 페이지네이션에서 이전, 다음 기호에 마우스 오버시
   // 이전
-  $('.previous').hover(function(){
+  $('.previous').hover(function() {
     $(this).text("◀");
   }, function(){
     $(this).text("◁");
   });
 
   // 다음
-  $('.next').hover(function(){
+  $('.next').hover(function() {
     $(this).text("▶");
   }, function(){
     $(this).text("▷");
@@ -41,8 +53,6 @@ $(document).ready(function () {
 // 팔로우 하기
 function goFollow(event, element, userNumber) {
   event.stopPropagation();
-
-  console.log("userNumber : " + userNumber)
 
   if (userNumber > 0) {
     element.innerText = "팔로잉";
@@ -101,13 +111,13 @@ function openModal(message, temp = 1, modalId = '#MODAL-ALERT-ONE-A') {
     }
 
     // 확인 클릭 시 → true 반환
-    $modal.find('.alert-ok').one('click', function () {
+    $modal.find('.alert-ok').one('click', function() {
       closeModal(modalId);
       resolve(true);
     });
 
     // 취소 클릭 시 → false 반환
-    $modal.find('.alert-no').one('click', function () {
+    $modal.find('.alert-no').one('click', function() {
       closeModal(modalId);
       resolve(false);
     });
@@ -124,6 +134,6 @@ function closeModal(modalId = '.div-alert-container') {
   $modal.fadeOut(200);
 }
 
-$(document).on('click', '.modal-close', function () {
+$(document).on('click', '.modal-close', function() {
   closeModal();
 });
