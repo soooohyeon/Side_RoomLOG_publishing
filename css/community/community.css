@@ -110,7 +110,6 @@ select::-ms-expand{ display: none;/*for IE10,11*/ }
   background-color: #ededed;
 
   font-size: 16px;
-  font-weight: 600;
 }
 
 /* 작성일짜 + 개수 */
@@ -129,7 +128,6 @@ select::-ms-expand{ display: none;/*for IE10,11*/ }
   margin-left: 15px;
 
   color: #999999;
-  font-weight: 600;
 }
 
 .div-count-wrap > img {
