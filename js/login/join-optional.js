@@ -21,3 +21,12 @@ $(document).ready(function () {
   });
   
 });
+
+// 프로필 이미지 등록 버튼 호버
+  $('#DIV-PROFILE-IMG').hover(function() {
+    $imgBtn = $(this).find("#IMG-PROFILE");
+    $imgBtn.attr("src", "../../image/login/profile_img_add_hover.png");
+  }, function(){
+    $imgBtn = $(this).find("#IMG-PROFILE");
+    $imgBtn.attr("src", "../../image/login/profile_img_add.png");
+  });

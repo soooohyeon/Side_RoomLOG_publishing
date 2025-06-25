@@ -97,7 +97,99 @@ function noScrap(event, element, userNumber) {
   element.setAttribute("alt", "scrap_no");
 }
 
+// ---------------------------------------------------------------
+
+// 이미지 등록 버튼 호버
+
+  $(".img-regist-btn").hover(function() {
+    $(this).attr("src", "../../image/layout/image_regist_btn_hover.png");
+  }, function(){
+    $(this).attr("src", "../../image/layout/image_regist_btn.png");
+  });
+
 // --------------------------------------------------------------- 
+
+// 전역 변수로 선언하여 이미지 누적
+let imageFiles = [];
+let currentCount = $(".div-thumbnail-wrap").length;
+
+// 이미지 첨부시 미리보기
+$(document).ready(function() {
+  $("#input-image").on("change", setPreview);
+});
+
+function setPreview(e) {
+  let files = Array.from(e.target.files);
+  let filesList = Array.prototype.slice.call(files);
+  let maxCount = 5;
+
+  for (const file of filesList) {
+    // 현재까지 저장된 파일 수 + 새로 선택한 수가 5 초과면 차단
+    if (currentCount >= maxCount) {
+      openModal("이미지는 최대 5개까지만 업로드할 수 있어요.");
+      return;
+    }
+    
+    if (!file.type.match("image.*")) {
+      openModal("이미지 파일만 업로드할 수 있어요.");
+      continue;
+    }
+
+    imageFiles.push(file);
+    
+    let reader = new FileReader(); 
+    reader.onload = function(e) {
+      let img = `
+        <div class="div-thumbnail-wrap">
+          <img src="${e.target.result}" class="img-thumbnail">
+        </div>
+      `;
+      $("#DIV-PREVIEW-IMAGE-WRAP").append(img);
+    }
+    reader.readAsDataURL(file);
+    currentCount++;
+  }
+  updateUploadButton();
+}
+
+// 마우스 호버에 따른 이미지 삭제 버튼
+$(document).on("mouseenter", ".div-thumbnail-wrap", function() {
+  const cancelBtn = `
+  <span class="span-thumbnail-close-btn">
+    <img src="../../image/layout/close_btn_black_white.png" alt="close">
+  </span>
+  `;
+  $(this).append(cancelBtn);
+});
+
+$(document).on("mouseleave", ".div-thumbnail-wrap", function() {
+  $(this).find(".span-thumbnail-close-btn").remove();
+});
+
+// 이미지 삭제
+$(document).on("click", ".span-thumbnail-close-btn", deletePreview);
+
+function deletePreview() {
+  const $previewWrap = $(this).closest(".div-thumbnail-wrap");
+  imageFiles.splice(($previewWrap.index - 1), 1);
+
+  $previewWrap.remove();
+  currentCount--;
+
+  updateUploadButton();
+}
+
+// 이미지 업로드 버튼 숨김, 표시
+function updateUploadButton() {
+  if (currentCount >= 5) {
+    $('#LABEL-IMAGE-BTN').hide();
+  } else {
+    $('#LABEL-IMAGE-BTN').show();
+  }
+}
+
+// --------------------------------------------------------------- 
+
 // 모달
 // 모달 열기
 function openModal(message, temp = 1, modalId = '#MODAL-ALERT-ONE-A') {

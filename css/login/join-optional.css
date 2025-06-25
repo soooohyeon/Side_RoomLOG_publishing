@@ -3,16 +3,18 @@
 #DIV-PROFILE-SETTINGS-WRAP { margin-top: 30px; }
 
 #DIV-PROFILE-IMG {
-  width: 130px;
-  height: 130px;
+  width: 110px;
+  height: 110px;
   margin: auto;
   display: flex;
   align-items: center;
   
-  border: 4px solid #DDDDDD;
+  border: 8px solid #dddddd;
   border-radius: 100%;
   overflow: hidden;
 }
+
+#DIV-PROFILE-IMG:hover { border: 8px solid #999999; }
 
 #DIV-PROFILE-IMG > label {
   width: 100%;

@@ -55,7 +55,7 @@ $(document).ready(function () {
     if (isCheckNick && isCheckBirth && isCheckAgeVisible) {
       $btn
         .removeAttr("disabled")
-        .attr("type", "submit")
+        // .attr("type", "submit")
         .addClass("btn-go-join")
         .removeClass("btn-no-join");
     } else {
@@ -65,5 +65,9 @@ $(document).ready(function () {
         .addClass("btn-no-join");
     } 
   }
-  
+});
+
+// 회원 가입 버튼 클릭 시
+$(document).on("click", ".btn-go-join", function() {
+  location.href="join-optional.html";
 });
