@@ -139,17 +139,19 @@ function setPreview(e) {
     
     let reader = new FileReader(); 
     reader.onload = function(e) {
-      let img = `
-        <div class="div-thumbnail-wrap">
+      let $img = $(`
+        <div class="div-thumbnail-wrap" style="display:none;">
           <img src="${e.target.result}" class="img-thumbnail">
         </div>
-      `;
-      $("#DIV-PREVIEW-IMAGE-WRAP").append(img);
+      `);
+      $("#DIV-PREVIEW-IMAGE-WRAP").append($img);
+      $img.fadeIn(150);
+      $(".image-column").css("margin-bottom", "122px")
     }
     reader.readAsDataURL(file);
     currentCount++;
+    updateUploadButton();
   }
-  updateUploadButton();
 }
 
 // 마우스 호버에 따른 이미지 삭제 버튼
@@ -171,12 +173,29 @@ $(document).on("click", ".span-thumbnail-close-btn", deletePreview);
 
 function deletePreview() {
   const $previewWrap = $(this).closest(".div-thumbnail-wrap");
-  imageFiles.splice(($previewWrap.index - 1), 1);
+  const index = $previewWrap.index();
+  $previewWrap.fadeOut(150, function() {
+    imageFiles.splice(index - 1, 1);
+    $previewWrap.remove();
+    currentCount--;
 
-  $previewWrap.remove();
-  currentCount--;
+    if (currentCount == 0) {
+      $(".image-column").removeAttr("style");
+    }
+    updateUploadButton();
+    updateInputFiles();
+    updateBackBlock();
+  });
+}
 
-  updateUploadButton();
+// input[type="file"]의 이미지 삭제시 value값 정리
+// 페이지 이동 탐지를 위함
+function updateInputFiles() {
+  const dataTransfer = new DataTransfer();
+  for (let i = 0; i < imageFiles.length; i++) {
+    dataTransfer.items.add(imageFiles[i]);
+  }
+  $("input[name='images']")[0].files = dataTransfer.files;
 }
 
 // 이미지 업로드 버튼 숨김, 표시

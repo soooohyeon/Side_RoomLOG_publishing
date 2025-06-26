@@ -7,6 +7,7 @@ textarea, input {
 input[type="text"] {
   padding: 15px;
   box-sizing: border-box;
+  border-radius: 8px;
 }
 
 #MAIN-CONTAINTER { padding: 70px 0 100px !important }
@@ -31,7 +32,7 @@ input[type="text"] {
   margin-bottom: 35px;
 }
 
-#DIV-FLEX-NONE { display: block; }
+.div-flex-none { display: block; }
 
 #DIV-COLUMN-FLEX-WRAP {
   display: flex;
@@ -46,15 +47,18 @@ input[type="text"] {
   font-size: 20px;
   text-align: right;
 }
-#DIV-COLUMN-FLEX-WRAP > .div-column-name { margin-top: 10px; } 
+.image-column { margin-bottom: 30px; } 
 
 .div-column-input-wrap {
   width: 100%;
   flex: 1;
+}
 
+.div-input-line {
   border: 1px solid #cccccc;
   border-radius: 8px;
 }
+
 #DIV-BTN-IMAGE-WRAP {
   padding: 15px 0 0;
   border: none;
@@ -67,6 +71,7 @@ input[type="text"] {
 
 /* 본문 입력 */
 #TEXTAREA-CONTENT {
+  min-height: 230px;
   padding: 15px;
   box-sizing: border-box;
 
@@ -82,8 +87,6 @@ input[type="text"] {
   width: 60px;
   cursor: pointer;
 }
-
-#DIV-THUMBNAIL-MSG-WRAP { margin-left: 140px; }
 
 /* 등록한 이미지 미리보기 */
 #DIV-PREVIEW-IMAGE-WRAP {
@@ -115,7 +118,7 @@ input[type="text"] {
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 0;
+  top: 10px;
   right: 0;
 
   background-color: rgba(0, 0, 0, 0.7);
@@ -137,5 +140,13 @@ input[type="text"] {
 }
 
 #DIV-WRITE-WRAP > .button-style {
+  display: inline-block;
   padding: 10px 15px;
+  border-radius: 5px !important;
+}
+
+.disabled {
+  background-color: #999999;
+  color: #fff;
+  cursor: not-allowed;
 }

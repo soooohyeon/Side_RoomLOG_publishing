@@ -1,248 +1,197 @@
-var inputElm = $(".users-list");
+// --------------------------------------------------------------- 
 
-function tagTemplate(tagData){
-    return `
-        <tag title="${tagData.email}"
-                contenteditable='false'
-                spellcheck='false'
-                tabIndex="-1"
-                class="tagify__tag ${tagData.class ? tagData.class : ""}"
-                ${this.getAttributes(tagData)}>
-            <x title='' class='tagify__tag__removeBtn' role='button' aria-label='remove tag'></x>
-            <div>
-                <div class='tagify__tag__avatar-wrap'>
-                    <img onerror="this.style.visibility='hidden'" src="${tagData.avatar}">
-                </div>
-                <span class='tagify__tag-text'>${tagData.name}</span>
-            </div>
-        </tag>
-    `
+// 해시태그
+let input = $("input[name='hashtag']");
+const MAX_TAGS = 5;
+
+// 해시태그 목록 (자동완성 용)
+const tagNames = ["소파", "인테리어", "가죽소파", "디저트", "토스트", "치즈", "그릭요거트", "조명", "식탁", "커피", "라떼아트", "라떼"];
+
+let tagify = new Tagify(input[0], {
+  whitelist: tagNames,
+  focusable: false,
+  placeholder: '관련 키워드를 태그로 남겨보세요.',
+  keepPlaceholder: true,
+  maxTags: MAX_TAGS,
+  dropdown: {
+    position: "input",
+    enabled: 0
+  }
+});
+
+
+// placeholder 보이도록
+function updatePlaceholderState() {
+  const len = tagify.value.length;
+  // 태그 입력창에 값 존재 여부 확인
+  const hasText = tagify.DOM.input.textContent.trim() !== "";
+
+  const placeholderText = len >= MAX_TAGS
+    ? "최대 5개까지 입력 가능합니다."
+    : "관련 키워드를 태그로 남겨보세요.";
+
+  // 핵심 placeholder 문구 갱신
+  tagify.DOM.input.setAttribute("data-placeholder", placeholderText);
+
+  // placeholder 보이게 할지 말지 (css로 강제로 보이게 해뒀기 때문에 설정 필요)
+  const showPlaceholder = !hasText;
+  tagify.DOM.input.style.setProperty("--placeholder-visible", showPlaceholder ? "1" : "0");
+
+  // contenteditable 유지
+  tagify.DOM.input.setAttribute("contenteditable", true);
+  tagify.DOM.input.style.pointerEvents = len >= MAX_TAGS ? "none" : "auto";
+
+  // 태그 5개 이상일때도 placeholder` 보이도록 처리
+  if (!hasText && len >= MAX_TAGS) {
+    tagify.DOM.input.innerHTML = "";
+  }
 }
 
-function suggestionItemTemplate(tagData){
-    return `
-        <div ${this.getAttributes(tagData)}
-            class='tagify__dropdown__item ${tagData.class ? tagData.class : ""}'
-            tabindex="0"
-            role="option">
-            ${ tagData.avatar ? `
-                <div class='tagify__dropdown__item__avatar-wrap'>
-                    <img onerror="this.style.visibility='hidden'" src="${tagData.avatar}">
-                </div>` : ''
-            }
-            <strong>${tagData.name}</strong>
-            <span>${tagData.email}</span>
-        </div>
-    `
+updatePlaceholderState();
+tagify.on('add', updatePlaceholderState);
+tagify.on('remove', updatePlaceholderState);
+
+// 태그 클릭 시 placeholder 복구
+tagify.DOM.scope.addEventListener("click", () => {
+  setTimeout(updatePlaceholderState, 0);
+});
+
+// 외부 클릭 시 placeholder 복구
+document.addEventListener("click", () => {
+  setTimeout(updatePlaceholderState, 0);
+});
+
+// 외부 클릭 + blur 시에도 placeholder 보이도록
+tagify.DOM.input.addEventListener("blur", () => {
+  setTimeout(updatePlaceholderState, 0);
+});
+
+// Backspace로 태그 삭제 막기
+tagify.DOM.input.addEventListener("keydown", function (e) {
+  if (e.key === "Backspace" && tagify.DOM.input.textContent.trim() === "") {
+    e.preventDefault();
+    e.stopImmediatePropagation(); // Tagify 내부 로직까지 차단
+  }
+}, true); // 캡쳐 단계에서 감지시켜 Tagify 로직보다 먼저 작동하도록 설정
+
+// --------------------------------------------------------------- 
+
+// 제목, 본문 유효성 검사
+// 회원가입 유효성 검사
+let isCheckTitle = false;
+let isCheckContent = false;
+
+// 제목 값 확인
+$("input[name='title']").on("input keyup", function() {
+  isCheckTitle = $(this).val() == "" ? false : true;
+  writeButton();
+});
+// 본문 값 확인
+$("textarea[name='content']").on("input keyup", function() {
+  isCheckContent = $(this).val() == "" ? false : true;
+  writeButton();
+  isFormFilled()
+});
+
+function writeButton() {
+  const $btn = $("#WRITE-BTN");
+  if (isCheckTitle && isCheckContent) {
+    $btn
+      .addClass("basic-button")
+      .removeClass("disabled");
+  } else {
+    $btn
+      .removeClass("basic-button")
+      .addClass("disabled");
+  } 
 }
 
-function dropdownHeaderTemplate(suggestions){
-    return `
-        <header data-selector='tagify-suggestions-header' class="${this.settings.classNames.dropdownItem} ${this.settings.classNames.dropdownItem}__addAll">
-            <strong style='grid-area: add'>${this.value.length ? `Add Remaning` : 'Add All'}</strong>
-            <span style='grid-area: remaning'>${suggestions.length} members</span>
-            <a class='remove-all-tags'>Remove all</a>
-        </header>
-    `
-}
+// --------------------------------------------------------------- 
 
-// initialize Tagify on the above input node reference
-var tagify = new Tagify(inputElm[0], {
-    tagTextProp: 'name', // very important since a custom template is used with this property as text
-    // enforceWhitelist: true,
-    skipInvalid: true, // do not remporarily add invalid tags
-    dropdown: {
-        closeOnSelect: false,
-        enabled: 0,
-        classname: 'users-list',
-        searchKeys: ['name', 'email']  // very important to set by which keys to search for suggesttions when typing
-    },
-    templates: {
-        tag: tagTemplate,
-        dropdownItem: suggestionItemTemplate,
-        dropdownHeader: dropdownHeaderTemplate
-    },
-    whitelist: [
-        {
-            "value": 1,
-            "name": "Justinian Hattersley",
-            "avatar": "https://i.pravatar.cc/80?img=1",
-            "email": "jhattersley0@ucsd.edu",
-            "team": "A"
-        },
-        {
-            "value": 2,
-            "name": "Antons Esson",
-            "avatar": "https://i.pravatar.cc/80?img=2",
-            "email": "aesson1@ning.com",
-            "team": "B"
+const writePostMsg = "이대로 글을 작성할까요?";
 
-        },
-        {
-            "value": 3,
-            "name": "Ardeen Batisse",
-            "avatar": "https://i.pravatar.cc/80?img=3",
-            "email": "abatisse2@nih.gov",
-            "team": "A"
-        },
-        {
-            "value": 4,
-            "name": "Graeme Yellowley",
-            "avatar": "https://i.pravatar.cc/80?img=4",
-            "email": "gyellowley3@behance.net",
-            "team": "C"
-        },
-        {
-            "value": 5,
-            "name": "Dido Wilford",
-            "avatar": "https://i.pravatar.cc/80?img=5",
-            "email": "dwilford4@jugem.jp",
-            "team": "A"
-        },
-        {
-            "value": 6,
-            "name": "Celesta Orwin",
-            "avatar": "https://i.pravatar.cc/80?img=6",
-            "email": "corwin5@meetup.com",
-            "team": "C"
-        },
-        {
-            "value": 7,
-            "name": "Sally Main",
-            "avatar": "https://i.pravatar.cc/80?img=7",
-            "email": "smain6@techcrunch.com",
-            "team": "A"
-        },
-        {
-            "value": 8,
-            "name": "Grethel Haysman",
-            "avatar": "https://i.pravatar.cc/80?img=8",
-            "email": "ghaysman7@mashable.com",
-            "team": "B"
-        },
-        {
-            "value": 9,
-            "name": "Marvin Mandrake",
-            "avatar": "https://i.pravatar.cc/80?img=9",
-            "email": "mmandrake8@sourceforge.net",
-            "team": "B"
-        },
-        {
-            "value": 10,
-            "name": "Corrie Tidey",
-            "avatar": "https://i.pravatar.cc/80?img=10",
-            "email": "ctidey9@youtube.com",
-            "team": "A"
-        },
-        {
-            "value": 11,
-            "name": "foo",
-            "avatar": "https://i.pravatar.cc/80?img=11",
-            "email": "foo@bar.com",
-            "team": "B"
-        },
-        {
-            "value": 12,
-            "name": "foo",
-            "avatar": "https://i.pravatar.cc/80?img=12",
-            "email": "foo.aaa@foo.com",
-            "team": "A"
-        },
-    ],
-
-    transformTag: (tagData, originalData) => {
-        var {name, email} = parseFullValue(tagData.name)
-        tagData.name = name
-        tagData.email = email || tagData.email
-    },
-
-    validate({name, email}) {
-        // when editing a tag, there will only be the "name" property which contains name + email (see 'transformTag' above)
-        if( !email && name ) {
-            var parsed = parseFullValue(name)
-            name = parsed.name
-            email = parsed.email
-        }
-
-        if( !name ) return "Missing name"
-        if( !validateEmail(email) ) return "Invalid email"
-
-        return true
+// 글 등록 버튼 클릭 시
+$(document).on("click", ".basic-button", function() {
+  openModal(writePostMsg, 2).then((result) => {
+    if (result) {
+      location.href="";
     }
-})
+  });
+});
 
-// The below code is printed as escaped, so please copy this function from:
-// https://github.com/yairEO/tagify/blob/master/src/parts/helpers.js#L89-L97
-function escapeHTML( s ){
-    return typeof s == 'string' ? s
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/`|'/g, "&#039;")
-        : s;
+// --------------------------------------------------------------- 
+
+// 값이 입력된 상태일 때 뒤로가기나 페이지 이동 클릭 시 모달 띄우기
+let isBlocking = false;   // 뒤로가기 막을지에 대한 여부
+let hasPushed = false;    // 뒤로가기 눌렀는지에 대한 여부
+let isModalOpen = false;  // 중복 모달 방지를 위한 flag 변수
+const moveMsg = "작성 중인 내용이 저장되지 않습니다.<br>정말 이동하시겠습니까?";
+
+// 입력된 값이 있는지 확인
+function isFormFilled() {
+  const title = $("input[name='title']").val().trim();
+  const content = $("textarea[name='content']").val().trim();
+  const file = $("input[name='images']")[0]?.files.length > 0;
+  const tags = tagify?.value?.length > 0;
+  return title !== "" || content !== "" || file || tags;
 }
 
-// The below part is only if you want to split the users into groups, when rendering the suggestions list dropdown:
-// (since each user also has a 'team' property)
-tagify.dropdown.createListHTML = sugegstionsList  => {
-    const teamsOfUsers = sugegstionsList.reduce((acc, suggestion) => {
-        const team = suggestion.team || 'Not Assigned';
+// 뒤로가기 눌렀을 때
+function updateBackBlock() {
+  const filled = isFormFilled();
 
-        if( !acc[team] )
-            acc[team] = [suggestion]
-        else
-            acc[team].push(suggestion)
+  // 값이 채워졌을 때 
+  if (filled && !hasPushed) {
+    history.pushState({ preventBack: true }, "", location.href);
+    hasPushed = true;
+    isBlocking = true;
+  }
 
-        return acc
-    }, {})
-
-    const getUsersSuggestionsHTML = teamUsers => teamUsers.map((suggestion, idx) => {
-        if( typeof suggestion == 'string' || typeof suggestion == 'number' )
-            suggestion = {value:suggestion}
-
-        var value = tagify.dropdown.getMappedValue.call(tagify, suggestion)
-
-        suggestion.value = value && typeof value == 'string' ? escapeHTML(value) : value
-
-        return tagify.settings.templates.dropdownItem.apply(tagify, [suggestion]);
-    }).join("")
-
-
-    // assign the user to a group
-    return Object.entries(teamsOfUsers).map(([team, teamUsers]) => {
-        return `<div class="tagify__dropdown__itemsGroup" data-title="Team ${team}:">${getUsersSuggestionsHTML(teamUsers)}</div>`
-    }).join("")
+  // 값이 비워졌을 때
+  if (!filled && hasPushed) {
+    history.back();
+    hasPushed = false;
+    isBlocking = false;
+  }
 }
 
-// attach events listeners
-tagify.on('dropdown:select', onSelectSuggestion) // allows selecting all the suggested (whitelist) items
-      .on('edit:start', onEditStart)  // show custom text in the tag while in edit-mode
+// 값을 입력 후 다시 지웠을 때 히스토리 복구하기 위함
+$(document).ready(function () {
+  $("input, textarea").on("input", updateBackBlock);
+  $("input[name='images']").on("change", updateBackBlock);
+  tagify.on("change", updateBackBlock);
+});
 
-function onSelectSuggestion(e){
-    if( e.detail.event.target.matches('.remove-all-tags')) {
-        tagify.removeAllTags()
-    }
+// 페이지 이동 시
+$(document).on("click", "a, button, [data-navigate]", function (e) {
+  const href = $(this).attr("href") || $(this).data("href");
 
-    // custom class from "dropdownHeaderTemplate"
-    else if( e.detail.elm.classList.contains(`${tagify.settings.classNames.dropdownItem}__addAll`) )
-        tagify.dropdown.selectAll();
-}
+  if (href && isFormFilled()) {
+    e.preventDefault(); // 기본 이동 막음
+    openModal(moveMsg, 2).then((result) => {
+      if (result) {
+        isBlocking = false;
+        hasPushed = false;
+        location.href = href;
+      }
+    });
+  }
+});
 
-function onEditStart({detail:{tag, data}}){
-    tagify.setTagTextNode(tag, `${data.name} <${data.email}>`)
-}
+// 뒤로가기 눌렀을 때
+window.addEventListener("popstate", function (e) {
 
-// https://stackoverflow.com/a/9204568/104380
-function validateEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-}
-
-function parseFullValue(value) {
-    // https://stackoverflow.com/a/11592042/104380
-    var parts = value.split(/<(.*?)>/g),
-        name = parts[0].trim(),
-        email = parts[1]?.replace(/<(.*?)>/g, '').trim();
-
-    return {name, email}
-}
+  if (isBlocking && isFormFilled() && !isModalOpen) {
+    isModalOpen = true;
+    openModal(moveMsg, 2).then((result) => {
+      if (result) {
+        isBlocking = false;
+        hasPushed = false;
+        history.back();
+      } else {
+        history.pushState({ preventBack: true }, "", location.href);
+      }
+      isModalOpen = false;
+    });
+  }
+});

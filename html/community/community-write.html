@@ -40,8 +40,8 @@
     <!-- 메뉴바 -->
     <div id="DIV-HEADER-BOTTOM">
       <ul id="UL-HEDAER-MENU">
-        <li id="LI-HOME-LINK"><a href="">홈</a></li>
-        <li id="LI-COMMUNITY-LINK"><a href="">커뮤니티</a></li>
+        <li id="LI-HOME-LINK"><a href="../main.html">홈</a></li>
+        <li id="LI-COMMUNITY-LINK"><a href="community.html">커뮤니티</a></li>
         <li id="LI-NOTICE-LINK"><a href="">공지사항</a></li>
         <li id="LI-FEEDBACK-LINK"><a href="">건의사항</a></li>
       </ul>
@@ -66,49 +66,49 @@
         <div id="DIV-WRITE-FORM-WRAP">
           <div class="div-one-column-wrap">
             <div class="div-column-name">제목</div>
-            <div class="div-column-input-wrap">
+            <div class="div-column-input-wrap div-input-line">
               <input type="text" name="title" id="title" placeholder="나만의 공간에 어울리는 한 줄 작성해보세요.">
             </div>
           </div>
           <div class="div-one-column-wrap">
             <div class="div-column-name">내용</div>
             <div class="div-column-content-wrap">
-              <textarea name="content" id="TEXTAREA-CONTENT" placeholder="인테리어 이야기, 공간 팁, 소소한 일상도 좋아요."></textarea>
+            <textarea name="content" id="TEXTAREA-CONTENT" placeholder="인테리어 이야기, 공간 팁, 소소한 일상도 좋아요."></textarea>
               <div class="div-text-count-wrap"><span id="count-text">0</span>/300</div>
             </div>
           </div>
-          <div class="div-one-column-wrap">
-            <div class="div-column-name">해시태그</div>
-            <div class="div-column-input-wrap">
-              <!-- <input type="text" name="hashtag" id="text" placeholder="관련 키워드를 태그로 남겨보세요." autocomplete="off"> -->
-              <input name='users-list-tags' class='users-list' value='abatisse2@nih.gov, Justinian Hattersley'>
-              
+          <div class="div-one-column-wrap div-flex-none">
+            <div id="DIV-COLUMN-FLEX-WRAP" class="div-hashtag-input-wrap">
+              <div class="div-column-name">해시태그</div>
+              <div class="div-column-input-wrap">
+                <input type="text" name="hashtag" id="hashtag" class="input-hashtag">
+              </div>
             </div>
-            <div id="DIV-HASHTAG-WRAP"></div>
           </div>
-          <div class="div-one-column-wrap" id="DIV-FLEX-NONE">
+          <div class="div-one-column-wrap div-flex-none">
             <div id="DIV-COLUMN-FLEX-WRAP">
-              <div class="div-column-name">첨부 이미지</div>
+              <div class="div-column-name image-column">첨부 이미지</div>
               <div class="div-column-input-wrap" id="DIV-BTN-IMAGE-WRAP">
                 <label for="input-image" id="LABEL-IMAGE-BTN">
                   <img src="../../image/layout/image_regist_btn.png" alt="이미지 등록" class="img-regist-btn">
-                  <input type="file" name="" id="input-image" class="input-image-btn" multiple accept="image/*"/>
+                  <input type="file" name="images" id="input-image" class="input-image-btn" multiple accept="image/*"/>
                 </label>
+                <!-- 등록한 이미지 미리보기 -->
+                <div id="DIV-THUMBNAIL-MSG-WRAP">
+                  <div id="DIV-PREVIEW-IMAGE-WRAP"></div>
+                  <div class="div-check-msg">최대 5장까지 첨부 가능합니다.</div>
+                </div>
               </div>
-            </div>
-            <!-- 등록한 이미지 미리보기 -->
-            <div id="DIV-THUMBNAIL-MSG-WRAP">
-              <div id="DIV-PREVIEW-IMAGE-WRAP"></div>
-              <div class="div-check-msg">최대 5장까지 첨부 가능합니다.</div>
             </div>
           </div>
         </div>
         <!--  -->
-        
+        <a href="https://naver.com" target="_self">테스트 이동</a>
+
         <!-- 목록 / 등록 버튼 영역 -->
         <div id="DIV-WRITE-WRAP">
           <div class="button-style list-button"><span>←</span> 목록으로</div>
-          <div class="button-style basic-button">글 등록하기</div>
+          <div class="button-style disabled" id="WRITE-BTN">글 등록하기</div>
         </div>
         <!--  -->
       </form>
