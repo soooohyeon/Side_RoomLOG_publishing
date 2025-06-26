@@ -165,7 +165,6 @@ $(document).ready(function () {
 // 페이지 이동 시
 $(document).on("click", "a, button, [data-navigate]", function (e) {
   const href = $(this).attr("href") || $(this).data("href");
-
   if (href && isFormFilled()) {
     e.preventDefault(); // 기본 이동 막음
     openModal(moveMsg, 2).then((result) => {
@@ -174,13 +173,13 @@ $(document).on("click", "a, button, [data-navigate]", function (e) {
         hasPushed = false;
         location.href = href;
       }
+      isModalOpen = false;
     });
   }
 });
 
 // 뒤로가기 눌렀을 때
 window.addEventListener("popstate", function (e) {
-
   if (isBlocking && isFormFilled() && !isModalOpen) {
     isModalOpen = true;
     openModal(moveMsg, 2).then((result) => {
