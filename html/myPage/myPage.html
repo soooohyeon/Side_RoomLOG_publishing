@@ -37,39 +37,66 @@
     <!-- 유저 프로필 정보 영역 -->
     <div id="DIV-USER-INFO-CONTAINER">
         <div id="DIV-USER-PROFILE-IMG">
-            dd
+            <img src="../../image/example/profile_image/profile3.jpg">
         </div>
         <div id="DIV-USER-INFO-WRAP">
-             
+          <div><span class="div-age">20대</span></div>
+          <div class="div-nick-btn-wrap">
+            <div class="div-nickname">포근한 하루</div>
+            <div class="div-message-btn">메세지함</div>
+            <div class="div-settings-btn">설정</div>
+          </div>
+          <div class="div-counts-wrap">
+            <div class="div-type-wrap">
+              <div class="div-count-name">게시글</div>
+              <div class="div-count">10</div>
+            </div>
+            <div class="div-type-wrap">
+              <div class="div-count-name">팔로워</div>
+              <div class="div-count">254</div>
+            </div>
+            <div class="div-type-wrap">
+              <div class="div-count-name">팔로우</div>
+              <div class="div-count">112</div>
+            </div>
+          </div>
+          <div class="div-user-info">이불 속 온기를 좋아하는 사람 🛏️</div>
         </div>
     </div>
     <!--  -->
 
     <!-- 카테고리 메뉴 - 작성글, 스크랩 -->
     <div id="DIV-CATEGORY-CONTAINER">
+      <div id="DIV-CATEGORY-WRAP">
         <ul id="UL-CATEGORY">
-            <li class="li-category-wrap ca-selected">
-                <div class="div-category" data-category="my-write-post">
-                    <img src="../../image/myPage/" alt="board">
-                    <span>작성 글</span> (10)
+            <li class="ca-selected"></li>
+            <li class="ca-hover"></li>
+            <li class="li-category-wrap">
+                <div class="div-category div-selected" data-category="my-board">
+                    <img src="../../image/myPage/board_menu.png" class="ca-img" data-category="my-board">
+                    <div>작성 글 (10)</div>
                 </div>
             </li>
             <li class="li-category-wrap">
-                <div class="div-category" data-category="my-scrap-post">
-                    <img src="" alt="scrap">
-                    <span>스크랩</span> (7)
+                <div class="div-category" data-category="my-scrap">
+                    <img src="../../image/layout/scrap_no.png" class="ca-img" data-category="my-scrap">
+                    <div>스크랩 (7)</div>
                 </div>
             </li>
         </ul>
+      </div>
     </div>
     <!--  -->
     
     <!-- 리스트 -->
     <div id="DIV-LIST-CONTAINER">
+      <div class="list-slide-wrap">
+
         <!-- 내가 작성한 게시글 -->
         <div class="div-mypage-containe write-list-wrap">
+
+            <!-- 글 목록 -->
             <div class="div-list-wrap">
-              <!-- 글 목록 -->
               <div class="div-post-list-wrap">
     
                 <!-- 글 1개 -->
@@ -103,6 +130,7 @@
                   </div>
                 </div>
                 <!--   -->
+
                 <!--  -->
                 <div class="div-one-post-wrap post-hover" onclick="">
                 <div class="div-post-info-wrap">
@@ -165,6 +193,7 @@
     
               </div>
             </div>
+            <!--  -->
             
             <!-- 페이지네이션 -->
             <div id="DIV-PAGENATION-WRAP">
@@ -182,17 +211,19 @@
                 <div class="pagenation next" onclick="">▷</div>
               </div>
             </div>
+            <!--  -->
+            
         </div>
         <!--  -->
 
         <!-- 스크랩한 게시글 -->
-        <div class="div-mypage-container scrap-list-wrap none-show">
+        <div class="div-mypage-container scrap-list-wrap">
             <div class="div-list-wrap">
               <!-- 글 목록 -->
               <div class="div-post-list-wrap">
     
                 <!-- 글 1개 -->
-                <div class="div-one-post-wrap post-hover" onclick="location.href='community_view.html'">
+                <div class="div-one-post-wrap post-hover" onclick="location.href='../community/community_view.html'">
                   <div class="div-post-info-wrap">
                     <div class="div-profile-post-wrap">
                       <div class="div-profile-wrap">
@@ -230,6 +261,7 @@
                   </div>
                 </div>
                 <!--   -->
+
                 <!--  -->
                 <div class="div-one-post-wrap post-hover" onclick="">
                 <div class="div-post-info-wrap">
@@ -325,7 +357,8 @@
             </div>
         </div>
         <!--  -->
-
+        
+      </div>
     </div>
 
   </main>

@@ -1,4 +1,61 @@
-/* 내가 작성한 게시글 */
+/* 유저 프로필 정보 영역 */
+#DIV-USER-INFO-CONTAINER {
+    width: 650px;
+    margin: auto;
+    display: flex;
+}
+
+/* 유저 프로필 사진 */
+#DIV-USER-PROFILE-IMG {
+    width: 200px;
+    aspect-ratio: 1;
+    overflow: hidden;
+}
+
+#DIV-USER-PROFILE-IMG > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/*  */
+.div-nick-btn-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.div-age {
+    width: ;
+}
+
+.div-nickname {
+    margin: 0;
+    margin-right: 30px;
+}
+
+.div-message-btn, .div-settings-btn {
+    display: flex;
+
+    padding: 7px;
+}
+.div-message-btn {
+
+}
+
+.div-settings-btn {
+
+}
+
+/* --------------------------------------------------------------- */
+
+/* 글 목록 */
+#DIV-LIST-CONTAINER {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
 .has-img .div-post-text-wrap { width: calc(100% - 195px); }
 .div-post-text-wrap { width: 100%; }
 
@@ -26,4 +83,4 @@
     
     border-radius: 3px;
     object-fit: cover;
-  }
+}

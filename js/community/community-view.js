@@ -49,7 +49,7 @@ $('.blue-line-button').hover(function () {
 
   // 현재 이미지가 스크랩된 상태일 때만 hover 이미지로 바꾸기
   if (src.includes("scrap_ok.png")) {
-    $img.attr("src", "../../image/community/scrap_hover.png");
+    $img.attr("src", "../../image/community/scrap_full_hover.png");
   }
 }, function () {
   const $img = $(this).children("img");
