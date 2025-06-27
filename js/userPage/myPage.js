@@ -6,13 +6,13 @@ const $caScrapImage = $(".ca-img[data-category='my-scrap']");
 const imageSrc = {
     board: {
         normal: "../../image/layout/board_count.png",
-        selected: "../../image/myPage/board_menu.png",
-        hover: "../../image/myPage/board_hover.png"
+        selected: "../../image/userPage/board_menu.png",
+        hover: "../../image/userPage/board_hover.png"
     },
     scrap: {
         normal: "../../image/layout/scrap_no.png",
-        selected: "../../image/myPage/scrap_menu.png",
-        hover: "../../image/myPage/scrap_line_hover.png"
+        selected: "../../image/userPage/scrap_menu.png",
+        hover: "../../image/userPage/scrap_line_hover.png"
     }
 };
 

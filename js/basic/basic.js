@@ -94,9 +94,15 @@ function goFollow(event, element, userNumber) {
 function noFollow(event, element, userNumber) {
   event.stopPropagation();
 
+  deleteFollow(userNumber);
+
   element.innerText = "팔로우";
   element.setAttribute("onclick", "goFollow(event, this, userNumber)");
   element.setAttribute("class", "button-style follow-btn");
+}
+
+function deleteFollow(userNumber) {
+  console.log("팔로우 삭제");
 }
 
 // ---------------------------------------------------------------
@@ -185,7 +191,7 @@ function setPreview(e) {
 $(document).on("mouseenter", ".div-thumbnail-wrap", function() {
   const cancelBtn = `
   <span class="span-thumbnail-close-btn">
-    <img src="../../image/layout/close_btn_black_white.png" alt="close">
+    <img src="../../image/layout/close_btn_white.png" alt="close">
   </span>
   `;
   $(this).append(cancelBtn);
@@ -238,24 +244,24 @@ function updateUploadButton() {
 
 // 모달
 // 모달 열기
-function openModal(message, temp = 1, modalId = '#MODAL-ALERT-ONE-A') {
+function openModal(message, temp = 1, modalId = "#MODAL-ALERT-ONE-A") {
   return new Promise((resolve) => {
     const $modal = $(modalId);
-    $modal.find('.div-alert-content').html(message);
-    $modal.addClass('alert-active');
+    $modal.find(".div-alert-content").html(message);
+    $modal.addClass("alert-active");
 
     if (temp == 2) {
-      $modal.find('.alert-no').addClass('modal-coutinue');
+      $modal.find(".alert-no").addClass("modal-coutinue");
     }
 
     // 확인 클릭 시 → true 반환
-    $modal.find('.alert-ok').one('click', function() {
+    $modal.find(".alert-ok").one("click", function() {
       closeModal(modalId);
       resolve(true);
     });
 
     // 취소 클릭 시 → false 반환
-    $modal.find('.alert-no').one('click', function() {
+    $modal.find(".alert-no").one("click", function() {
       closeModal(modalId);
       resolve(false);
     });
@@ -266,12 +272,12 @@ function openModal(message, temp = 1, modalId = '#MODAL-ALERT-ONE-A') {
 }
 
 // 모달 닫기
-function closeModal(modalId = '.div-alert-container') {
+function closeModal(modalId = ".div-alert-container") {
   const $modal = $(modalId);
-  $modal.removeClass('alert-active');
+  $modal.removeClass("alert-active");
   $modal.fadeOut(200);
 }
 
-$(document).on('click', '.modal-close', function() {
+$(document).on("click", ".modal-close", function() {
   closeModal();
 });
