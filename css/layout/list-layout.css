@@ -15,7 +15,7 @@
 
 /* 목록 컨텐츠 영역 */
 #SECTION-SEARCH-LIST-WRAP{ margin-top: 80px; }
-#DIV-LIST-WRAP { margin: 60px 0; }
+.div-list-wrap { margin: 60px 0; }
 
 /* 글 개수 */
 #DIV-POST-COUNT {
@@ -41,6 +41,7 @@
 .div-post-info-wrap {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 /* 프로필 + 닉네임 */
@@ -55,12 +56,24 @@
   align-items: center;
 }
 
+/* 프로필 이미지 */
 .div-go-user-page > img {
   width: 67px;
   height: 67px;
 
   border: 1px solid #dddddd;
   border-radius: 50%;
+}
+
+/* 게시글에 등록된 이미지 */
+.div-post-img > img {
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+  margin-right: 20px;
+  
+  border-radius: 3px;
+  object-fit: cover;
 }
 
 /* 제목, 본문 말줄임표 */
@@ -89,11 +102,54 @@
   -webkit-box-orient: vertical;
 }
 
-/* 게시글 작성일 */
+/* 해시태그 */
+.div-hashtag-wrap {
+  display: flex;
+  margin: 15px 0 20px;
+}
+
+.div-hashtag {
+  margin-right: 10px;
+  padding: 5px 10px;
+  background-color: #ededed;
+
+  font-size: 16px;
+}
+
+/* 작성일짜 + 개수 */
+.div-time-count-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.div-two-counts-wrap {
+  display: flex;
+}
+
+.div-count-wrap {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+
+  color: #999999;
+}
+
 .div-time {
   color: #999999;
   font-size: 18px;
   font-weight: 600;
+}
+
+.div-count-wrap > img {
+  height: 30px;
+}
+
+.div-comment {
+  margin-left: 8px;
+}
+
+.div-scrap {
+  margin-left: 5px;
 }
 
 /* -------------------------------------------------------------- */

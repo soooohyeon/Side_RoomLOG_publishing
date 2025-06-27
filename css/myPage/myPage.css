@@ -1,0 +1,50 @@
+#MAIN-CONTAINTER {
+    border-top: 1px solid #DDDDDD;
+    padding: 0 0 150px;
+}
+
+/* 유저 프로필 정보 영역 */
+#DIV-USER-INFO-CONTAINER {
+    padding: 40px 0;
+}
+
+/* 카테고리 - 작성글, 스크랩 */
+#UL-CATEGORY {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    border-top: 1px solid #cccccc;
+}
+
+#UL-CATEGORY > li {
+    padding: 15px 2px;
+    color: #999999;
+}
+
+#UL-CATEGORY > li:hover {
+    color: #064973;
+    cursor: pointer;
+}
+
+/* 카테고리 선택 시 - 작성글, 스크랩 */
+.ca-selected { border-top: 4px solid #04B2D9; }
+.ca-selected  > .div-category { color: #000; }
+/* 현재 카테고리를 제외한 카테고리는 안 보이게 설정 */
+.none-show { display: none; }
+
+.li-category-wrap:not(:last-child) {
+    margin-right: 50px !important;
+}
+
+/* 스크랩한 게시글 */
+.has-img .div-profile-post-wrap { width: calc(100% - 265px); }
+/* 유저 프로필 사진 호버시 */
+.div-go-user-page > img:hover { border: 1px, solid #006497; }
+/* 게시글에 등록된 이미지 */
+.div-post-img {
+    width: 250px;
+    height: 165px;
+    overflow: hidden;
+}
