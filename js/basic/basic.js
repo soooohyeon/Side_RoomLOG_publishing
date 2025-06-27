@@ -49,6 +49,33 @@ $(document).ready(function() {
 
 // ---------------------------------------------------------------
 
+// 시간 형식 포맷
+function getTimeAgo(timestamp) {
+  const now = new Date();
+  const past = new Date(timestamp);
+  const diff = Math.floor((now - past) / 1000); // 초 단위 차이
+
+  if (diff < 60) return "방금 전";
+  if (diff < 3600) return Math.floor(diff / 60) + "분 전";
+  if (diff < 86400) return Math.floor(diff / 3600) + "시간 전";
+  if (diff < 172800) return "어제";
+  return Math.floor(diff / 86400) + "일 전";
+}
+
+function updateTimeAgo() {
+  $(".time-ago").each(function () {
+    const ts = $(this).data("timestamp");
+    $(this).text(getTimeAgo(ts));
+  });
+}
+
+// 시간 형식 포맷 함수 사용 (작성일짜 출력) (basic.js)
+$(document).ready(function () {
+  updateTimeAgo();
+})
+
+// ---------------------------------------------------------------
+
 // 팔로우 - 메인, 게시판 디테일, 유저 개인 페이지
 // 팔로우 하기
 function goFollow(event, element, userNumber) {

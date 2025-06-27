@@ -11,13 +11,17 @@ $("#SELECT-SORT").click(function() {
   }
 });
 
-// 게시글에 이미지가 존재할 경우 조정
-document.querySelectorAll('.div-post-info-wrap').forEach(wrap => {
-  const imgWrap = wrap.querySelector('.div-post-img img');
+// ---------------------------------------------------------------
+
+// 게시글에 이미지가 존재할 경우 너비 조정
+document.querySelectorAll(".div-post-info-wrap").forEach(wrap => {
+  const imgWrap = wrap.querySelector(".div-post-img img");
   if (imgWrap && imgWrap.complete && imgWrap.naturalWidth > 0) {
-    wrap.classList.add('has-img');
+    wrap.classList.add("has-img");
   }
 });
+
+// ---------------------------------------------------------------
 
 // 글 작성 버튼 클릭 시
 $(".div-write-btn").on("click", function() {
@@ -28,3 +32,6 @@ $(".div-write-btn").on("click", function() {
     openModal("로그인이 필요해요.<br>글 작성은 로그인 후 이용할 수 있어요!");
   };
 });
+
+// ---------------------------------------------------------------
+

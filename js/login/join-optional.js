@@ -15,18 +15,24 @@ $(document).ready(function () {
   $("#profile-image").on("change", function(event){
     const file = event.target.files[0];
     if (!file) return;
+
     const imageURL = URL.createObjectURL(file);
+    $("#DIV-PROFILE-IMG").attr("class", "has-img");
     $("#IMG-PROFILE").attr("src", imageURL);
-    console.log(imageURL);
+    isFileChange = true;
   });
-  
 });
 
+let isFileChange = false;
 // 프로필 이미지 등록 버튼 호버
   $('#DIV-PROFILE-IMG').hover(function() {
-    $imgBtn = $(this).find("#IMG-PROFILE");
-    $imgBtn.attr("src", "../../image/login/profile_img_add_hover.png");
-  }, function(){
-    $imgBtn = $(this).find("#IMG-PROFILE");
-    $imgBtn.attr("src", "../../image/login/profile_img_add.png");
+    if (!isFileChange) {  // 이미지 프리퓨가 없을 때 만 바뀌도록
+      $imgBtn = $(this).find("#IMG-PROFILE");
+      $imgBtn.attr("src", "../../image/login/profile_img_add_hover.png");
+    }
+  }, function() {
+    if (!isFileChange) {  // 이미지 프리퓨가 없을 때 만 바뀌도록
+      $imgBtn = $(this).find("#IMG-PROFILE");
+      $imgBtn.attr("src", "../../image/login/profile_img_add.png");
+    }
   });
