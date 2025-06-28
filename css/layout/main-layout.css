@@ -126,7 +126,6 @@ textarea::placeholder,
 /* 페이지 설명, 서브 설명 */
 #P-CURRENT-PAGE {
   color: #999999;
-  font-size: 16 px;
 }
 
 #P-TITLE {

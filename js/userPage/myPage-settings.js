@@ -71,6 +71,7 @@ $('#LABEL-PROFILE-IMAGE-BTN').hover(function() {
 
 // ---------------------------------------------------------------
 
+// 저장하기 버튼 클릭 시
 $(document).on("click", ".basic-button", function() {
   openModal("변경하신 내용이 저장되었어요.")
 });

@@ -6,10 +6,10 @@
   <title>RoomLOG</title>
   <link rel="shortcut icon" href="../../image/layout/favicon.png">
   <link rel="stylesheet" href="../../css/layout/main-layout.css">
-  <link rel="stylesheet" href="../../css/userPage/myPage-settings.css">
+  <link rel="stylesheet" href="../../css/userPage/myPage-quit.css">
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script defer src="../../js/basic/basic.js"></script>
-  <script defer src="../../js/userPage/myPage-settings.js"></script>
+  <script defer src="../../js/userPage/myPage-quit.js"></script>
 </head>
 <body>
   <!-- 상단 공통 헤더 영역 -->
@@ -36,94 +36,26 @@
       <!-- 페이지 설명 영역 -->
       <div id="DIV-PAGE-TITLE-WRAP">
         <p id="P-CURRENT-PAGE">마이페이지</p>
-        <p id="P-TITLE">개인 정보 수정</p>
-        <p id="P-SUB-TITLE">지금의 정보를 확인하고, 필요한 부분만 바꿔보세요.<br>언제든 수정할 수 있어요.</p>
+        <p id="P-TITLE">탈퇴하기</p>
+        <p id="P-SUB-TITLE">정말 떠나시려는 걸까요?<br>탈퇴하시면 계정과 활동 정보가 모두 삭제돼요.<br>진행 전, 아래 내용을 꼭 확인해 주세요.</p>
       </div>
       <!--  -->
 
-      <form action="" method="">
-        <!-- 프로필 이미지 -->
-        <div id="DIV-PROFILE-IMG" class="none-img">
-          <div id="DIV-PROFILE-IMG-WRAP">
-            <img src="../../image/userPage/profile_img_basic.png" class="img-one-preview" alt="프로필사진">
-            <label for="profile-image" id="LABEL-PROFILE-IMAGE-BTN">
-              <img src="../../image/userPage/profile_img_update_btn.png" alt="img-btn" id="IMG-PROFILE-IMAGE-BTN">
-            </label>
-            <input type="file" name="one-image" id="profile-image" class="input-profile-image">
-          </div>
-        </div>
+      <div id="DIV-QUIT-QUIDE">
+        RoomLOG를 탈퇴하시면 지금까지 남긴 모든 정보가 삭제됩니다.<br>
+        닉네임, 프로필, 작성한 게시글과 댓글, 스크랩한 글 등<br>
+        당신의 활동 기록은 완전히 제거되며, 삭제된 정보는 복구할 수 없습니다.<br><br>
+        단, 작성하신 댓글 중 다른 사용자의 댓글(대댓글)이 달려 있는 경우에는<br>
+        연결된 대댓글이 먼저 삭제된 이후에, 원댓글도 함께 삭제됩니다.<br>
+        이 과정에서 일부 댓글은 탈퇴 직후 잠시 노출될 수 있지만,<br>
+        작성자는 ‘탈퇴한 사용자’로 표시되며, 해당 댓글도 이후 자동 삭제됩니다.<br><br>
+        탈퇴를 진행하시려면 아래 입력창에 ‘탈퇴합니다’를 입력해주세요.
+      </div> 
 
-        <!-- 정보 확인 및 수정 영역 -->
-        <div id="DIV-DATA-COLUMNS-WRAP">
-          <div class="div-one-column-wrap">
-            <div class="div-column-wrap">
-              <div class="div-column-text">연동된 계정</div>
-            </div>
-            <div class="div-data-column-wrap">
-              <div class="div-no-edit-wrap">
-                <img src="../../image/layout/login_google.png" alt="social-type">
-                <!-- <img src="../../image/layout/login_kakao.png" alt="social-type"> -->
-                test123@gmail.com
-              </div>
-            </div>
-          </div>
-          <div class="div-one-column-wrap">
-            <div class="div-column-wrap">
-              <div class="div-column-text">닉네임</div>
-            </div>
-            <div class="div-data-column-wrap">
-              <input type="text" name="nickname" data-original="포근한하루" value="포근한하루" id="INPUT-NICK" class="input-mypage" autocomplete="off">
-              <div class="div-check-msg" id="DIV-NICK-CHECK"></div>
-            </div>
-          </div>
-          <div class="div-one-column-wrap">
-            <div class="div-column-wrap">
-              <div class="div-column-text">한 줄 소개</div>
-            </div>
-            <div class="div-data-column-wrap">
-              <input type="text" name="intro" id="INPUT-INTRO" class="input-mypage" autocomplete="off">
-              <div class="div-check-msg">짧은 한 문장이 더 오래 머물 수 있어요 (30자 이내)</div>
-            </div>
-          </div>
-          <div class="div-one-column-wrap">
-            <div class="div-column-wrap">
-              <div class="div-column-text">생년월일</div>
-            </div>
-            <div class="div-data-column-wrap">
-              <div class="div-no-edit-wrap">2000.01.01</div>
-            </div>
-          </div>
-          <div class="div-one-column-wrap">
-            <div class="div-column-wrap">
-              <div class="div-column-text">나이 공개</div>
-            </div>
-            <div class="div-data-column-wrap">
-              <div class="div-age-visible-wrap">
-                <label for="age-visible-yes">
-                  <input type="radio" name="age-visible" value="Y" id="age-visible-yes" class="input-join-data required-input" required checked>
-                  <span>보여주기</span>
-                </label>
-                <label for="age-visible-no" class="">
-                  <input type="radio" name="age-visible" value="N" id="age-visible-no" class="input-join-data required-input" required>
-                  <span>숨기기</span>
-                </label>
-              </div>
-              <div class="div-check-msg">다른 사람에게 나이대가 보여져요<br>언제든 숨길 수 있어요</div>
-            </div>
-          </div>
-
-          <!-- 탈퇴, 뒤로가기, 저장 -->
-          <div class="action-btn-wrap">
-            <div id="DIV-QUIT-SITE"><a href="mypage-quit.html">계정을 삭제하시려면 여기를 눌러주세요</a></div>
-            <div id="DIV-WRITE-WRAP">
-              <div class="button-style list-button" onclick="history.back();"><span>←</span> 돌아가기</div>
-              <div class="button-style basic-button" id="WRITE-BTN">저장하기</div>
-            </div>
-          </div>
-          <!--  -->
-        </div>
-      </form>
-
+      <div id="DIV-QUIT-WRITE-WRAP">
+        <input type="text" id="INPUT-QUIT-MSG" autocomplete="off">
+        <div class="button-style disabled" id="DIV-QUIT-BTN">탈퇴하기</div>
+      </div>
 
     </section>
 
