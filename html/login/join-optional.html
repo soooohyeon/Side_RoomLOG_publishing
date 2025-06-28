@@ -6,11 +6,11 @@
   <title>RoomLOG</title>
   <link rel="shortcut icon" href="../../image/layout/favicon.png">
   <link rel="stylesheet" href="../../css/layout/main-layout.css">
-  <link rel="stylesheet" href="../../css/layout/list-layout.css">
   <link rel="stylesheet" href="../../css/login/login-layout.css">
   <link rel="stylesheet" href="../../css/login/join-optional.css">
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script defer src="../../js/login/join-optional.js"></script>
+  <script defer src="../../js/basic/basic.js"></script>
 </head>
 <body>
   <!-- 상단 공통 헤더 영역 -->
@@ -40,10 +40,10 @@
             <div id="DIV-PROFILE-IMG" class="none-img">
               <label for="profile-image">
                 <div id="DIV-PROFILE-IMG-WRAP">
-                  <img src="../../image/login/profile_img_add.png" id="IMG-PROFILE" alt="프로필사진 추가">
+                  <img src="../../image/login/profile_img_add.png" class="img-one-preview" alt="프로필사진 추가">
                 </div>
               </label>
-              <input type="file" name="profile-image" id="profile-image" class="input-profile-image">
+              <input type="file" name="one-image" id="profile-image" class="input-profile-image" accept="image/*" />
             </div>
             <div id="DIV-PROFILE-NAME">○○○ 님</div>
             <div id="DIV-PROFILE-INTRO">
@@ -64,6 +64,20 @@
   <footer id="FOOTER-ROOMLOG">
     © 2025 RoomLOG. All rights reserved.
   </footer>
+
+  <!-- 알람 모달창 -->
+  <div class="div-alert-container" id="MODAL-ALERT-ONE-A">
+    <div class="div-alert-wrap">
+      <div class="div-alert-content">
+        모달 내용
+      </div>
+      <div class="div-alert-btn-wrap">
+        <div class="div-alert-btn alert-ok modal-close">확인</div>
+        <div class="div-alert-btn alert-no">취소</div>
+      </div>
+    </div>
+  </div>
+  <!--  -->
 
 </body>
 </html>

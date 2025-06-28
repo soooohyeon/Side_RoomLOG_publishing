@@ -132,16 +132,45 @@ function noScrap(event, element, userNumber) {
 
 // ---------------------------------------------------------------
 
+// 한 줄 소개 30자 제한
+function limitUserIntroLength ($intro) {
+    let introValue = $intro.val();
+    let introLength = Array.from(introValue).length;
+
+    if (introLength > 30) {
+      const trimmed = Array.from(introValue).slice(0, 30).join("");
+      $intro.val(trimmed);
+    }
+}
+
+// ---------------------------------------------------------------
+
+// 단일 이미지 첨부
+function setOnePreview(file) {
+  if (!file) { return false; }
+  
+  if (!file.type.match("image.*")) {
+    openModal("이미지 파일만 업로드할 수 있어요.");
+    return false;
+  }
+  
+  const imageURL = URL.createObjectURL(file);
+  $(".img-one-preview").attr("src", imageURL);
+  return true;
+}
+
+// ---------------------------------------------------------------
+
 // 이미지 등록 버튼 호버
+$(".img-regist-btn").hover(function() {
+  $(this).attr("src", "../../image/layout/image_regist_btn_hover.png");
+}, function(){
+  $(this).attr("src", "../../image/layout/image_regist_btn.png");
+});
 
-  $(".img-regist-btn").hover(function() {
-    $(this).attr("src", "../../image/layout/image_regist_btn_hover.png");
-  }, function(){
-    $(this).attr("src", "../../image/layout/image_regist_btn.png");
-  });
+// --------------------------------------------
 
-// --------------------------------------------------------------- 
-
+// 다중 이미지 첨부
 // 전역 변수로 선언하여 이미지 누적
 let imageFiles = [];
 let currentCount = $(".div-thumbnail-wrap").length;
@@ -187,6 +216,8 @@ function setPreview(e) {
   }
 }
 
+// --------------------------------------------
+
 // 마우스 호버에 따른 이미지 삭제 버튼
 $(document).on("mouseenter", ".div-thumbnail-wrap", function() {
   const cancelBtn = `
@@ -221,6 +252,8 @@ function deletePreview() {
   });
 }
 
+// --------------------------------------------
+
 // input[type="file"]의 이미지 삭제시 value값 정리
 // 페이지 이동 탐지를 위함
 function updateInputFiles() {
@@ -230,6 +263,8 @@ function updateInputFiles() {
   }
   $("input[name='images']")[0].files = dataTransfer.files;
 }
+
+// --------------------------------------------
 
 // 이미지 업로드 버튼 숨김, 표시
 function updateUploadButton() {

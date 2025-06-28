@@ -23,7 +23,7 @@ $(document).ready(function () {
     } else {  // 2 ~ 12자 이내일 때 중복 검사
       
       // 중복검사 패스
-      nickResult.text("좋은 닉네임이에요!");
+      nickResult.text("사용할 수 있는 닉네임이에요");
       nickResult.css("color", "#064973");
       isCheckNick = true;
 
