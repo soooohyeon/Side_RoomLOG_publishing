@@ -196,7 +196,7 @@ textarea::placeholder,
 }
 
 .basic-button {
-  background-color: #006497;
+  background-color: #064973;
   color: #fff;
 }
 .basic-button:hover { background-color: #00263A; }
@@ -223,9 +223,9 @@ textarea::placeholder,
 .blue-line-button {
   background-color: #fff;
 
-  border: 2px solid #006497 !important;
+  border: 2px solid #064973 !important;
   border-radius: 5px!important;
-  color: #006497;
+  color: #064973;
 }
 .blue-line-button:hover {
   border: 2px solid #00263A !important;

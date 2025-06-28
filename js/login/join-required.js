@@ -7,31 +7,12 @@ $(document).ready(function () {
   let isCheckAgeVisible = true;
 
   // 닉네임 중복 검사
-  $("#nickname").on("propertychange change keyup paste input", function() {
+  $("#nickname").on("input", function() {
+    let $nickResult = $("#DIV-NICK-CHECK")
     let nickValue = $(this).val();
-    let nickLength = Array.from(nickValue).length;
-    let nickResult = $("#DIV-NICK-CHECK")
-
-    if (nickLength < 2) {
-      isCheckNick = false;
-      nickResult.removeAttr("style");
-      nickResult.text("최소 2글자 이상 입력하세요");
-    } else if (nickLength > 12) {
-      isCheckNick = false;
-      const trimmed = Array.from(nickValue).slice(0, 12).join("");
-      $(this).val(trimmed);
-    } else {  // 2 ~ 12자 이내일 때 중복 검사
-      
-      // 중복검사 패스
-      nickResult.text("사용할 수 있는 닉네임이에요");
-      nickResult.css("color", "#064973");
-      isCheckNick = true;
-
-      // 중복됨
-      // nickResult.text("다른 닉네임을 입력해 주세요");
-      // nickResult.css("color", "#FF0000");
-      // isCheckNick = false;
-    }
+    
+    // basic.js
+    isCheckNick = isNickUsed($nickResult, nickValue);
     updateJoinButton();
   });
 
@@ -66,6 +47,8 @@ $(document).ready(function () {
     } 
   }
 });
+
+// ---------------------------------------------------------------
 
 // 회원 가입 버튼 클릭 시
 $(document).on("click", ".btn-go-join", function() {

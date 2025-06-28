@@ -132,15 +132,49 @@ function noScrap(event, element, userNumber) {
 
 // ---------------------------------------------------------------
 
-// 한 줄 소개 30자 제한
-function limitUserIntroLength ($intro) {
-    let introValue = $intro.val();
-    let introLength = Array.from(introValue).length;
+// 닉네임 중복 검사
+function isNickUsed($result, nickname, originalNick = null) {
+  let nickLength = Array.from(nickname).length; 
+  let isCheckNick = false;
 
-    if (introLength > 30) {
-      const trimmed = Array.from(introValue).slice(0, 30).join("");
-      $intro.val(trimmed);
-    }
+  if (nickLength < 2) {
+    isCheckNick = false;
+    $result.removeAttr("style");
+    $result.text("최소 2글자 이상 입력하세요");
+  } else if (originalNick === nickname) {
+    isCheckNick = true;
+    $result.text("");
+  } else if (nickLength > 12) {
+    isCheckNick = false;
+    const trimmed = Array.from(nickname).slice(0, 12).join("");
+    $(this).val(trimmed);
+  } else {  // 2 ~ 12자 이내일 때 중복 검사
+    
+    // 중복검사 패스
+    $result.text("사용할 수 있는 닉네임이에요");
+    $result.css("color", "#064973");
+    isCheckNick = true;
+
+    // 중복됨
+    // $result.text("다른 닉네임을 입력해 주세요");
+    // $result.css("color", "#FF0000");
+    // isCheckNick = false;
+  }
+  // 결과 리턴
+  return isCheckNick;
+}
+
+// ---------------------------------------------------------------
+
+// 한 줄 소개 30자 제한
+function limitUserIntroLength($intro) {
+  let introValue = $intro.val();
+  let introLength = Array.from(introValue).length;
+  
+  if (introLength > 30) {
+    const trimmed = Array.from(introValue).slice(0, 30).join("");
+    $intro.val(trimmed);
+  }
 }
 
 // ---------------------------------------------------------------

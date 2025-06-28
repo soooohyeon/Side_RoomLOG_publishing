@@ -1,3 +1,4 @@
+#MAIN-CONTAINTER { border-top: 1px solid #dddddd; }
 #DIV-PAGE-TITLE-WRAP { margin: 60px 40px 50px; }
 
 .section-line > form { margin-bottom: 60px; }
@@ -33,10 +34,7 @@
   height: 100%;
   object-fit: cover;
 }
-.img-one-preview {
-  border-radius: 50%;
-  border: 1px solid #555;
-}
+.img-one-preview { border-radius: 50%; }
 
 #profile-image { display: none; }
 
@@ -49,7 +47,7 @@
 
 /* 컬럼 1개 */
 .div-one-column-wrap {
-  height: 100px;
+  height: 110px;
   margin-bottom: 5px;
   display: flex;
 }
@@ -74,7 +72,7 @@
 }
 
 .div-no-edit-wrap, .input-mypage {
-  width: 50%;
+  width: 60%;
   padding: 0 15px;
   border-radius: 10px;
   border: 2px solid #000;
@@ -88,12 +86,10 @@ input[type="text"]:focus {
   outline: none;
 }
 
-#INPUT-INTRO {
-  width: 100%;
-}
+#INPUT-INTRO { width: 100%; }
 
 .div-check-msg {
-  margin-top: 5px;
+  margin-top: 7px;
   margin-left: 10px;
 
   font-size: 16px;
@@ -102,9 +98,10 @@ input[type="text"]:focus {
 }
 
 .div-no-edit-wrap > img {
-  width: 30px;
-  height: 30px;
+  width: 27px;
+  height: 27px;
   aspect-ratio: 1;
+  margin-right: 12px;
 }
 
 /* 나이 공개 여부 */
@@ -133,8 +130,12 @@ input[type="radio"]:not(:checked) + span:hover { background-color: #A9A9A9; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+  margin-top: 70px;
 }
+
+/* 탈퇴 버튼 */
+#DIV-QUIT-SITE > a { color: #999999; }
+#DIV-QUIT-SITE > a:hover { color: #064973; }
 
 /* 버튼 */
 #DIV-WRITE-WRAP {
