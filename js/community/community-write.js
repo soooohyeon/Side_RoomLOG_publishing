@@ -76,6 +76,79 @@ tagify.DOM.input.addEventListener("keydown", function (e) {
 
 // --------------------------------------------------------------- 
 
+// TinyMCE Editor API 설정
+let content = "";
+tinymce.init ({
+	selector: "#TEXTAREA-CONTENT",
+	plugins: "paste emoticons preview table lists checklist fullscreen",
+	height: 400,
+  resize: false,
+  menubar: false,
+  content_style: 'body { cursor: text; !important }',
+  toolbar_mode: 'floating',
+	toolbar:  [
+    { name: 'history', items: [ 'undo', 'redo' ] },
+    { name: 'styles', items: [ 'styles' ] },
+    { name: 'colors', items: [ 'forecolor', 'backcolor' ] },
+    { name: 'formatting', items: [ 'bold', 'italic', 'underline', 'strikethrough' ] },
+    { name: 'insert', items: [ 'emoticons', 'table' ] },
+    { name: 'lists', items: [ 'bullist ', 'numlist', 'checklist' ] },
+    { name: 'view', items: [ 'preview', 'fullscreen' ] }
+  ],
+  paste_data_images: false,
+  paste_remove_styles: true,
+  paste_as_text: true,
+  invalid_elements: 'img',
+  setup: function (editor) {
+    editor.on('input', function () {
+      content = editor.getContent();
+
+      updateCharCount(); 
+      writeButton();
+      isFormFilled()
+      updateBackBlock();
+    });
+
+    // TinyMCE Editor 입력 부분 어디든 포커스 되게 설정
+    editor.on('PostRender', function () {
+      const container = editor.getContainer();
+      const editArea = container.querySelector('.tox-edit-area');
+      
+      if (!container) return;
+      
+      if (editArea) {
+        editArea.addEventListener('click', () => {
+          editor.focus();
+        });
+      }
+    });
+
+  }
+});
+
+// --------------------------------------------------------------- 
+
+// 글자 수 카운트 (공백, 줄바꿈 포함)
+function updateCharCount() {
+  const editor = tinymce.get('TEXTAREA-CONTENT');
+  const text = editor.getContent({ format: 'text' }) ?? '';
+  // 공백을 포함한 문자만 카운팅
+  const charCount = text.replace(/\n/g, '').length;
+  // 줄 개수 카운팅
+  let lineCount = (text.match(/\n/g) || []).length;
+  let totalCount = 0;
+  
+  // 줄이 2개씩 카운팅 되므로 /2로 줄바꿈 1번당 1개로 계산
+  if (lineCount !== 0) {
+    lineCount = lineCount / 2;
+  }
+  
+  totalCount = charCount + lineCount;
+  $("#SPAN-COUNT").text(totalCount);
+}
+
+// --------------------------------------------------------------- 
+
 // 제목, 본문 유효성 검사
 // 회원가입 유효성 검사
 let isCheckTitle = false;
@@ -85,12 +158,6 @@ let isCheckContent = false;
 $("input[name='title']").on("input keyup", function() {
   isCheckTitle = $(this).val() == "" ? false : true;
   writeButton();
-});
-// 본문 값 확인
-$("textarea[name='content']").on("input keyup", function() {
-  isCheckContent = $(this).val() == "" ? false : true;
-  writeButton();
-  isFormFilled()
 });
 
 function writeButton() {
@@ -114,6 +181,7 @@ const writePostMsg = "이대로 글을 작성할까요?";
 $(document).on("click", ".basic-button", function() {
   openModal(writePostMsg, 2).then((result) => {
     if (result) {
+      tinymce.triggerSave();
       location.href="";
     }
   });
@@ -129,17 +197,17 @@ const moveMsg = "작성 중인 내용이 저장되지 않습니다.<br>정말 �
 
 // 입력된 값이 있는지 확인
 function isFormFilled() {
-  const title = $("input[name='title']").val().trim();
-  const content = $("textarea[name='content']").val().trim();
   const file = $("input[name='images']")[0]?.files.length > 0;
   const tags = tagify?.value?.length > 0;
-  return title !== "" || content !== "" || file || tags;
+  
+  return isCheckTitle || isCheckContent || file || tags;
 }
 
 // 뒤로가기 눌렀을 때
 function updateBackBlock() {
+  // 
+  tinymce.triggerSave();
   const filled = isFormFilled();
-
   // 값이 채워졌을 때 
   if (filled && !hasPushed) {
     history.pushState({ preventBack: true }, "", location.href);
@@ -157,15 +225,17 @@ function updateBackBlock() {
 
 // 값을 입력 후 다시 지웠을 때 히스토리 복구하기 위함
 $(document).ready(function () {
-  $("input, textarea").on("input", updateBackBlock);
+  $("input").on("input", updateBackBlock);
   $("input[name='images']").on("change", updateBackBlock);
   tagify.on("change", updateBackBlock);
+
+  // 약간의 지연을 두고 TinyMCE 초기화 끝나길 기다렸다가 실행
+  setTimeout(updateBackBlock, 100); // ✅ 초기에 한번 강제 실행
 });
 
 // 페이지 이동 시
 $(document).on("click", "a, button, [data-navigate]", function (e) {
   const href = $(this).attr("href") || $(this).data("href");
-
   if (href && isFormFilled()) {
     e.preventDefault(); // 기본 이동 막음
     openModal(moveMsg, 2).then((result) => {
@@ -180,7 +250,6 @@ $(document).on("click", "a, button, [data-navigate]", function (e) {
 
 // 뒤로가기 눌렀을 때
 window.addEventListener("popstate", function (e) {
-
   if (isBlocking && isFormFilled() && !isModalOpen) {
     isModalOpen = true;
     openModal(moveMsg, 2).then((result) => {

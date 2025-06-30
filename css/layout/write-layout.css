@@ -59,28 +59,23 @@ input[type="text"] {
   border-radius: 8px;
 }
 
-#DIV-BTN-IMAGE-WRAP {
-  padding: 15px 0 0;
-  border: none;
-}
-
 .div-column-content-wrap {
   width: 100%;
   flex: 1;
 }
 
-/* 본문 입력 */
-#TEXTAREA-CONTENT {
-  min-height: 230px;
-  padding: 15px;
-  box-sizing: border-box;
-
-  border: 1px solid #cccccc;
-  border-radius: 8px;
+.div-text-count-wrap {
+  margin-top: 8px;
+  padding: 0 5px;
+  text-align: right;
 }
-.div-text-count-wrap { text-align: right; }
 
 /* 이미지 첨부 */
+#DIV-BTN-IMAGE-WRAP {
+  padding: 15px 0 0;
+  border: none;
+}
+
 #input-image { display: none; }
 
 .img-regist-btn {
