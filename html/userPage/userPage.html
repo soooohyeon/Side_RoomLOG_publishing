@@ -22,6 +22,12 @@
         <img src="../../image/layout/logo.png" id="IMG-LOGO" alt="LOGO">
       </div>
       <div id="DIV-RIGHT-LOGIN">
+        <div class="div-header-top-link div-menu-line">
+          <a href="javascript:void(0);" id="GO-MESSAGE-PAGE">메세지함</a>
+        </div>
+        <div class="div-header-top-link div-menu-line">
+          <a href="javascript:void(0);" id="GO-MESSAGE-PAGE">마이페이지</a>
+        </div>
         <div class="div-header-top-link">
           <a href="">로그아웃</a>
         </div>
@@ -43,9 +49,10 @@
           <div class="div-age-wrap"><span class="div-age">20대</span></div>
           <div class="div-nick-btn-wrap">
             <div class="div-nickname">포근한 하루</div>
-            <div class="div-message-btn">메세지함</div>
-            <div class="div-settings-btn" onclick="location.href='mypage-settings.html'">
-              <img src="../../image/userPage/setting.png">설정
+            <!-- <div class="button-style basic-button" onclick="noFollow(event, this, 0)">팔로잉</div> -->
+            <div class="button-style follow-btn" onclick="goFollow(event, this, 1)">팔로우</div>
+            <div class="button-style div-message-btn" onclick="location.href='../../html/message/message-write.html'">
+              대화하기
             </div>
           </div>
           <!-- 게시글, 팔로워, 팔로우 -->
@@ -73,7 +80,7 @@
     <div id="DIV-LIST-CONTAINER">
       <div class="list-slide-wrap">
 
-        <!-- 내가 작성한 게시글 -->
+        <!-- 사용자가 작성한 게시글 -->
         <div class="div-mypage-containe write-list-wrap">
 
             <!-- 글 목록 -->
@@ -167,10 +174,6 @@
                 </div>
                 </div>
                 <!--  -->
-                
-                <!-- 게시글이 없을 경우 -->
-                <!-- <div class="div-post-none">아직 아무것도 남기지 않았어요.<br>당신의 방, 취향, 하루를 들려주세요.</div> -->
-                <!--  -->
     
               </div>
             </div>
@@ -193,11 +196,13 @@
               </div>
             </div>
             <!--  -->
-            
         </div>
         <!--  -->
-
       </div>
+
+      <!-- 게시글이 없을 경우 -->
+      <!-- <div class="div-post-none">현재 이 공간에는 글이 없습니다.<br>조만간 새로운 소식이 올라올 수도 있어요.</div> -->
+      <!--  -->
     </div>
 
   </main>
