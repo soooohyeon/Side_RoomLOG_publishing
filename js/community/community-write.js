@@ -205,7 +205,7 @@ function isFormFilled() {
 
 // 뒤로가기 눌렀을 때
 function updateBackBlock() {
-  // 
+  // TinyMCE Editor의 입력 값을 Textarea에 동기화
   tinymce.triggerSave();
   const filled = isFormFilled();
   // 값이 채워졌을 때 
