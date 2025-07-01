@@ -1,17 +1,4 @@
-/* 슬라이드 효과를 위한 글 목록을 감싸는 wrap */
-.list-slide-wrap {
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    transition: transform 0.3s ease;
-}
-
-.write-list-wrap,
-.scrap-list-wrap {
-    width: 100%;
-    flex-shrink: 0;
-}
-
+/* 카테고리 */
 #DIV-CATEGORY-WRAP {
     display: flex;
     justify-content: center;
@@ -57,12 +44,21 @@
     margin-right: 7px;
 }
 
-.li-category-wrap:hover {
-    color: #006497;
-    /* border-top: 4px solid #cccccc;
-    position: absolute;
-    top: 0;
-    transition: all 0.1s ease; */
+.li-category-wrap:hover { color: #006497; }
+
+/* 슬라이드 효과를 위한 글 목록을 감싸는 wrap */
+.list-slide-wrap {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    transition: transform 0.3s ease;
+}
+
+.write-list-wrap,
+.scrap-list-wrap {
+    width: 100%;
+    flex-shrink: 0;
+    margin: 0 auto;
 }
 
 /* 스크랩한 게시글 */

@@ -4,10 +4,13 @@
 }
 
 /* 유저 프로필 정보 영역 */
+#DIV-USER-INFO-CONTAINER, #DIV-LIST-CONTAINER { min-width: 625px; }
+
+/* 유저 프로필 정보 영역 */
 #DIV-USER-INFO-CONTAINER {
-    width: 750px;
+    width: 50%;
     margin: auto;
-    padding: 50px 0;
+    padding: 80px 0;
     display: flex;
     align-items: center;
 }
@@ -111,8 +114,8 @@
 
 /* 글 목록 */
 #DIV-LIST-CONTAINER {
+    width: 65%;
     overflow: hidden;
-    width: 100%;
     position: relative;
 }
 
