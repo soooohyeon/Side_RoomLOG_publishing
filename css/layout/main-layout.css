@@ -155,7 +155,10 @@ textarea::placeholder,
   margin-right: 15px;
   font-weight: 600;
 }
-.div-nick:hover { color: #006497; }
+.div-nick:hover {
+  color: #006497;
+  cursor: pointer;
+}
 
 /* 유저 나이대 */
 .div-age {

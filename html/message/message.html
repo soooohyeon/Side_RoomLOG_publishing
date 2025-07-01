@@ -81,7 +81,7 @@
             <div class="div-post-list-wrap">
   
               <!-- 메세지 1개 -->
-              <div class="div-one-post-wrap post-hover unread-msg" onclick="location.href=''">
+              <div class="div-one-post-wrap post-hover unread-msg" data-userNumber="2">
                 <div class="div-post-info-wrap">
                   <div class="div-post-wrap">
                     <div class="div-post-btn-wrap">
@@ -105,7 +105,7 @@
               <!--   -->
               
               <!--  -->
-              <div class="div-one-post-wrap post-hover" onclick="location.href=''">
+              <div class="div-one-post-wrap post-hover" data-userNumber="">
                 <div class="div-post-info-wrap">
                   <div class="div-post-wrap">
                     <div class="div-post-btn-wrap">
@@ -125,7 +125,7 @@
                   <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
                 </div>
               </div>
-              <div class="div-one-post-wrap post-hover" onclick="location.href=''">
+              <div class="div-one-post-wrap post-hover" data-userNumber="">
                 <div class="div-post-info-wrap">
                   <div class="div-post-wrap">
                     <div class="div-post-btn-wrap">
@@ -145,7 +145,7 @@
                   <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
                 </div>
               </div>
-              <div class="div-one-post-wrap post-hover" onclick="location.href=''">
+              <div class="div-one-post-wrap post-hover" data-userNumber="">
                 <div class="div-post-info-wrap">
                   <div class="div-post-wrap">
                     <div class="div-post-btn-wrap">
@@ -214,7 +214,7 @@
             <div class="div-post-list-wrap">
   
               <!-- 메세지 1개 -->
-              <div class="div-one-post-wrap post-hover" onclick="location.href=''">
+              <div class="div-one-post-wrap post-hover" data-userNumber="3">
                 <div class="div-post-info-wrap">
                   <div class="div-post-wrap">
                     <div class="div-post-btn-wrap">
@@ -237,7 +237,7 @@
               <!--   -->
               
               <!--  -->
-              <div class="div-one-post-wrap post-hover" onclick="location.href=''">
+              <div class="div-one-post-wrap post-hover" data-userNumber="">
                 <div class="div-post-info-wrap">
                   <div class="div-post-wrap">
                     <div class="div-post-btn-wrap">
@@ -257,7 +257,7 @@
                   <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
                 </div>
               </div>
-              <div class="div-one-post-wrap post-hover" onclick="location.href=''">
+              <div class="div-one-post-wrap post-hover" data-userNumber="">
                 <div class="div-post-info-wrap">
                   <div class="div-post-wrap">
                     <div class="div-post-btn-wrap">
@@ -277,7 +277,7 @@
                   <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
                 </div>
               </div>
-              <div class="div-one-post-wrap post-hover" onclick="location.href=''">
+              <div class="div-one-post-wrap post-hover" data-userNumber="">
                 <div class="div-post-info-wrap">
                   <div class="div-post-wrap">
                     <div class="div-post-btn-wrap">
@@ -346,46 +346,36 @@
   </div>
   <!--  -->
 
-  <!-- 팔로워, 팔로우 모달창 -->
-  <!-- <div class="div-alert-container modal-follow">
-    <div class="div-alert-wrap">
-      <div id="DIV-MODAL-HEADER">
-        <div class="div-modal-title">팔로워</div>
-        <img src="../../image/userPage/close_btn_grey.png" class="modal-follow-close" alt="close">
+  <!-- 메세지 상세 보기 -->
+  <!-- <div class="div-alert-container madal-message" id="MODAL-ALERT-ONE-A">
+    <div class="div-alert-wrap div-message-view">
+      <div class="div-alert-close-btn">
+        <img src="../../image/layout/close_btn_grey.png" class="modal-close modal-close-img" alt="close">
       </div>
-
       <div class="div-alert-content">
-        <div id="DIV-USER-SEARCH-WRAP">
-
-          <input type="text" id="user-search" placeholder="누구를 찾고 있나요?">
-        </div>
-        <div id="DIV-USER-COUNT-WRAP">
-          총 <div id="USER-COUNT">10</div>명
-        </div>
-        <div id="DIV-USER-LIST-WRAP">
-
-          <div class="div-user-wrap">
-            <div class="div-follow-user-wrap">
-              <div class="div-user-profile-img user-profile-img">
-                <img src="../../image/example/profile_image/profile1.jpg">
+        <div id="DIV-MESSAGE-CONTENT-CONTAINER">
+          <div class="div-profile-btn-wrap">
+            <div class="div-profile-wrap">
+              <div class="div-go-user-page">
+                <img src="../../image/example/profile_image/profile6.jpg" onclick="">
+                <div class="div-nickname div-nick" onclick="">반쯤열린창 </div>
               </div>
-              <div class="div-user-simple-info">
-                <div class="user-nick"><span class="user-nickname">조용한 오후</span></div>
-                <div class="user-info-wrap">
-                  <div class="user-info div-one-skip">집에 햇살과 고양이가 함께 있어요.</div>
-                </div>
-              </div>
+              <div class="div-age">20대</div>
             </div>
-            <div class="div-follow-btn-wrap">
-              <div class="button-style delete-button" onclick="noFollow(event, this, 1)">삭제</div>
-              <div class="button-style basic-button" onclick="noFollow(event, this, 1)">팔로잉</div>
-              <div class="button-style follow-btn" onclick="goFollow(event, this, 0)">팔로우</div>
+            <div class="div-time-btn-wrap">
+              <div class="div-delete">삭제</div>
+              <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
             </div>
           </div>
-          
+          <div id="DIV-MESSAGE-CONTENT-WRAP">
+            잘 지내고 있으시죠~? 
+          </div>
         </div>
       </div>
-
+      <div class="div-alert-btn-wrap div-message-btn-wrap">
+        <div class="button-style list-button" onclick="showMessage(3)">지난 대화</div>
+        <div class="button-style blue-line-button" onclick="sendMessage(3)">답장하기</div>
+      </div>
     </div>
   </div> -->
   <!--  -->

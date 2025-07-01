@@ -23,7 +23,7 @@ function openFollowModal(temp, modalId = "#MODAL-ALERT-ONE-A") {
     const title = `
         <div id="DIV-MODAL-HEADER">
             <div class="div-modal-title">${type}</div>
-            <img src="../../image/userPage/close_btn_grey.png" class="modal-follow-close" alt="close">
+            <img src="../../image/layout/close_btn_grey.png" class="modal-close modal-close-img" alt="close">
         </div>
     `;
     
@@ -87,21 +87,7 @@ function openFollowModal(temp, modalId = "#MODAL-ALERT-ONE-A") {
     $modal.fadeIn(200);
 }
 
-// 모달 닫기
-$(document).on("click", ".modal-follow-close", function() {
-    closeModal();
-});
-
-// 모달 닫기(x) 버튼 오버 시
-$(document).on("mouseenter", ".modal-follow-close", function() {
-    $(this).attr("src", "../../image/userPage/close_btn_black.png");
-});
-
-$(document).on("mouseleave", ".modal-follow-close", function() {
-    $(this).attr("src", "../../image/userPage/close_btn_grey.png");
-});;
-
-// ---------------------------------------------------------------
+// ----------------------------------------
 
 // 팔로워 클릭 시
 $(".show-follower").on("click", function() {

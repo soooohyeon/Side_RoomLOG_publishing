@@ -111,3 +111,87 @@ function updateSlideHeight(targetSelector) {
 $(document).ready(function () {
     updateSlideHeight(".receive-msg-list-wrap");
 });
+
+// ---------------------------------------------------------------
+
+// 메세지 상세보기 모달창
+// 모달 열기
+function openFollowModal(userNumber, modalId = "#MODAL-ALERT-ONE-A") {
+  const $modal = $(modalId);
+  const $alertWrap = $(".div-alert-wrap");
+  const messageFrame = `
+    <div class="div-alert-close-btn">
+      <img src="../../image/layout/close_btn_grey.png" class="modal-close modal-close-img" alt="close">
+    </div>
+    <div class="div-alert-content">
+      <div id="DIV-MESSAGE-CONTENT-CONTAINER">
+        <div class="div-profile-btn-wrap">
+          <div class="div-profile-wrap">
+            <div class="div-go-user-page">
+              <img src="../../image/example/profile_image/profile6.jpg">
+              <div class="div-nickname div-nick">반쯤열린창 </div>
+            </div>
+            <div class="div-age">20대</div>
+          </div>
+          <div class="div-time-btn-wrap">
+            <div class="div-delete">삭제</div>
+            <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
+          </div>
+        </div>
+        <div id="DIV-MESSAGE-CONTENT-WRAP">
+          잘 지내고 있으시죠~? 
+        </div>
+      </div>
+    </div>
+    <div class="div-alert-btn-wrap div-message-btn-wrap">
+      <div class="button-style list-button" onclick="showMessage(3)">지난 대화</div>
+      <div class="button-style blue-line-button" onclick="sendMessage(3)">답장하기</div>
+    </div>
+  `;
+
+  $alertWrap.addClass("div-message-view");
+  $alertWrap.html(messageFrame);
+  // 시간 형식 포맷 함수 사용 (작성일짜 출력) (basic.js)
+  updateTimeAgo();
+  
+  // 모달 표시
+  $modal.addClass("alert-active");
+  $modal.fadeIn(200);
+}
+
+// ----------------------------------------
+
+// 메세지 클릭 시
+$(".div-one-post-wrap").on("click", function() {
+  const userNumber = $(this).data("userNumber");
+  openFollowModal(userNumber);
+});
+
+// ---------------------------------------------------------------
+
+const deleteMsg = "이 메세지를 삭제할까요?<br>아직 읽지 않았다면 상대방에게도 삭제돼요.<br>이미 읽은 메세지는 상대방이 볼 수 있습니다.";
+
+// 메세지 삭제 클릭 시
+$(document).on("click", ".div-delete", function (e){
+  e.stopPropagation();
+  const messageNumber = $(this).data("messageNumber");
+  openModal(deleteMsg, 2).then((result) => {
+    if (result) {
+      location.href="";
+    }
+  });
+});
+
+// ---------------------------------------------------------------
+
+// 지난 대화 클릭 시
+function showMessage(userNumber) {
+  location.href = "../../html/message/message-history.html";
+}
+
+// ---------------------------------------------------------------
+
+// 답장하기 클릭 시
+function sendMessage(userNumber) {
+  location.href = "../../html/message/message-write.html";
+}

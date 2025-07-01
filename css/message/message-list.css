@@ -176,10 +176,9 @@
 
 .unread-msg .div-nickname,
 .unread-msg .div-content {
-  font-weight: 700;
-  color: #222;
+  font-weight: 800;
 }
-.unread-msg .div-content { font-size: 19px; }
+.unread-msg .div-content { font-size: 20px; }
 .unread-msg .div-nickname { font-size: 22px; }
 
 .unread-msg {
@@ -199,7 +198,90 @@
 }
 .div-pagenation-wrap > ul { display: flex; }
 
+/* --------------------------------------------------------------- */
+
 /* 메세지가 없을 경우 */
-.div-post-none {
-  height: 550px;
+.div-post-none { height: 550px; }
+
+/* --------------------------------------------------------------- */
+
+/* 메세지 상세 보기 (모달) */
+#message-modal {
+  display: flex;
+}
+
+.div-message-view {
+  width: 630px;
+  margin-bottom: 3%;
+  padding: 15px;
+  padding-bottom: 30px;
+  
+  border-radius: 25px;
+}
+
+/* 모달 닫기 버튼 (x) */
+.div-alert-close-btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5px;
+  padding-bottom: 15px;
+}
+
+.modal-close-img {
+  width: 18px;
+  cursor: pointer;
+}
+
+#DIV-MESSAGE-CONTENT-CONTAINER {
+  width: 88%;
+  margin: auto;
+}
+
+.div-profile-btn-wrap {
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.div-time-btn-wrap {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.div-time-btn-wrap > div {
+  font-size: 15px;
+}
+
+.div-time-btn-wrap > .div-time { 
+  color: #555555;  
+}
+.div-time-btn-wrap > .div-delete { cursor: pointer; }
+
+#DIV-MESSAGE-CONTENT-WRAP {
+  min-height: 85px;
+  margin-top: 20px;
+  padding: 20px 30px;
+
+  border: 1px solid #cccccc;
+  color: #555555;
+  line-height: 1.6em;
+}
+
+/* 모달 버튼 - 지난 대화, 답장하기 */
+.div-message-btn-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.div-message-btn-wrap > .button-style { padding: 7px 10px; }
+.div-message-btn-wrap > .button-style:last-child { margin-left: 10px; }
+
+.div-message-btn-wrap > .list-button {
+  margin: 0;
+  padding-top: 5px;
+  padding-bottom: 9px;
 }
