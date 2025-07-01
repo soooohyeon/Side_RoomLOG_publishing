@@ -1,0 +1,65 @@
+#MAIN-CONTAINTER {
+  padding: 0 0 100px;
+  border-top: 1px solid #DDDDDD;
+}
+
+/* 메인 wrap */
+#DIV-MASSAGE-CONTAINER {
+  width: 75%;
+  min-width: 600px;
+  margin: auto;
+  margin-top: 60px;
+
+  background-color: #fff;
+  border: 1px solid #cccccc;
+  border-radius: 7px;
+}
+
+#DIV-MESSAGE-WRAP {
+  width: 80%;
+  margin: 50px auto;
+}
+
+/* 유저 정보 */
+.div-user-page {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.div-user-page > img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.div-nickname > span {
+  margin-left: 10px;
+
+  color: #555555;
+  font-size: 20px;
+}
+
+/* 버튼 */
+#DIV-WRITE-WRAP {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+#DIV-WRITE-WRAP > .button-style {
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 5px !important;
+}
+
+#DIV-WRITE-WRAP > .button-style {
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 5px !important;
+}
+.disabled {
+  background-color: #999999;
+  color: #fff;
+  cursor: not-allowed;
+}
