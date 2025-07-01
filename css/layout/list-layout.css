@@ -1,8 +1,9 @@
-/* 리스트 기본 레이아웃웃 */
+/* 리스트 기본 레이아웃 */
 
 /* 게시물 호버시 효과 */
 .post-hover:hover {
-  background-color: rgba(213, 229, 242, 0.3);
+  background-color: rgba(213, 229, 242, 0.4);
+  transition: background 0.5s ease;
   cursor: pointer;
 }
 

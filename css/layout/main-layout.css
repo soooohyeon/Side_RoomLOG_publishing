@@ -177,6 +177,7 @@ textarea::placeholder,
 
   color: #555555;
   font-size: 20px;
+  text-align: center;
 }
 
 /* -------------------------------------------------------------- */
