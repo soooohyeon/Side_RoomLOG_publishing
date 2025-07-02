@@ -8,10 +8,10 @@
   <link rel="stylesheet" href="../../css/layout/main-layout.css">
   <link rel="stylesheet" href="../../css/layout/list-layout.css">
   <link rel="stylesheet" href="../../css/message/message-layout.css">
-  <link rel="stylesheet" href="../../css/message/message-write.css">
+  <link rel="stylesheet" href="../../css/message/message-history.css">
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script defer src="../../js/basic/basic.js"></script>
-  <script defer src="../../js/message/message-write.js"></script>
+  <script defer src="../../js/message/message-history.js"></script>
 </head>
 <body>
   <!-- 상단 공통 헤더 영역 -->
@@ -45,24 +45,99 @@
             <div class="div-nickname">반쯤열린창<span>님에게 보내는 메세지</span></div>
           </div>
         </div>
-        
-        <form action="" method="">
-          <div id="DIV-MESSAGE-WRITE-WRAP">
-            <textarea name="message" id="TEXTAREA-MESSAGE" placeholder="오늘 하루 어땠나요? 소소한 이야기도 환영해요"></textarea>
-            <div id="DIV-COUNT-WRAP">
-              <span id="SPAN-COUNT">0</span>/300
+
+        <div id="DIV-MESSAGE-HISTORY-WRAP">
+          <div id="DIV-MESSAGE-LIST">
+            <!-- 상대방 -->
+            <div class="div-message-wrap div-other-message-wrap">
+              <div class="div-message">안녕하세요!!<br>인테리어가 너무 제 취향이라 연락드렸어요 ㅎㅎ<br>맞팔 부탁드려요!!</div>
+              <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
             </div>
+
+            <!-- 나 -->
+            <div class="div-message-wrap div-my-message-wrap">
+              <div class="div-message">네 안녕하세요!!!</div>
+              <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
+            </div>
+
+            <!--  -->
+            <div class="div-message-wrap div-other-message-wrap">
+              <div class="div-message">앞으로 소통하면서 지내고 싶어요~ ㅎㅎ</div>
+              <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
+            </div>
+            <div class="div-message-wrap div-other-message-wrap">
+              <div class="div-message">잘 부탁드립니다!!</div>
+              <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
+            </div>
+            <div class="div-message-wrap div-my-message-wrap">
+              <div class="div-message">넵 저도 잘 부탁드려요</div>
+              <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
+            </div>
+            <div class="div-message-wrap div-my-message-wrap">
+              <div class="div-message">소통하면서 지내요!!</div>
+              <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
+            </div>
+            <div class="div-message-wrap div-other-message-wrap">
+              <div class="div-message">앞으로 소통하면서 지내고 싶어요~ ㅎㅎ</div>
+              <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
+            </div>
+            <div class="div-message-wrap div-other-message-wrap">
+              <div class="div-message">잘 부탁드립니다!!</div>
+              <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
+            </div>
+            <div class="div-message-wrap div-my-message-wrap">
+              <div class="div-message">넵 저도 잘 부탁드려요</div>
+              <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
+            </div>
+            <div class="div-message-wrap div-my-message-wrap">
+              <div class="div-message">소통하면서 지내요!!</div>
+              <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
+            </div>
+            <div class="div-message-wrap div-other-message-wrap">
+              <div class="div-message">앞으로 소통하면서 지내고 싶어요~ ㅎㅎ</div>
+              <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
+            </div>
+            <div class="div-message-wrap div-other-message-wrap">
+              <div class="div-message">잘 부탁드립니다!!</div>
+              <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
+            </div>
+            <div class="div-message-wrap div-my-message-wrap">
+              <div class="div-message">넵 저도 잘 부탁드려요</div>
+              <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
+            </div>
+            <div class="div-message-wrap div-my-message-wrap">
+              <div class="div-message">소통하면서 지내요!!</div>
+              <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
+            </div>
+            <div class="div-message-wrap div-other-message-wrap">
+              <div class="div-message">앞으로 소통하면서 지내고 싶어요~ ㅎㅎ</div>
+              <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
+            </div>
+            <div class="div-message-wrap div-other-message-wrap">
+              <div class="div-message">잘 부탁드립니다!!</div>
+              <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
+            </div>
+            <div class="div-message-wrap div-my-message-wrap">
+              <div class="div-message">넵 저도 잘 부탁드려요</div>
+              <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
+            </div>
+            <div class="div-message-wrap div-my-message-wrap">
+              <div class="div-message">소통하면서 지내요!!</div>
+              <div class="div-time time-ago" data-timestamp="2025-06-27T15:05:00"></div>
+            </div>
+            <!--  -->
+
           </div>
-          
-          <!-- 버튼 -->
-          <div id="DIV-WRITE-WRAP">
-            <div class="button-style list-button" onclick="history.back();"><span>←</span> 이전으로</div>
-            <div class="button-style disabled" id="WRITE-BTN">메세지 보내기</div>
-          </div>
-        </form>
-        
+          <div id="DIV-SCROLL-BTN-WRAP" class="none-show"><div id="SCROLL-BTN">▼</div></div>
+        </div>
+
       </div>
     </div>
+    
+    <div id="DIV-LIST-BTN-WRAP">
+      <button class="button-style list-button" onclick="history.back()">이전 화면으로</button>
+    </div>
+
   </main>
   <!--  -->
 

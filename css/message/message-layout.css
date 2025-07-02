@@ -1,7 +1,4 @@
-#MAIN-CONTAINTER {
-  padding: 0 0 100px;
-  border-top: 1px solid #DDDDDD;
-}
+#MAIN-CONTAINTER { border-top: 1px solid #DDDDDD; }
 
 /* 메인 wrap */
 #DIV-MASSAGE-CONTAINER {
@@ -17,7 +14,7 @@
 
 #DIV-MESSAGE-WRAP {
   width: 80%;
-  margin: 50px auto;
+  margin: 35px auto;
 }
 
 /* 유저 정보 */
@@ -41,23 +38,18 @@
 }
 
 /* 버튼 */
-#DIV-WRITE-WRAP {
+#DIV-WRITE-WRAP, #DIV-LIST-BTN-WRAP {
   display: flex;
   justify-content: center;
   margin-top: 50px;
 }
 
-#DIV-WRITE-WRAP > .button-style {
+#DIV-WRITE-WRAP > .button-style, #DIV-LIST-BTN-WRAP > .button-style {
   display: inline-block;
   padding: 10px 15px;
   border-radius: 5px !important;
 }
 
-#DIV-WRITE-WRAP > .button-style {
-  display: inline-block;
-  padding: 10px 15px;
-  border-radius: 5px !important;
-}
 .disabled {
   background-color: #999999;
   color: #fff;
