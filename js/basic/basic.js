@@ -32,19 +32,22 @@ $(document).ready(function() {
   
   // 페이지네이션에서 이전, 다음 기호에 마우스 오버시
   // 이전
-  $('.previous').hover(function() {
-    $(this).text("◀");
+  $('.pagenation').hover(function() {
+    const className = $(this).attr("class");
+    if (className.includes("previous")) {
+      $(this).text("◀");
+    } else if (className.includes("next")) {
+      $(this).text("▶");
+    }
   }, function(){
-    $(this).text("◁");
+    const className = $(this).attr("class");
+    if (className.includes("previous")) {
+      $(this).text("◁");
+    } else if (className.includes("next")) {
+      $(this).text("▷");
+    }
   });
-
-  // 다음
-  $('.next').hover(function() {
-    $(this).text("▶");
-  }, function(){
-    $(this).text("▷");
-  });
-
+  
 });
 
 // ---------------------------------------------------------------

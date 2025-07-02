@@ -1,0 +1,15 @@
+/* 영역 */
+.section-container {
+  display: flex;
+  background-color: antiquewhite;
+}
+
+/* 그래프 영역 */
+.div-graph-wrap {
+  padding: 30px;
+}
+
+/* 4가지 목록 최신 5개 출력 - 유저, 커뮤니티 게시글, 건의사항, 공지사항 */
+.div-list-title-wrap {
+  display: flex;
+}
