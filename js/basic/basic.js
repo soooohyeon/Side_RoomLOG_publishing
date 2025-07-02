@@ -240,7 +240,7 @@ function setPreview(e) {
           <img src="${e.target.result}" class="img-thumbnail">
         </div>
       `);
-      $("#DIV-PREVIEW-IMAGE-WRAP").append($img);
+      $("#DIV-THUMBNAIL-IMAGE-WRAP").append($img);
       $img.fadeIn(150);
     }
     reader.readAsDataURL(file);
@@ -311,32 +311,6 @@ function updateUploadButton() {
 
 // 모달
 // 모달 열기
-// function openModal(message, temp = 1, modalId = "#MODAL-ALERT-ONE-A") {
-//   return new Promise((resolve) => {
-//     const $modal = $(modalId);
-//     $modal.find(".div-alert-content").html(message);
-//     $modal.addClass("alert-active");
-
-//     if (temp == 2) {
-//       $modal.find(".alert-no").addClass("modal-coutinue");
-//     }
-
-//     // 확인 클릭 시 → true 반환
-//     $modal.find(".alert-ok").one("click", function() {
-//       closeModal(modalId);
-//       resolve(true);
-//     });
-
-//     // 취소 클릭 시 → false 반환
-//     $modal.find(".alert-no").one("click", function() {
-//       closeModal(modalId);
-//       resolve(false);
-//     });
-
-//     // 모달 표시
-//     $modal.fadeIn(200);
-//   });
-// }
 function openModal(message, temp = 1, modalId = "#MODAL-ALERT-ONE-A") {
   return new Promise((resolve) => {
     const $modal = $(modalId);

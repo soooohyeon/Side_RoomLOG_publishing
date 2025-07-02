@@ -43,7 +43,7 @@
     <div id="DIV-HEADER-BOTTOM">
       <ul id="UL-HEDAER-MENU">
         <li id="LI-HOME-LINK"><a href="../main.html">홈</a></li>
-        <li id="LI-COMMUNITY-LINK"><a href="community.html">커뮤니티</a></li>
+        <li id="LI-COMMUNITY-LINK"><a href="../../html/community/community.html">커뮤니티</a></li>
         <li id="LI-NOTICE-LINK"><a href="">공지사항</a></li>
         <li id="LI-FEEDBACK-LINK"><a href="">건의사항</a></li>
       </ul>
@@ -67,9 +67,8 @@
         <!-- 글 작성 영역 -->
         <div id="DIV-WRITE-FORM-WRAP">
           <div class="div-one-column-wrap">
-            <div class="div-column-name">카테고리</div>
+            <div class="div-column-name"><span class="required-column">*</span>카테고리</div>
             <div class="div-column-input-wrap div-input-line">
-              <!-- <input type="text" name="title" id="title" placeholder="카테고리를 선택해 주세요."> -->
               <select name="category" id="SELECT-CATEGORY">
                 <option value="" selected disabled hidden>카테고리를 선택해 주세요.</option>
                 <option value="suggestion">건의</option>
@@ -80,13 +79,13 @@
             </div>
           </div>
           <div class="div-one-column-wrap">
-            <div class="div-column-name">제목</div>
+            <div class="div-column-name"><span class="required-column">*</span>제목</div>
             <div class="div-column-input-wrap div-input-line">
               <input type="text" name="title" id="title" placeholder="불편 사항이나 제안 내용을 요약해 주세요.">
             </div>
           </div>
           <div class="div-one-column-wrap">
-            <div class="div-column-name div-text-name">내용</div>
+            <div class="div-column-name div-text-name"><span class="required-column">*</span>내용</div>
             <div class="div-column-content-wrap">
               <textarea name="content" id="TEXTAREA-CONTENT" placeholder="건의, 오류 신고, 유저 신고 등&#10;어떤 내용이든 정확히 전달될 수 있도록&#10;카테고리를 먼저 선택하고 의견을 작성해 주세요."></textarea>
               <div class="div-text-count-wrap"><span id="SPAN-COUNT">0</span>/500</div>
@@ -101,9 +100,7 @@
                   <input type="file" name="images" id="input-image" class="input-image-btn" multiple accept="image/*"/>
                 </label>
                 <!-- 등록한 이미지 미리보기 -->
-                <div id="DIV-THUMBNAIL-MSG-WRAP">
-                  <div id="DIV-PREVIEW-IMAGE-WRAP"></div>
-                </div>
+                <div id="DIV-THUMBNAIL-IMAGE-WRAP"></div>
               </div>
             </div>
           </div>

@@ -56,6 +56,14 @@ input[type="text"] {
   text-align: right;
 }
 
+/* 필수 입력 영역 */
+.required-column {
+  margin-right: 5px;
+  color: #ff0000;
+  font-size: 20px;
+}
+
+/* 이미지 첨부 영역 */
 .image-column {
   height: 60px;
   display: flex;
@@ -83,7 +91,7 @@ input[type="text"] {
   text-align: right;
 }
 
-/* 이미지 첨부 */
+/* 이미지 첨부 버튼 */
 #DIV-BTN-IMAGE-WRAP { border: none; }
 
 #input-image { display: none; }
@@ -94,7 +102,7 @@ input[type="text"] {
 }
 
 /* 등록한 이미지 미리보기 */
-#DIV-PREVIEW-IMAGE-WRAP {
+#DIV-THUMBNAIL-IMAGE-WRAP {
   display: flex;
   flex-wrap: wrap;
 }

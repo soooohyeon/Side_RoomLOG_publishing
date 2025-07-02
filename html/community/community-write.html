@@ -43,9 +43,9 @@
     <div id="DIV-HEADER-BOTTOM">
       <ul id="UL-HEDAER-MENU">
         <li id="LI-HOME-LINK"><a href="../main.html">홈</a></li>
-        <li id="LI-COMMUNITY-LINK"><a href="community.html">커뮤니티</a></li>
-        <li id="LI-NOTICE-LINK"><a href="">공지사항</a></li>
-        <li id="LI-FEEDBACK-LINK"><a href="">건의사항</a></li>
+        <li id="LI-COMMUNITY-LINK"><a href="../../html/community/community.html">커뮤니티</a></li>
+        <li id="LI-NOTICE-LINK"><a href="../../html/">공지사항</a></li>
+        <li id="LI-FEEDBACK-LINK"><a href="../../html/feedback/feedback.html">건의사항</a></li>
       </ul>
     </div>
     <!--  -->
@@ -67,13 +67,13 @@
         <!-- 글 작성 영역 -->
         <div id="DIV-WRITE-FORM-WRAP">
           <div class="div-one-column-wrap">
-            <div class="div-column-name">제목</div>
+            <div class="div-column-name"><span class="required-column">*</span>제목</div>
             <div class="div-column-input-wrap div-input-line">
               <input type="text" name="title" id="title" placeholder="나만의 공간에 어울리는 한 줄 작성해보세요.">
             </div>
           </div>
           <div class="div-one-column-wrap">
-            <div class="div-column-name">내용</div>
+            <div class="div-column-name"><span class="required-column">*</span>내용</div>
             <div class="div-column-content-wrap">
               <textarea name="content" id="TEXTAREA-CONTENT" placeholder="인테리어 이야기, 공간 팁, 소소한 일상도 좋아요."></textarea>
               <div class="div-text-count-wrap"><span id="SPAN-COUNT">0</span>/300</div>
@@ -96,9 +96,7 @@
                   <input type="file" name="images" id="input-image" class="input-image-btn" multiple accept="image/*"/>
                 </label>
                 <!-- 등록한 이미지 미리보기 -->
-                <div id="DIV-THUMBNAIL-MSG-WRAP">
-                  <div id="DIV-PREVIEW-IMAGE-WRAP"></div>
-                </div>
+                <div id="DIV-THUMBNAIL-IMAGE-WRAP"></div>
               </div>
             </div>
           </div>

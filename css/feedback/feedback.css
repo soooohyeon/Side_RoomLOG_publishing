@@ -1,6 +1,7 @@
 /* 페이지 소개 - 주제목 */
 #P-TITLE > img {
-    height: 40px;
+    height: 22px;
+    margin-right: 5px;
 }
 
 
