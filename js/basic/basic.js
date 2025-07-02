@@ -242,7 +242,6 @@ function setPreview(e) {
       `);
       $("#DIV-PREVIEW-IMAGE-WRAP").append($img);
       $img.fadeIn(150);
-      $(".image-column").css("margin-bottom", "122px")
     }
     reader.readAsDataURL(file);
     currentCount++;
@@ -277,9 +276,6 @@ function deletePreview() {
     $previewWrap.remove();
     currentCount--;
 
-    if (currentCount == 0) {
-      $(".image-column").removeAttr("style");
-    }
     updateUploadButton();
     updateInputFiles();
     updateBackBlock();
@@ -303,8 +299,10 @@ function updateInputFiles() {
 // 이미지 업로드 버튼 숨김, 표시
 function updateUploadButton() {
   if (currentCount >= 5) {
+    $(".image-column").css("height", "auto")
     $('#LABEL-IMAGE-BTN').hide();
   } else {
+    $(".image-column").removeAttr("style");
     $('#LABEL-IMAGE-BTN').show();
   }
 }

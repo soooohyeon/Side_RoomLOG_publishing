@@ -32,9 +32,17 @@ input[type="text"] {
   margin-bottom: 35px;
 }
 
+.div-image-wrap {
+  margin-bottom: 0;
+}
+
 .div-flex-none { display: block; }
 
-#DIV-COLUMN-FLEX-WRAP {
+.div-column-flex-wrap {
+  display: flex;
+}
+
+.div-hashtag-input-wrap {
   display: flex;
   align-items: center;
 }
@@ -47,7 +55,12 @@ input[type="text"] {
   font-size: 20px;
   text-align: right;
 }
-.image-column { margin-bottom: 30px; } 
+
+.image-column {
+  height: 60px;
+  display: flex;
+  align-items: center;
+} 
 
 .div-column-input-wrap {
   width: 100%;
@@ -71,10 +84,7 @@ input[type="text"] {
 }
 
 /* 이미지 첨부 */
-#DIV-BTN-IMAGE-WRAP {
-  padding: 15px 0 0;
-  border: none;
-}
+#DIV-BTN-IMAGE-WRAP { border: none; }
 
 #input-image { display: none; }
 
@@ -120,7 +130,10 @@ input[type="text"] {
   cursor: pointer;
 }
 
-.div-check-msg { margin-top: 10px; }
+.div-check-msg {
+  margin-top: 10px;
+  margin-left: 135px;
+}
 
 .span-thumbnail-close-btn > img {
   width: 70%;

@@ -12,10 +12,10 @@
   <link rel="shortcut icon" href="../../image/layout/favicon.png">
   <link rel="stylesheet" href="../../css/layout/main-layout.css">
   <link rel="stylesheet" href="../../css/layout/write-layout.css">
-  <link rel="stylesheet" href="../../css/community/community-write.css">
+  <link rel="stylesheet" href="../../css/feedback/feedback.css">
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script defer src="../../js/basic/basic.js"></script>
-  <script defer src="../../js/community/community-write.js"></script>
+  <script defer src="../../js/feedback/feedback.js"></script>
   <!-- TinyMCE Editor -->
   <script src="https://cdn.tiny.cloud/1/zofwqu4mz4a8fi7sczm8ax1dhgbenvoz1xob3thhkvgz4uiw/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
@@ -58,8 +58,8 @@
     <section class="section-line">
       <!-- 페이지 설명 영역 -->
       <div id="DIV-PAGE-TITLE-WRAP">
-        <p id="P-TITLE">오늘의 공간, 오늘의 이야기</p>
-        <p id="P-SUB-TITLE">인테리어, 생활 팁, 소소한 하루까지<br>지금 당신의 공간 이야기를 남겨보세요.</p>
+        <p id="P-TITLE"><img src="../../image/layout/logo.png" alt="LOGO">에 전하고 싶은 말씀이 있으신가요?</p>
+        <p id="P-SUB-TITLE">사이트 이용 중 불편한 점이나 개선 의견이 있다면<br>언제든 자유롭게 남겨주세요.</p>
       </div>
       <!--  -->
 
@@ -67,24 +67,29 @@
         <!-- 글 작성 영역 -->
         <div id="DIV-WRITE-FORM-WRAP">
           <div class="div-one-column-wrap">
-            <div class="div-column-name">제목</div>
+            <div class="div-column-name">카테고리</div>
             <div class="div-column-input-wrap div-input-line">
-              <input type="text" name="title" id="title" placeholder="나만의 공간에 어울리는 한 줄 작성해보세요.">
+              <!-- <input type="text" name="title" id="title" placeholder="카테고리를 선택해 주세요."> -->
+              <select name="category" id="SELECT-CATEGORY">
+                <option value="" selected disabled hidden>카테고리를 선택해 주세요.</option>
+                <option value="suggestion">건의</option>
+                <option value="bug">오류 신고</option>
+                <option value="report">유저 신고</option>
+                <option value="etc">기타</option>
+              </select>
             </div>
           </div>
           <div class="div-one-column-wrap">
-            <div class="div-column-name">내용</div>
-            <div class="div-column-content-wrap">
-              <textarea name="content" id="TEXTAREA-CONTENT" placeholder="인테리어 이야기, 공간 팁, 소소한 일상도 좋아요."></textarea>
-              <div class="div-text-count-wrap"><span id="SPAN-COUNT">0</span>/300</div>
+            <div class="div-column-name">제목</div>
+            <div class="div-column-input-wrap div-input-line">
+              <input type="text" name="title" id="title" placeholder="불편 사항이나 제안 내용을 요약해 주세요.">
             </div>
           </div>
-          <div class="div-one-column-wrap div-flex-none">
-            <div class="div-column-flex-wrap div-hashtag-input-wrap">
-              <div class="div-column-name">해시태그</div>
-              <div class="div-column-input-wrap">
-                <input type="text" name="hashtag" id="hashtag" class="input-hashtag">
-              </div>
+          <div class="div-one-column-wrap">
+            <div class="div-column-name div-text-name">내용</div>
+            <div class="div-column-content-wrap">
+              <textarea name="content" id="TEXTAREA-CONTENT" placeholder="건의, 오류 신고, 유저 신고 등&#10;어떤 내용이든 정확히 전달될 수 있도록&#10;카테고리를 먼저 선택하고 의견을 작성해 주세요."></textarea>
+              <div class="div-text-count-wrap"><span id="SPAN-COUNT">0</span>/500</div>
             </div>
           </div>
           <div class="div-one-column-wrap div-flex-none div-image-wrap">
@@ -102,14 +107,13 @@
               </div>
             </div>
           </div>
-          <div class="div-check-msg">최대 5장까지 첨부 가능합니다.</div>
+          <div class="div-check-msg">확인을 위한 이미지 5장까지 첨부 가능합니다.<br>오류 화면, 신고 사유 등 증빙이 필요한 경우에만 첨부해 주세요.</div>
         </div>
         <!--  -->
 
         <!-- 목록 / 등록 버튼 영역 -->
         <div id="DIV-WRITE-WRAP">
-          <div class="button-style list-button" onclick="history.back();"><span>←</span> 목록으로</div>
-          <div class="button-style disabled" id="WRITE-BTN">글 등록하기</div>
+          <div class="button-style disabled" id="WRITE-BTN">건의하기</div>
         </div>
         <!--  -->
       </form>
