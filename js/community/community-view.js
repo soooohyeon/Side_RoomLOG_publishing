@@ -29,6 +29,12 @@ function setMiniBoxHeight() {
 // 이미지 리스트 - 로딩 + 리사이즈 이벤트에 적용
 $(window).on("load resize", setMiniBoxHeight);
 
+$(document).ready(function() {
+  const $mainImg = $(".div-sub-image > img").attr("src");
+  console.log($mainImg);
+  $("#DIV-MAIN-IMAGE > img").attr("src", $mainImg);
+});
+
 // 메인 이미지 띄우기
 function changeImage(element) {
   const newSrc = $(element).attr("src");

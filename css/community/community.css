@@ -70,7 +70,6 @@ select::-ms-expand{ display: none;/*for IE10,11*/ }
   color: #555555;
 }
 
-
 /* 게시글 1개 */
 /* 유저 프로필 사진 호버시 */
 .div-go-user-page > img:hover { border: 1px, solid #006497; }

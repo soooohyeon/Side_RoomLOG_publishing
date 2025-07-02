@@ -133,6 +133,12 @@ textarea::placeholder,
   font-weight: 800;
 }
 
+/* 페이지 소개 - 주제목에 LOGO 삽입 시 */
+#P-TITLE > img {
+    height: 23px;
+    margin-right: 4px;
+}
+
 #P-SUB-TITLE {
   margin-top: 15px;
 

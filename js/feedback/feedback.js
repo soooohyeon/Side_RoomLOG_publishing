@@ -70,12 +70,16 @@ function writeButton() {
 // --------------------------------------------------------------- 
 
 const writeMsg = "소중한 의견을 전달하시겠어요?<br>여러분의 건의는 더 나은 서비스를 만드는 데 큰 도움이 됩니다.";
+const writeOkMsg = "건의사항이 정상적으로 제출되었습니다.<br>처리 결과는 별도로 안내되지 않으니 참고해 주세요.";
 
 // 글 등록 버튼 클릭 시
 $(document).on("click", ".basic-button", function() {
   openModal(writeMsg, 2).then((result) => {
     if (result) {
-      location.href="";
+      setTimeout(() => {
+        openModal(writeOkMsg);
+        // location.href="";
+      }, 50);
     }
   });
 });

@@ -173,14 +173,18 @@ function writeButton() {
 
 // --------------------------------------------------------------- 
 
-const writePostMsg = "이대로 글을 작성할까요?";
+const writePostMsg = "게시글을 업로드하시겠습니까?<br>다른 사용자들에게 곧바로 보여집니다.";
+const writeOkMsg = "글이 정상적으로 업로드되었습니다.<br>많은 사람들이 보게 될 거예요!";
 
 // 글 등록 버튼 클릭 시
 $(document).on("click", ".basic-button", function() {
   openModal(writePostMsg, 2).then((result) => {
     if (result) {
-      tinymce.triggerSave();
-      location.href="";
+      setTimeout(() => {
+        openModal(writeOkMsg);
+        tinymce.triggerSave();
+        // location.href="";
+      }, 50);
     }
   });
 });
