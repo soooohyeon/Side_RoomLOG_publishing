@@ -7,7 +7,7 @@
   margin: 0;
   padding: 0;
   font-family: 'NanumSquare', 'Noto Sans', sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 1px;
 }
@@ -132,6 +132,213 @@ textarea::placeholder,
 /* -------------------------------------------------------------- */
 
 /* 메인 컨텐츠 영역 */
-#MAIN-CONTAINTER {
-  margin: 40px auto;
+#MAIN-CONTAINTER { margin: 70px auto; }
+
+/* -------------------------------------------------------------- */
+
+/* 검색창 영역 */
+#SECTION-SEARCH-CONTAINER { margin-top: 40px; }
+
+#DIV-SEARCH-WRAP {
+  display: flex;
+  width: 90%;
+  height: 60px;
+  margin: auto;
+}
+
+/* 셀렉트 기본 화살표 없애고 화살표 직접 지정 */
+select {
+  -webkit-appearance: none; /* for chrome */
+  -moz-appearance: none; /*for firefox*/
+  appearance: none;
+  background: #fff url('../../image/layout/search_arrow.png') no-repeat 97% 50%/15px auto;
+  background-position:  right 10px center;
+}
+select:focus { outline: none; }
+/* 셀렉트 기본 화살표 없애기 */
+select::-ms-expand{ display: none;/*for IE10,11*/ }
+
+/* 검색 카테고리 */
+#SELECT-SEARCH-CATEGORY {
+  width: 250px;
+  height: 100%;
+  margin-right: 20px;
+  padding: 0 30px;
+
+  border: 1px solid #999999;
+  border-radius: 50px;
+  font-size: 21px;
+}
+
+/* 검색창 */
+#DIV-SEARCH-TEXT-WRAP {
+  width: 100%;
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+
+  border: 1px solid #999999;
+  border-radius: 50px;
+}
+
+#DIV-SEARCH-TEXT-WRAP > img {
+  height: 32px;
+  margin-right: 15px;
+}
+
+#INPUT-SEARCH-TEXT {
+  width: 100%;
+  height: 100%;
+
+  border: none;
+  font-size: 21px;
+}
+#INPUT-SEARCH-TEXT:focus { outline: none; }
+
+/* -------------------------------------------------------------- */
+
+/* 글 개수 + 정렬 카테고리 */
+#SECTION-COUNT-FILTER-CONTAINER { margin-top: 40px; }
+
+#DIV-INFO-WRAP {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 정렬 카테고리 */
+#DIV-SORT-WRAP > select { background-size: 13px auto; }
+#SELECT-SORT {
+  padding: 0 10px;
+
+  border: none;
+  font-size: 18px;
+  color: #555555;
+}
+
+/* -------------------------------------------------------------- */
+
+#SECTION-LIST-CONTAINER { margin-top: 15px; }
+
+/* 테이블 또는 페이지 제목 */
+.div-title {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+/* 테이블 기본 레이아웃 */
+table {
+  width: 100%;
+  padding: 0px;
+  border-spacing: 0px;
+  border: 1px solid #cccccc;
+
+  table-layout: fixed;
+}
+
+table > thead { background-color: #eeeeee; }
+thead > tr > th { font-size: 19px; }
+
+thead > tr > th {
+  background-color: #eeeeee;
+  padding: 12px;
+  font-weight: 800;
+}
+
+td {
+  padding: 16px 14px;
+  border-top: 1px solid #cccccc;
+  border-spacing: 0px;
+  color: #555555;
+  text-align: center;
+
+  line-height: 1.2;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+
+.go-page {
+  background-color: #fff;
+  cursor: pointer;
+}
+.go-page:hover {
+  background-color: rgba(213, 229, 242, 0.5);
+  transition: background 0.3s ease;
+}
+
+.t-btn { width: 60px; }
+
+/* 탈퇴, 삭제 버튼 */
+.div-delete-btn {
+  display: inline-block;
+  padding: 6px 15px;
+  border: 1px solid #999999;
+  border-radius: 30px;
+  color: #999999;
+}
+
+/* -------------------------------------------------------------- */
+
+/* 페이지네이션 */
+#DIV-PAGENATION-WRAP {
+  margin-top: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #cccccc;
+}
+
+.div-page-btn-wrap {
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#DIV-PAGENATION-WRAP > ul {
+  display: flex;
+}
+
+.pagenation {
+  margin: 0 10px;
+
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.page {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #cccccc;
+}
+
+.page:hover {
+  border: 1px solid #064973;
+  color: #064973;
+}
+
+.previous, .next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  font-size: 21px;
+}
+.previous:hover, .next:hover { color: #064973; }
+
+/* 현재 페이지 */
+.selected {
+  background-color: #064973;
+  color: #fff;
+}
+.selected:hover {
+  background-color: #064973;
+  color: #fff;
 }

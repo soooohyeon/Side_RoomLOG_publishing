@@ -1,8 +1,6 @@
 textarea, input {
   width: 100%;
-
   border: none;
-  color: #999999;
 }
 input[type="text"] {
   padding: 15px;

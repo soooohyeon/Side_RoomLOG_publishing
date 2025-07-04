@@ -2,8 +2,8 @@
 
 /* 게시물 호버시 효과 */
 .post-hover:hover {
-  background-color: rgba(213, 229, 242, 0.4);
-  transition: background 0.5s ease;
+  background-color: rgba(213, 229, 242, 0.5);
+  transition: background 0.3s ease;
   cursor: pointer;
 }
 

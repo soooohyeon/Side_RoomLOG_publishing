@@ -1,0 +1,14 @@
+td {
+  padding: 10px 14px;
+}
+
+.td-social > img {
+  height: 25px;
+  margin-top: 5px;
+}
+
+.t-email { width: calc(40% - 60px); }
+.t-nickname { width: 20%; }
+.t-birth { width: 15%; }
+.t-social-type { width: 10%; }
+.t-regist-date { width: 15%; }

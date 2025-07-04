@@ -9,7 +9,7 @@ select {
   -webkit-appearance: none; /* for chrome */
   -moz-appearance: none; /*for firefox*/
   appearance: none;
-  background: #fff url('../../image/community/search_arrow.png') no-repeat 97% 50%/15px auto;
+  background: #fff url('../../image/layout/search_arrow.png') no-repeat 97% 50%/15px auto;
   background-position:  right 10px center;
 }
 select:focus { outline: none; }
