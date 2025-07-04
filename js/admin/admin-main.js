@@ -109,3 +109,32 @@ var myPieChart = new Chart($pieChartElement, {
     }
   }
 });
+  
+// --------------------------------------------------------------- 
+
+// 링크 연결 - 사용자 관리 상세, 게시글 상세, 건의사항 관리 상세, 공지 관리 상세
+$(document).on("click", ".go-page", function() {
+  const type = $(this).data("type");
+  const typeId= $(this).data("id");
+  let url = "";
+
+  switch(type) {
+    case "user" :
+      url = "admin-user-view.html";
+      break;
+    case "board" :
+      url = "../community/community-view.html";
+      break;
+    case "feedback" :
+      url = "admin-feedback-view.html";
+      break;
+    case "notice" :
+      url = "admin-notice-view.html";
+      break;
+    default :
+      openModal("지원하지 않는 유형입니다.");
+      return;
+  }
+
+  location.href=url;
+});

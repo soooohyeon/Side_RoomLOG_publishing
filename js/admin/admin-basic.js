@@ -15,35 +15,6 @@ $('.pagenation').hover(function() {
     $(this).text("▷");
   }
 });
-  
-// --------------------------------------------------------------- 
-
-// 링크 연결 - 사용자 관리 상세, 게시글 상세, 건의사항 관리 상세, 공지 관리 상세
-$(document).on("click", ".go-page", function() {
-  const type = $(this).data("type");
-  const typeId= $(this).data("id");
-  let url = "";
-
-  switch(type) {
-    case "user" :
-      url = "admin_user_view.html";
-      break;
-    case "board" :
-      url = "../community/community_view.html";
-      break;
-    case "feedback" :
-      url = "admin_feedback_view.html";
-      break;
-    case "notice" :
-      url = "admin_notice_view.html";
-      break;
-    default :
-      openModal("지원하지 않는 유형입니다.");
-      return;
-  }
-
-  location.href=url;
-});
 
 // --------------------------------------------------------------- 
 

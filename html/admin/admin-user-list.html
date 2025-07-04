@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../../css/admin/main-layout.css">
   <link rel="stylesheet" href="../../css/admin/admin-user.css">
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script defer src="../../js/admin/basic.js"></script>
+  <script defer src="../../js/admin/admin-basic.js"></script>
   <script defer src="../../js/admin/admin-user.js"></script>
 </head>
 <body>
@@ -17,7 +17,7 @@
   <header id="HEADER-CONTAINER">
     <!-- 로고 및 로그인 링크 -->
     <div id="DIV-HEADER-TOP">
-      <div id="DIV-LEFT-LOGO" onclick="location.href='admin_main.html';">
+      <div id="DIV-LEFT-LOGO" onclick="location.href='admin-main.html'">
         <img src="../../image/layout/logo.png" id="IMG-LOGO" alt="LOGO">
       </div>
       <div id="DIV-RIGHT-LOGIN">
@@ -34,20 +34,20 @@
     <!-- 메뉴바 -->
     <div id="DIV-HEADER-BOTTOM">
       <ul id="UL-HEDAER-MENU">
-        <li id="LI-HOME-LINK"><a href="admin_user_list.html">사용자 관리</a></li>
-        <li id="LI-COMMUNITY-LINK" class="li-main-menu"><a href="admin_board_list.html">콘텐츠 관리</a>
+        <li id="LI-HOME-LINK"><a href="admin-user-list.html">사용자 관리</a></li>
+        <li id="LI-COMMUNITY-LINK" class="li-main-menu"><a href="admin-board-list.html">콘텐츠 관리</a>
           <ul class="ul-sub-menu">
-            <li><a href="admin_board_list.html">게시글 관리</a></li>
-            <li><a href="admin_board_comment.html">댓글 관리</a></li>
+            <li><a href="admin-board-list.html">게시글 관리</a></li>
+            <li><a href="admin-comment-list.html">댓글 관리</a></li>
           </ul>
         </li>
-        <li id="LI-NOTICE-LINK" class="li-main-menu"><a href="admin_notice_list.html">운영 콘텐츠 관리</a>
+        <li id="LI-NOTICE-LINK" class="li-main-menu"><a href="admin-notice-list.html">운영 콘텐츠 관리</a>
           <ul class="ul-sub-menu">
-            <li><a href="admin_notice_list.html">공지 사항 관리</a></li>
-            <li><a href="admin_banner_list.html">배너 관리</a></li>
+            <li><a href="admin-notice-list.html">공지 사항 관리</a></li>
+            <li><a href="admin-banner-list.html">배너 관리</a></li>
           </ul>
         </li>
-        <li id="LI-FEEDBACK-LINK"><a href="admin_feedback_list.html">건의사항 관리</a></li>
+        <li id="LI-FEEDBACK-LINK"><a href="admin-feedback-list.html">건의사항 관리</a></li>
       </ul>
     </div>
     <!--  -->
@@ -65,7 +65,7 @@
           <div id="DIV-SEARCH-CATEGORY-WRAP">
             <select name="search-category" id="SELECT-SEARCH-CATEGORY">
               <option value="all" selected>전체</option>
-              <option value="email">이메일</option>
+              <option value="email">E-Mail</option>
               <option value="nickname">닉네임</option>
             </select>
           </div>
@@ -97,7 +97,7 @@
       <table>
         <thead>
           <tr>
-            <th class="t-email">이메일</th>
+            <th class="t-email">E-Mail</th>
             <th class="t-nickname">닉네임</th>
             <th class="t-birth">생년월일</th>
             <th class="t-social-type">소셜 로그인</th>
@@ -106,41 +106,41 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="go-page" data-id="2" data-type="user">
+          <tr class="go-page go-detail userNumber" data-user="2">
             <td>choco.latte@gmail.com</td>
             <td>방꾸밀래</td>
             <td>2025.06.19</td>
             <td class="td-social"><img src="../../image/layout/login_google.png" alt="google"></td>
             <!-- <td class="td-social"><img src="../../image/layout/login_kakao.png" alt="kakao"></td> -->
             <td>2025.06.19</td>
-            <td><div class="div-delete-btn">탈퇴</div></td>
+            <td><div class="div-delete-btn delete-btn">탈퇴</div></td>
           </tr>
-          <tr class="go-page" data-id="2" data-type="user">
+          <tr class="go-page go-detail userNumber" data-user="2">
             <td>moodlight@gmail.com</td>
             <td>무드등켜고</td>
             <td>2025.06.19</td>
             <td class="td-social"><img src="../../image/layout/login_google.png" alt="google"></td>
             <!-- <td class="td-social"><img src="../../image/layout/login_kakao.png" alt="kakao"></td> -->
             <td>2025.06.19</td>
-            <td><div class="div-delete-btn">탈퇴</div></td>
+            <td><div class="div-delete-btn delete-btn">탈퇴</div></td>
           </tr>
-          <tr class="go-page" data-id="2" data-type="user">
+          <tr class="go-page go-detail userNumber" data-user="2">
             <td>catmate@gmail.com</td>
             <td>룸메는고양이</td>
             <td>2025.06.19</td>
             <td class="td-social"><img src="../../image/layout/login_google.png" alt="google"></td>
             <!-- <td class="td-social"><img src="../../image/layout/login_kakao.png" alt="kakao"></td> -->
             <td>2025.06.19</td>
-            <td><div class="div-delete-btn">탈퇴</div></td>
+            <td><div class="div-delete-btn delete-btn">탈퇴</div></td>
           </tr>
-          <tr class="go-page" data-id="2" data-type="user">
+          <tr class="go-page go-detail userNumber" data-user="2">
             <td>todays.holiday@kakao.com</td>
             <td>오늘은휴일</td>
             <td>2025.06.19</td>
             <!-- <td class="td-social"><img src="../../image/layout/login_google.png" alt="google"></td> -->
             <td class="td-social"><img src="../../image/layout/login_kakao.png" alt="kakao"></td>
             <td>2025.06.19</td>
-            <td><div class="div-delete-btn">탈퇴</div></td>
+            <td><div class="div-delete-btn delete-btn">탈퇴</div></td>
           </tr>
         </tbody>
       </table>

@@ -7,7 +7,7 @@
   margin: 0;
   padding: 0;
   font-family: 'NanumSquare', 'Noto Sans', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: 1px;
 }
@@ -38,6 +38,12 @@ textarea::placeholder,
   color: #999;
   opacity: 1;
   font-weight: 600;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* -------------------------------------------------------------- */
@@ -183,6 +189,7 @@ select::-ms-expand{ display: none;/*for IE10,11*/ }
 }
 
 #DIV-SEARCH-TEXT-WRAP > img {
+  width: 32px;
   height: 32px;
   margin-right: 15px;
 }
@@ -252,11 +259,11 @@ td {
   color: #555555;
   text-align: center;
 
-  line-height: 1.2;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   word-break: break-all;
+  line-height: 1.2;
 }
 
 .go-page {
@@ -270,6 +277,9 @@ td {
 
 .t-btn { width: 60px; }
 
+/* ------------------------------- */
+/* 버튼 */
+
 /* 탈퇴, 삭제 버튼 */
 .div-delete-btn {
   display: inline-block;
@@ -278,6 +288,32 @@ td {
   border-radius: 30px;
   color: #999999;
 }
+.div-delete-btn:hover {
+  border: 1px solid #555555;
+  color: #555555;
+}
+
+.button-style {
+  border-radius: 5px;
+  padding: 10px 12px;
+
+  cursor: pointer;
+}
+
+.btn-grey-line {
+  border: 1px solid #999999;
+  color: #999999;
+}
+.btn-grey-line:hover {
+  border: 1px solid #666666;
+  color: #666666;
+}
+
+.btn-full-blue {
+  background-color: #064973;
+  color: #fff;
+}
+.btn-full-blue:hover { background-color: #00263A; }
 
 /* -------------------------------------------------------------- */
 
@@ -315,8 +351,6 @@ td {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  border: 1px solid #cccccc;
 }
 
 .page:hover {

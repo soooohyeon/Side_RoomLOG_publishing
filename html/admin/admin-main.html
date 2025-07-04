@@ -8,10 +8,10 @@
   <link rel="stylesheet" href="../../css/admin/main-layout.css">
   <link rel="stylesheet" href="../../css/admin/admin-main.css">
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script defer src="../../js/admin/basic.js"></script>
+  <script defer src="../../js/admin/admin-basic.js"></script>
+  <script defer src="../../js/admin/admin-main.js"></script>
   <!-- 차트 -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script defer src="../../js/admin/chart.js"></script>
 </head>
 <body>
   
@@ -19,7 +19,7 @@
   <header id="HEADER-CONTAINER">
     <!-- 로고 및 로그인 링크 -->
     <div id="DIV-HEADER-TOP">
-      <div id="DIV-LEFT-LOGO" onclick="location.href='admin_main.html';">
+      <div id="DIV-LEFT-LOGO" onclick="location.href='admin-main.html';">
         <img src="../../image/layout/logo.png" id="IMG-LOGO" alt="LOGO">
       </div>
       <div id="DIV-RIGHT-LOGIN">
@@ -36,20 +36,20 @@
     <!-- 메뉴바 -->
     <div id="DIV-HEADER-BOTTOM">
       <ul id="UL-HEDAER-MENU">
-        <li id="LI-HOME-LINK"><a href="admin_user_list.html">사용자 관리</a></li>
-        <li id="LI-COMMUNITY-LINK" class="li-main-menu"><a href="admin_board_list.html">콘텐츠 관리</a>
+        <li id="LI-HOME-LINK"><a href="admin-user-list.html">사용자 관리</a></li>
+        <li id="LI-COMMUNITY-LINK" class="li-main-menu"><a href="admin-board-list.html">콘텐츠 관리</a>
           <ul class="ul-sub-menu">
-            <li><a href="admin_board_list.html">게시글 관리</a></li>
-            <li><a href="admin_board_comment.html">댓글 관리</a></li>
+            <li><a href="admin-board-list.html">게시글 관리</a></li>
+            <li><a href="admin-comment-list.html">댓글 관리</a></li>
           </ul>
         </li>
-        <li id="LI-NOTICE-LINK" class="li-main-menu"><a href="admin_notice_list.html">운영 콘텐츠 관리</a>
+        <li id="LI-NOTICE-LINK" class="li-main-menu"><a href="admin-notice-list.html">운영 콘텐츠 관리</a>
           <ul class="ul-sub-menu">
-            <li><a href="admin_notice_list.html">공지 사항 관리</a></li>
-            <li><a href="admin_banner_list.html">배너 관리</a></li>
+            <li><a href="admin-notice-list.html">공지 사항 관리</a></li>
+            <li><a href="admin-banner-list.html">배너 관리</a></li>
           </ul>
         </li>
-        <li id="LI-FEEDBACK-LINK"><a href="admin_feedback_list.html">건의사항 관리</a></li>
+        <li id="LI-FEEDBACK-LINK"><a href="admin-feedback-list.html">건의사항 관리</a></li>
       </ul>
     </div>
     <!--  -->
@@ -90,13 +90,13 @@
         <div class="div-one-list-wrap">
           <div class="div-list-title-wrap">
             <div class="div-title">최근 등록 유저</div>
-            <div class="div-list-all" onclick="location.href='admin_user_list.html'">전체보기 &gt;</div>
+            <div class="div-list-all" onclick="location.href='admin-user-list.html'">전체보기 &gt;</div>
           </div>
           <div class="div-list-wrap">
             <table>
               <thead>
                 <tr>
-                  <th class="t-email">E-mail</th>
+                  <th class="t-email">E-Mail</th>
                   <th class="t-nick">닉네임</th>
                   <th class="t-date">가입일</th>
                 </tr>
@@ -137,7 +137,7 @@
         <div class="div-one-list-wrap">
           <div class="div-list-title-wrap">
             <div class="div-title">최근 커뮤니티 게시글</div>
-            <div class="div-list-all" onclick="location.href='admin_board_list.html'">전체보기 &gt;</div>
+            <div class="div-list-all" onclick="location.href='admin-board-list.html'">전체보기 &gt;</div>
           </div>
           <div class="div-list-wrap">
             <table>
@@ -189,13 +189,13 @@
         <div class="div-one-list-wrap">
           <div class="div-list-title-wrap">
             <div class="div-title">최근 등록된 건의사항</div>
-            <div class="div-list-all" onclick="location.href='admin_feedback_list.html'">전체보기 &gt;</div>
+            <div class="div-list-all" onclick="location.href='admin-feedback-list.html'">전체보기 &gt;</div>
           </div>
           <div class="div-list-wrap">
             <table>
               <thead>
                 <tr>
-                  <th class="t-email">E-mail</th>
+                  <th class="t-email">제목</th>
                   <th class="t-nick">닉네임</th>
                   <th class="t-date">등록일</th>
                 </tr>
@@ -236,7 +236,7 @@
         <div class="div-one-list-wrap">
           <div class="div-list-title-wrap">
             <div class="div-title">최근 공지사항 게시글</div>
-            <div class="div-list-all" onclick="location.href='admin_notice_list.html'">전체보기 &gt;</div>
+            <div class="div-list-all" onclick="location.href='admin-notice-list.html'">전체보기 &gt;</div>
           </div>
           <div class="div-list-wrap">
             <table>
