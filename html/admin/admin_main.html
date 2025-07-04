@@ -8,9 +8,10 @@
   <link rel="stylesheet" href="../../css/admin/main-layout.css">
   <link rel="stylesheet" href="../../css/admin/admin-main.css">
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script defer src="../../js/admin/admin-main.js"></script>
+  <script defer src="../../js/admin/basic.js"></script>
   <!-- 차트 -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="../../js/admin/chart.js"></script>
 </head>
 <body>
   
@@ -101,27 +102,27 @@
                 </tr>
               </thead>
               <tbody>
-                <tr onclick="location.href='admin_user_view.html'">
+                <tr class="go-page" data-id="2" data-type="user">
                   <td>choco.latte@gmail.com</td>
                   <td>방꾸밀래</td>
                   <td>2025.06.19</td>
                 </tr>
-                <tr onclick="location.href='admin_user_view.html'">
+                <tr class="go-page" data-id="2" data-type="user">
                   <td>moodlight@gmail.com</td>
                   <td>무드등켜고</td>
                   <td>2025.06.19</td>
                 </tr>
-                <tr onclick="location.href='admin_user_view.html'">
+                <tr class="go-page" data-id="2" data-type="user">
                   <td>catmate@gmail.com</td>
                   <td>룸메는고양이</td>
                   <td>2025.06.19</td>
                 </tr>
-                <tr onclick="location.href='admin_user_view.html'">
+                <tr class="go-page" data-id="2" data-type="user">
                   <td>todays.holiday@kakao.com</td>
                   <td>오늘은휴일</td>
                   <td>2025.06.19</td>
                 </tr>
-                <tr onclick="location.href='admin_user_view.html'">
+                <tr class="go-page" data-id="2" data-type="user">
                   <td>dreamcatcher@kakao.com</td>
                   <td>드림캐쳐</td>
                   <td>2025.06.19</td>
@@ -148,27 +149,27 @@
                 </tr>
               </thead>
               <tbody class="main-post-list">
-                <tr onclick="location.href='../community/community_view.html'">
+                <tr class="go-page" data-id="2" data-type="board">
                   <td>오늘은 무조건 푹 쉬는 날</td>
                   <td>방꾸밀래</td>
                   <td>2025.06.19</td>
                 </tr>
-                <tr onclick="location.href='../community/community_view.html'">
+                <tr class="go-page" data-id="2" data-type="board">
                   <td>무드등 하나로 방 분위기 이렇게 달라졌어요</td>
                   <td>무드등켜고</td>
                   <td>2025.06.19</td>
                 </tr>
-                <tr onclick="location.href='../community/community_view.html'">
+                <tr class="go-page" data-id="2" data-type="board">
                   <td>창문 앞에 작은 테이블 두니까 분위기 있지 않나요?</td>
                   <td>룸메는고양이</td>
                   <td>2025.06.19</td>
                 </tr>
-                <tr onclick="location.href='../community/community_view.html'">
+                <tr class="go-page" data-id="2" data-type="board">
                   <td>고양이 키워서 캣타워 설치하고 싶은데 추천 좀!!</td>
                   <td>오늘은휴일</td>
                   <td>2025.06.19</td>
                 </tr>
-                <tr onclick="location.href='../community/community_view.html'">
+                <tr class="go-page" data-id="2" data-type="board">
                   <td>집에서 만드는 홈카페 인테리어 이렇게 해보세요</td>
                   <td>드림캐쳐</td>
                   <td>2025.06.19</td>
@@ -184,7 +185,7 @@
       <!-- 리스트 2개씩 묶음 - 건의사항, 공지사항 -->
       <div class="div-two-list-wrap">
 
-        <!-- 리스트 1개 - 최근 등록 유저 -->
+        <!-- 리스트 1개 - 최근 등록된 건의사항 -->
         <div class="div-one-list-wrap">
           <div class="div-list-title-wrap">
             <div class="div-title">최근 등록된 건의사항</div>
@@ -200,27 +201,27 @@
                 </tr>
               </thead>
               <tbody class="main-post-list">
-                <tr onclick="location.href='admin_feedback_view.html'">
+                <tr class="go-page" data-id="2" data-type="feedback">
                   <td>게시글 검색 기능이 너무 제한적입니다</td>
                   <td>방꾸밀래</td>
                   <td>2025.06.19</td>
                 </tr>
-                <tr onclick="location.href='admin_feedback_view.html'">
+                <tr class="go-page" data-id="2" data-type="feedback">
                   <td>댓글 수정 기능이 있으면 좋겠습니다</td>
                   <td>무드등켜고</td>
                   <td>2025.06.19</td>
                 </tr>
-                <tr onclick="location.href='admin_feedback_view.html'">
+                <tr class="go-page" data-id="2" data-type="feedback">
                   <td>이미지 첨부 시 용량 제한 완화 건의</td>
                   <td>룸메는고양이</td>
                   <td>2025.06.19</td>
                 </tr>
-                <tr onclick="location.href='admin_feedback_view.html'">
+                <tr class="go-page" data-id="2" data-type="feedback">
                   <td>비회원도 글 읽을 수 있게 해주세요</td>
                   <td>오늘은휴일</td>
                   <td>2025.06.19</td>
                 </tr>
-                <tr onclick="location.href='admin_feedback_view.html'">
+                <tr class="go-page" data-id="2" data-type="feedback">
                   <td>글 작성 중 임시저장 기능이 필요해요</td>
                   <td>드림캐쳐</td>
                   <td>2025.06.19</td>
@@ -246,23 +247,23 @@
                 </tr>
               </thead>
               <tbody class="main-post-list">
-                <tr onclick="location.href='admin_notice_view.html'">
+                <tr class="go-page" data-id="2" data-type="notice">
                   <td>[공지] 7월 서비스 점검 안내 (7/10 수 01:00~04:00)</td>
                   <td>2025.06.19</td>
                 </tr>
-                <tr onclick="location.href='admin_notice_view.html'">
+                <tr class="go-page" data-id="2" data-type="notice">
                   <td>[필독] 비매너 이용자 제재 내역 안내</td>
                   <td>2025.06.19</td>
                 </tr>
-                <tr onclick="location.href='admin_notice_view.html'">
+                <tr class="go-page" data-id="2" data-type="notice">
                   <td>[안내] 게시판 운영 정책 일부 변경 안내</td>
                   <td>2025.06.19</td>
                 </tr>
-                <tr onclick="location.href='.admin_notice_view.html'">
+                <tr class="go-page" data-id="2" data-type="notice">
                   <td>[신규 기능] 글 작성 시 해시태그 기능 오픈</td>
                   <td>2025.06.19</td>
                 </tr>
-                <tr onclick="location.href='admin_notice_view.html'">
+                <tr class="go-page" data-id="2" data-type="notice">
                   <td>[필독] 커뮤니티 이용 수칙 안내</td>
                   <td>2025.06.19</td>
                 </tr>
@@ -277,6 +278,20 @@
     </section>
 
   </main>
+  <!--  -->
+
+  <!-- 알람 모달창 -->
+  <div class="div-alert-container" id="MODAL-ALERT-ONE-A">
+    <div class="div-alert-wrap">
+      <div class="div-alert-content">
+        모달 내용
+      </div>
+      <div class="div-alert-btn-wrap">
+        <div class="div-alert-btn alert-ok modal-close">확인</div>
+        <div class="div-alert-btn alert-no">취소</div>
+      </div>
+    </div>
+  </div>
   <!--  -->
 
 </body>

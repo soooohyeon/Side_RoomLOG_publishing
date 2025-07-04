@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../../css/admin/main-layout.css">
   <link rel="stylesheet" href="../../css/admin/admin-user.css">
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script defer src="../../js/admin/basic.js"></script>
   <script defer src="../../js/admin/admin-user.js"></script>
 </head>
 <body>
@@ -105,7 +106,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="go-page" data-userNumber="1">
+          <tr class="go-page" data-id="2" data-type="user">
             <td>choco.latte@gmail.com</td>
             <td>방꾸밀래</td>
             <td>2025.06.19</td>
@@ -114,7 +115,7 @@
             <td>2025.06.19</td>
             <td><div class="div-delete-btn">탈퇴</div></td>
           </tr>
-          <tr class="go-page" data-userNumber="2">
+          <tr class="go-page" data-id="2" data-type="user">
             <td>moodlight@gmail.com</td>
             <td>무드등켜고</td>
             <td>2025.06.19</td>
@@ -123,7 +124,7 @@
             <td>2025.06.19</td>
             <td><div class="div-delete-btn">탈퇴</div></td>
           </tr>
-          <tr class="go-page" data-userNumber="3">
+          <tr class="go-page" data-id="2" data-type="user">
             <td>catmate@gmail.com</td>
             <td>룸메는고양이</td>
             <td>2025.06.19</td>
@@ -132,7 +133,7 @@
             <td>2025.06.19</td>
             <td><div class="div-delete-btn">탈퇴</div></td>
           </tr>
-          <tr class="go-page" data-userNumber="4">
+          <tr class="go-page" data-id="2" data-type="user">
             <td>todays.holiday@kakao.com</td>
             <td>오늘은휴일</td>
             <td>2025.06.19</td>
@@ -162,8 +163,22 @@
       </div>
     </section>
     <!--  -->
-    
+
   </main>
+  <!--  -->
+
+  <!-- 알람 모달창 -->
+  <div class="div-alert-container" id="MODAL-ALERT-ONE-A">
+    <div class="div-alert-wrap">
+      <div class="div-alert-content">
+        모달 내용
+      </div>
+      <div class="div-alert-btn-wrap">
+        <div class="div-alert-btn alert-ok modal-close">확인</div>
+        <div class="div-alert-btn alert-no">취소</div>
+      </div>
+    </div>
+  </div>
   <!--  -->
 
 </body>

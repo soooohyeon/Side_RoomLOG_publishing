@@ -1,11 +1,16 @@
 // ---------------------------------------------------------------
 // 댓글을 제외한 상세페이지 이벤트 관련
 
+const deleteMsg = "이 글을 정말 지우시겠어요?<br>한 번 삭제하면, 다시 볼 수 없어요.";
+
 // 게시글 삭제 버튼 클릭 시
 $("#POST-DELETE-BTN").on("click", function() {
-  openModal("이 글을 정말 지우시겠어요?<br>한 번 삭제하면, 다시 볼 수 없어요.", 2).then((result) => {
+  openModal(deleteMsg, 2).then((result) => {
     if (result) {
-      location.href = "삭제경로";
+      setTimeout(() => {
+        openModal("삭제되었습니다.");
+        // location.href = "삭제경로";
+      }, 50);
     }
   });
 });
