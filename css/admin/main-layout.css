@@ -114,6 +114,8 @@ img {
 .ul-sub-menu {
   position: absolute;
   width: 100%;
+  
+  z-index: 10;
   /* 슬라이드 효과를 주기 위함 */
   max-height: 0;
   overflow: hidden;
@@ -231,6 +233,15 @@ select::-ms-expand{ display: none;/*for IE10,11*/ }
 .div-title {
   font-size: 26px;
   font-weight: 800;
+  position: relative;
+}
+
+.div-sub-title {
+  position: absolute;
+  top: -25px;
+  font-size: 17px;
+  /* font-weight: 800; */
+  color: #999999;
 }
 
 /* 테이블 기본 레이아웃 */
@@ -283,10 +294,13 @@ td {
 /* 탈퇴, 삭제 버튼 */
 .div-delete-btn {
   display: inline-block;
-  padding: 6px 15px;
+  height: 17px;
+  padding: 6px 9px;
+
   border: 1px solid #999999;
   border-radius: 30px;
   color: #999999;
+  line-height: 17px;
 }
 .div-delete-btn:hover {
   border: 1px solid #555555;

@@ -51,8 +51,7 @@ $(document).on("click", ".go-type-page", function() {
 });
 
 // 상세 페이지 이동
-$(document).on("click", ".span-board-number", function(e) {
-  e.stopPropagation();
+$(document).on("click", ".span-board-number", function() {
   const boardNumber = $(this).children(".span-board").text();
   location.href = "../community/community-view.html";
 });
