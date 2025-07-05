@@ -67,7 +67,7 @@ $('.blue-line-button').hover(function () {
   const src = $img.attr("src");
 
   // hover에서 벗어날 때 다시 원래 이미지로 복귀
-  if (src.includes("scrap_hover.png")) {
+  if (src.includes("scrap_full_hover.png")) {
     $img.attr("src", "../../image/layout/scrap_ok.png");
   }
 });
