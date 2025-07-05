@@ -1,3 +1,53 @@
+// 댓글 내용 전체 보기/숨기기
+$(document).on("click", ".comment-content", function() {
+  const commentWrap = $(this).closest(".go-page");
+
+  commentWrap.hasClass("comment-active")
+    ? hideComment($(this))
+    : showComment($(this));
+});
+
+// 댓글 내용 전체 보여주기
+function showComment(element) {
+  const commentWrap = element.closest(".go-page");
+  const commentContent = element.children(".comment-text").html();
+  const $arrow = element.find("img");
+  const $commentAllFrame = $(`
+    <tr class="comment-all">
+    <td colspan="6"><div class="comment-slide-wrap">${commentContent}</div></td>
+    </tr>
+  `);
+  
+  $arrow.addClass("rotate");
+  commentWrap.addClass("comment-active");
+  commentWrap.after($commentAllFrame);
+  $commentAllFrame.find(".comment-slide-wrap").slideDown(200);
+}
+
+// 댓글 내용 숨기기
+function hideComment(element) {
+  const commentWrap = element.closest(".go-page");
+  const $arrow = element.find("img");
+  const $nextRow = commentWrap.next(".comment-all");
+  const $slideWrap = $nextRow.find(".comment-slide-wrap");
+
+  $arrow.removeClass("rotate");
+  $slideWrap.slideUp(200, function() {
+    $nextRow.remove();
+  });
+  commentWrap.removeClass("comment-active");
+}
+
+// ---------------------------------------------------------------
+
+// 게시글 상세 페이지 이동
+$(document).on("click", ".board-number", function() {
+  const boardNumber = $(this).data("board");
+  location.href = "../../html/community/community-view.html";
+});
+
+// ---------------------------------------------------------------
+
 // 댓글 삭제
 function deleteComment(commentNumber, parentCommentNumber) {
   const deleteCommentMsg = parentCommentNumber === null
@@ -9,7 +59,6 @@ function deleteComment(commentNumber, parentCommentNumber) {
   
   $("#MODAL-ALERT-ONE-A").removeClass("modal-comment");
   openModal(deleteCommentMsg, 2).then(result => {
-    console.log("💣 확인용 class:", $("#MODAL-ALERT-ONE-A").attr("class"));
     if (result) {
       setTimeout(() => {
         openModal(deleteOkCommentMsg);
@@ -19,3 +68,9 @@ function deleteComment(commentNumber, parentCommentNumber) {
     }
   });
 }
+
+$(document).on("click", ".delete-btn", function() {
+  const commentNumber = $(this).data("comment");
+  const parentCommentNumber = $(this).data("parent");
+  deleteComment(commentNumber, parentCommentNumber);
+});
