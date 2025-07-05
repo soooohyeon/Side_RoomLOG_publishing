@@ -73,7 +73,7 @@ function openCommentModal(commentNumber, boardNumber, modalId = "#MODAL-ALERT-ON
       </div>
     </div>
     <div class="div-alert-btn-wrap">
-      <div class="button-style btn-full-blue delete-comment" data-comment="2">댓글 삭제</div>
+      <div class="button-style btn-full-blue delete-comment" data-comment="2" data-parent="3">댓글 삭제</div>
     </div>
   `;
 
@@ -82,12 +82,12 @@ function openCommentModal(commentNumber, boardNumber, modalId = "#MODAL-ALERT-ON
   $modal.addClass("alert-active modal-comment").fadeIn(200);
 }
 
-// 댓글 삭제 클릭 시
-const commentDeleteMsg = "";
-
 $(document).on("click", ".delete-comment", function() {
-
-})
+  // 댓글 삭제 버튼 클릭 시 (admin-comment.js)
+  const commentNumber = $(this).data("comment");
+  const parentCommentNumber = $(this).data("parent");
+  deleteComment(commentNumber, parentCommentNumber);
+});
 
 // --------------------------------------
 
@@ -125,17 +125,16 @@ $(document).ready(function () {
 // --------------------------------------------------------------- 
 
 // 탈퇴 클릭 시
-const deleteMsg ="해당 사용자를 탈퇴 처리하면, 작성한 게시글, 댓글, 스크랩 등 모든 활동 기록이 삭제됩니다.<br>작성자의 닉네임 및 프로필 정보 역시 복구할 수 없으며,<br>댓글 중 대댓글이 달린 항목은 순차적으로 삭제됩니다.<br><br>정말 탈퇴를 진행하시겠습니까?";
-const deleteOkMsg ="탈퇴 처리되었습니다.";
-
 $(document).on("click", ".delete-btn", function(e) {
+  const deleteUserMsg = "해당 사용자를 탈퇴 처리하면, 작성한 게시글, 댓글, 스크랩 등 모든 활동 기록이 삭제됩니다.<br>작성자의 닉네임 및 프로필 정보 역시 복구할 수 없으며,<br>댓글 중 대댓글이 달린 항목은 순차적으로 삭제됩니다.<br><br>정말 탈퇴를 진행하시겠습니까?";
+  const deleteOkUserMsg = "탈퇴 처리되었습니다.";
   e.stopPropagation();
   const userNumber = $(this).closest(".userNumber").data("user");
 
-  openModal(deleteMsg, 2).then((result) => {
+  openModal(deleteUserMsg, 2).then((result) => {
     if (result) {
       setTimeout(() => {
-        openModal(deleteOkMsg);
+        openModal(deleteOkUserMsg);
         // location.href = "탈퇴경로";
       }, 50);
     }

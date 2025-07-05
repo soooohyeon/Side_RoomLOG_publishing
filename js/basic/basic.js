@@ -318,6 +318,11 @@ function openModal(message, temp = 1, modalId = "#MODAL-ALERT-ONE-A") {
   return new Promise((resolve) => {
     const $modal = $(modalId);
     const $alertWrap = $modal.find(".div-alert-wrap");
+    
+    // 💣 완전한 클래스 리셋
+    $modal[0].className = "";  // 진짜 DOM에서 클래스 싹 제거
+    $modal.addClass("div-alert-container");
+
     const basicFrame = `
       <div class="div-alert-content">${message}</div>
       <div class="div-alert-btn-wrap">
