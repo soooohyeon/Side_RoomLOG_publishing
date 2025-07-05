@@ -14,7 +14,7 @@ $("#SELECT-SORT").click(function() {
 // ---------------------------------------------------------------
 
 // 상세 페이지 이동
-$(document).on("click", ".go-detail", function() {
+$(document).on("click", ".view-banner", function() {
   const bannerNumber = $(this).data("banner");
   location.href = "admin-banner-view.html";
 });
@@ -50,7 +50,7 @@ $(document).on("click", ".td-menu_btn", function(e) {
 
   const menuFrame = `
     <div class="div-menu-wrap">
-      <div class="div-menu-option">수정</div>
+      <div class="div-menu-option update-btn">수정</div>
       <div class="div-menu-option delete-btn">삭제</div>
     </div>
   `;
@@ -80,7 +80,7 @@ $(document).on("click", ".delete-btn", function(e) {
   const deleteBannerMsg = "해당 배너를 삭제하시겠습니까?<br>삭제된 배너는 사용자 화면에서 즉시 제거되며, 이미지 및 연결 정보는 복구할 수 없습니다.";
   const deleteOkBannerMsg = "배너가 삭제되었습니다.";
   e.stopPropagation();
-  const bannerNumber = $(this).closest(".go-detail").data("banner");
+  const bannerNumber = $(this).closest(".view-banner").data("banner");
 
   openModal(deleteBannerMsg, 2).then((result) => {
     if (result) {
@@ -90,4 +90,14 @@ $(document).on("click", ".delete-btn", function(e) {
       }, 50);
     }
   });
+});
+
+// --------------------------------
+
+// 메뉴 - 수정 클릭 시
+$(document).on("click", ".update-btn", function(e) {
+  e.stopPropagation();
+  const bannerNumber = $(this).closest(".view-banner").data("banner");
+  
+  // location.href = "삭제경로";
 });

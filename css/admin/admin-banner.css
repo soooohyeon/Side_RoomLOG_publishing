@@ -1,4 +1,4 @@
-/* 커뮤니티 게시글 관리 목록 페이지 */
+/* 배너 관리 목록 페이지 */
 #SELECT-SORT { padding: 0 30px; }
 #SECTION-LIST-CONTAINER td { padding: 10px 14px; }
 
@@ -55,3 +55,33 @@ tbody > tr > td:nth-child(2) { text-align: left; }
 .div-menu-option:hover { background-color: #f5f5f5; }
 
 /* -------------------------------------------------------------- */
+
+/* 배너 상세 페이지 */
+#DIV-BANNER-IMG {
+  width: 100%;
+  aspect-ratio: 1080 / 550;
+
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.banner-period-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.div-view-status {
+  margin-right: 15px;
+  padding: 6px 12px;
+  border: 1px solid #555555;
+}
+
+.status-used {
+  color: #006497;
+  border: 1px solid #006497;
+}
+
+.div-banner-memo {
+  line-height: 1.6;
+}

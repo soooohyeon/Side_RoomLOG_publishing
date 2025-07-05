@@ -75,7 +75,7 @@ function updateTimeAgo() {
 // 시간 형식 포맷 함수 사용 (작성일짜 출력) (basic.js)
 $(document).ready(function () {
   updateTimeAgo();
-})
+});
 
 // ---------------------------------------------------------------
 

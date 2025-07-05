@@ -15,6 +15,7 @@
 
 .img-banner {
   height: 100%;
+  aspect-ratio: 1080 / 550;
   object-fit: cover;
 }
 

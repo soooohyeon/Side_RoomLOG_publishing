@@ -1,0 +1,102 @@
+/* 배너 상세, 작성 / 공지 상세, 작성 / 건의사항 상세 */
+.section-line {
+  width: 95%;
+  min-width: 650px;
+  margin: auto;
+  padding: 30px 50px;
+
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+}
+
+.section-line:not(:last-child) { margin-bottom: 15px; }
+
+/* 글 제목 */
+#DIV-CONTENT-TITLE {
+  margin: 20px 0 25px;
+
+  font-size: 27px;
+  font-weight: 800;
+}
+
+/* 섹션 별 제목 */
+.div-section-title {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  
+  border-bottom: 1px solid #cccccc;
+  font-size: 23px;
+  font-weight: 800;
+  color: #555555;
+}
+
+.div-section-content-wrap {
+  margin-top: 20px;
+  color: #555555;
+}
+
+#DIV-POST-INFO-WRAP {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid #cccccc;
+}
+
+/* 프로필 */
+#DIV-PROFILE-WRAP {
+  display: flex;
+  align-items: center;
+}
+
+.div-profile-img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.div-nickname {
+  margin: 0 10px;
+
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* 시간 - 작성일, 수정일 */
+#DIV-DATE-WRAP {
+  display: flex;
+  margin-top: 15px;
+
+  color: #999999;
+}
+
+#DIV-DATE-WRAP > div > span:first-child { margin-right: 7px; }
+
+#DIV-UPDATE-WRAP::before {
+  content: "|";
+  margin: 0 7px 0 10px;
+  color: #CCCCCC;
+}
+
+/* 상세 페이지 버튼 - 수정, 삭제 */
+#DIV-BTN-GROUP-WRAP {
+  display: flex;
+  color: #999999;
+}
+
+.grey-font-btn { cursor: pointer; }
+.grey-font-btn:hover { color: #006497; }
+
+/* 상세 페이지 버튼 - 목록으로 */
+.section-list-btn-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0 80px;
+}
+
+/* 작성된 것이 없을 경우 */
+.div-none {
+  height: 50px;
+}
