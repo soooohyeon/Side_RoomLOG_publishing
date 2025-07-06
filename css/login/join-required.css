@@ -50,15 +50,15 @@ input[type='date'] {
 }
 
 input[type='date']::-webkit-calendar-picker-indicator {
-    position: absolute; 
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    /* 배경, 글자 투명하게하여 아이콘 안보이도록 설정 */
-    background: transparent; 
-    color: transparent; 
-    cursor: pointer;
+  position: absolute; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* 배경, 글자 투명하게하여 아이콘 안보이도록 설정 */
+  background: transparent; 
+  color: transparent; 
+  cursor: pointer;
 }
 
 /* 나이 공개 여부 */

@@ -57,59 +57,72 @@
   
   <!-- 메인 콘텐츠 영역 -->
   <main id="MAIN-CONTAINTER">
-    
-    <!-- 기본 정보 및 배너 이미지 -->
-    <section class="section-line">
-      <div id="DIV-CONTENT-TITLE">당신의 하루가 머무는 곳</div>
-      <div id="DIV-POST-INFO-WRAP">
-        <div id="DIV-PROFILE-DATE-WRAP">
-          <div id="DIV-PROFILE-WRAP">
-            <div class="div-profile-img"><img src="../../image/layout/admin_profile.png" alt="profile"></div>
-            <div class="div-nickname">운영자</div>
-          </div>
-          <div id="DIV-DATE-WRAP">
-            <div>
-              <span>등록일</span>
-              <span class="time-ago" data-timestamp="2025-06-27T15:05:00"></span>
-            </div>
-            <div id="DIV-UPDATE-WRAP">
-              <span>수정일</span>
-              <span class="time-ago" data-timestamp="2025-06-27T15:01:00"></span>
-            </div>
-          </div>
-        </div>
-        <div id="DIV-BTN-GROUP-WRAP" class="view-banner" data-banner="3">
-          <div class="div-menu-line"><span class="grey-font-btn update-btn">수정</span></div>
-          <div><span class="grey-font-btn delete-btn">삭제</span></div>
-        </div>
-      </div>
-      <div class="div-section-content-wrap">
-        <div id="DIV-BANNER-IMG">
-          <img src="../../image/banner/banner2.png" alt="banner">
-        </div>
-      </div>
-    </section>
 
-    <!-- 배너 사용 기간 및 상태 -->
-    <section class="section-line">
-      <div class="div-section-title">배너 사용 기간</div>
-      <div class="div-section-content-wrap banner-period-wrap">
-        <!-- <div class="div-view-status">미사용</div> -->
-        <div class="div-view-status status-used">사용</div>
-        <div class="div-view-period">2025.06.15 ~ 2025.06.30</div>
+    <section class="section-line section-write-container">
+      <!-- 페이지 설명 -->
+      <div id="DIV-PAGE-INFO-WRAP">
+        <div class="div-title">
+          <div class="div-sub-title">운영 콘텐츠 관리</div>
+          배너 등록하기
+        </div>
+        <div class="div-page-info">
+          사용자 화면에 노출될 배너를 등록합니다.<br>배너 제목과 이미지 1개를 등록해 주세요.<br>등록된 배너는 사용 기간 동안만 노출됩니다.
+        </div>
       </div>
-    </section>
-    
-    <!-- 배너 메모 -->
-    <section class="section-line">
-      <div class="div-section-title">배너 사용 기간</div>
-      <div class="div-section-content-wrap div-banner-memo">
-        상시 사용 배너로 고정, 단 계절성 배너 시리즈(봄/가을 등) 교체 시 주기적 검토<br>
-        이미지 교체 시에도 동일한 컨셉 유지 필요<br>
-        문구는 유지하되 배경 이미지는 시즌별로 교체 가능
+
+      <!-- 작성 폼 -->
+      <div id="DIV-WRITE-FORM-WRAP">
+        <form action="" method="">
+
+          <div class="div-one-column-wrap">
+            <div class="div-column-name"><span class="required-column">*</span>제목</div>
+            <div class="div-column-input-wrap div-line">
+              <input type="text" name="title" id="title" placeholder="배너 제목을 입력해 주세요.">
+            </div>
+          </div>
+          
+          <div class="div-one-column-wrap div-flex-none">
+            <div class="div-column-flex-wrap">
+              <div class="div-column-name image-column"><span class="required-column">*</span>첨부 이미지</div>
+              <div class="div-column-input-wrap">
+                <label for="input-image" id="LABEL-IMAGE-BTN">
+                  <img src="../../image/layout/image_regist_btn.png" alt="이미지 등록" class="img-regist-btn">
+                  <input type="file" name="images" id="input-image" class="input-image-btn" accept="image/*"/>
+                </label>
+                <!-- 등록한 이미지 미리보기 --> 
+              </div>
+            </div>
+          </div>
+          <div id="DIV-BANNER-IMG-WRAP">
+            <!-- <div class="div-img-name">ㅇㅇㅇㅇ</div>
+            <div id="DIV-BANNER-IMG">
+              <img src="../../image/banner/banner2.png">
+            </div> -->
+          </div>
+          <div class="div-check-msg">이미지는 1개만 업로드할 수 있으며, 사용자 화면에 그대로 노출됩니다.<br>권장 크기: 1080 x 550px (JPG / PNG)</div>
+
+          <div class="div-one-column-wrap">
+            <div class="div-column-name"><span class="required-column">*</span>사용 기간</div>
+            <div class="div-column-input-wrap">
+              <input type="date" name="start-date" class="div-line input-date">
+              <span class="span-period">~</span>
+              <input type="date" name="end-date" class="div-line input-date">
+            </div>
+          </div>
+
+          <div class="div-one-column-wrap">
+            <div class="div-column-name">메모</div>
+            <div class="div-column-input-wrap div-line div-textarea-wrap">
+              <textarea name="memo" id="" class="textarea-content" placeholder="필요한 경우, 배너 관련 메모를 작성해 주세요. (선택)&#10;배너 교체 기준, 담당자, 내부 관리용 정보 등을 자유롭게 기록하세요."></textarea>
+              <div id="DIV-COUNT-WRAP">
+                <span id="SPAN-COUNT">0</span>/500
+            </div>
+          </div>
+
+        </form>
       </div>
-      <!-- 작성된 것이 없을 경우 -->
-      <!-- <div class="div-section-content-wrap div-none"> 현재 작성된 메모가 없습니다.</div> -->
+
+      
     </section>
     
     <section class="section-list-btn-wrap">

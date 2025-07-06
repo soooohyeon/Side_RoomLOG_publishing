@@ -45,6 +45,27 @@ $(document).ready(function () {
 
 // --------------------------------------------------------------- 
 
+// 배너, 공지, 건의사항 작성시 textarea 글자 수 카운트
+function countTextarea(element, maxCount) {
+  const $commentCount = $("#SPAN-COUNT");
+
+  // 이모지 포함 정확한 길이 계산
+  let content = element.val();
+  let trimmed = Array.from(content).slice(0, maxCount).join("");
+
+  // 200자까지만 입력
+  if (content !== trimmed) {
+    element.val(trimmed);
+    content = trimmed;
+  }
+
+  const nowLength = Array.from(content).length;
+  // 글자수 표시
+  $commentCount.text(nowLength);
+}
+
+// --------------------------------------------------------------- 
+
 // 모달
 // 모달 열기
 function openModal(message, temp = 1, modalId = "#MODAL-ALERT-ONE-A") {

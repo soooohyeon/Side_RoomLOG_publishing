@@ -11,7 +11,6 @@ input[type="text"] {
 #MAIN-CONTAINTER { padding: 70px 0 100px !important }
 
 .div-column-input-wrap > input:focus, textarea:focus { outline: none; }
-.focused { outline: 3px solid #064973; }
 
 /* 페이지 설명 영역 */
 #DIV-PAGE-TITLE-WRAP { margin: 60px 40px 50px; }
@@ -30,15 +29,9 @@ input[type="text"] {
   margin-bottom: 35px;
 }
 
-.div-image-wrap {
-  margin-bottom: 0;
-}
-
+.div-image-wrap { margin-bottom: 0; }
 .div-flex-none { display: block; }
-
-.div-column-flex-wrap {
-  display: flex;
-}
+.div-column-flex-wrap { display: flex; }
 
 .div-hashtag-input-wrap {
   display: flex;

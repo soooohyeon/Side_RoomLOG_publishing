@@ -30,9 +30,7 @@
 }
 
 #DIV-PROFILE-IMG-WRAP {
-  display: flex;
-  justify-content: center;
-
+  height: 100%;
   cursor: pointer;
 }
 

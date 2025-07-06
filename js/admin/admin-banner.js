@@ -11,7 +11,7 @@ $("#SELECT-SORT").click(function() {
   }
 });
 
-// ---------------------------------------------------------------
+// --------------------------------
 
 // 상세 페이지 이동
 $(document).on("click", ".view-banner", function() {
@@ -19,7 +19,7 @@ $(document).on("click", ".view-banner", function() {
   location.href = "admin-banner-view.html";
 });
 
-// --------------------------------------------------------------- 
+// -------------------------------- 
 
 // 메뉴 버튼 호버
 $(document).on("mouseenter", ".td-menu_btn", function() {
@@ -73,7 +73,7 @@ function hideMenu() {
   $currentMenuBtn = null;
 }
 
-// --------------------------------------------------------------- 
+// -------------------------------- 
 
 // 메뉴 - 삭제 클릭 시
 $(document).on("click", ".delete-btn", function(e) {
@@ -100,4 +100,61 @@ $(document).on("click", ".update-btn", function(e) {
   const bannerNumber = $(this).closest(".view-banner").data("banner");
   
   // location.href = "삭제경로";
+});
+
+// --------------------------------------------------------------- 
+
+// 배너 작성 페이지
+
+// 배너 이미지 첨부시 썸네일 미리보기
+$("#input-image").on("change", function(event){
+  const $imageArea = $("#DIV-BANNER-IMG-WRAP");
+  const file = event.target.files[0];
+  if (!file) { return false; }
+  
+  if (!file.type.match("image.*")) {
+    openModal("이미지 파일만 업로드할 수 있어요.");
+    return false;
+  }
+  
+  const imageURL = URL.createObjectURL(file);
+  const imgFrame = `
+    <div class="div-img-name">${file.name}</div>
+    <div id="DIV-BANNER-IMG">
+      <img src="${imageURL}">
+    </div>
+  `;
+
+  $imageArea.html(imgFrame);
+});
+
+// --------------------------------
+
+// 사용 기간 기본 값을 현재 날짜로 설정
+$(".input-date").val(new Date().toISOString().substring(0,10));
+
+// 날짜 제한하기
+const $startDate = $("input[name='start-date']");
+const $endDate = $("input[name='end-date']");
+
+$startDate.on("change", function() {
+  const minValue = $(this).val();
+
+  $endDate.attr("min", minValue);
+
+  console.log(minValue > $endDate.val());
+
+  if (minValue > $endDate.val()) {
+    $endDate.val(minValue);
+  }
+});
+
+// --------------------------------
+
+// textarea 글자 수 카운트
+$(document).ready(function() {
+  const $textarea = $(".textarea-content");
+  $textarea.on("input change", function () {
+    countTextarea($(this), 500);
+  });
 });
