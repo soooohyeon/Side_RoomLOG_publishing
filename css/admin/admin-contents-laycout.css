@@ -89,6 +89,7 @@
 .grey-font-btn { cursor: pointer; }
 .grey-font-btn:hover { color: #006497; }
 
+
 /* 상세 페이지 버튼 - 목록으로 */
 .section-list-btn-wrap {
   display: flex;

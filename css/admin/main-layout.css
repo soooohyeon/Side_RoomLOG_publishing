@@ -289,11 +289,17 @@ td {
 .t-btn { width: 60px; }
 .t-btn-group { width: 20px; }
 
+#DIV-BTN-WRITE-GROUP {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 60px;
+}
+
 /* ------------------------------- */
 
 /* 버튼 */
 
-/* 탈퇴, 삭제 버튼 */
+/* 탈퇴, 삭제, 글 남기기 버튼 */
 .div-delete-btn {
   display: inline-block;
   height: 17px;
